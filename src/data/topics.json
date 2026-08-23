@@ -1,0 +1,2173 @@
+{
+  "categories": {
+    "System Design": {
+      "color": "category-system",
+      "icon": "Layout",
+      "description": "Architecture, scalability, and distributed systems"
+    },
+    "AI & Machine Learning": {
+      "color": "category-ai",
+      "icon": "Brain",
+      "description": "AI, ML, LLMs, and intelligent systems"
+    },
+    "APIs & Web": {
+      "color": "category-api",
+      "icon": "Globe",
+      "description": "REST, GraphQL, gRPC, and web protocols"
+    },
+    "Databases": {
+      "color": "category-database",
+      "icon": "Database",
+      "description": "SQL, NoSQL, indexing, and query optimization"
+    },
+    "DevOps & Cloud": {
+      "color": "category-devops",
+      "icon": "Cloud",
+      "description": "Docker, Kubernetes, CI/CD, and cloud platforms"
+    },
+    "Networking": {
+      "color": "category-networking",
+      "icon": "Network",
+      "description": "Protocols, DNS, TCP/IP, and infrastructure"
+    },
+    "Security & Authentication": {
+      "color": "category-security",
+      "icon": "Shield",
+      "description": "Auth, OAuth, JWT, and security best practices"
+    },
+    "Programming & Concepts": {
+      "color": "category-programming",
+      "icon": "Code",
+      "description": "Languages, patterns, and core concepts"
+    },
+    "Algorithms & Data Structures": {
+      "color": "category-algorithms",
+      "icon": "GitBranch",
+      "description": "Sorting, graphs, trees, and complexity"
+    },
+    "Career & Learning": {
+      "color": "category-career",
+      "icon": "BookOpen",
+      "description": "Roadmaps, resources, and interview prep"
+    }
+  },
+  "topics": [
+    {
+      "title": "A Crash Course on Architectural Scalability",
+      "slug": "a-crash-course-on-architectural-scalability",
+      "category": "System Design",
+      "page": 22,
+      "content": "Scalability is the ability of a system to handle an increased workload without losing performance.\nHowever, we can also look at scalability in terms of the scaling strategy.",
+      "images": [
+        "/images/topics/a-crash-course-on-architectural-scalability/page_22_img_0.jpg"
+      ]
+    },
+    {
+      "title": "0 to 1.5 Billion Guests: Airbnb\u2019s Architectural Evolution",
+      "slug": "0-to-15-billion-guests-airbnbs-architectural-evolu",
+      "category": "System Design",
+      "page": 57,
+      "content": "0 to 1.5 Billion Guests: Airbnb\u2019s Architectural\nEvolution\nAirbnb operates in 200+ countries and has helped 4 million hosts welcome over 1.5 billion guests\nacross the world.\nWhat powers Airbnb technically?\nAirbnb started as a monolithic application. It was built using Ruby-on-Rails and was internally known\nas the Monorail.",
+      "images": [
+        "/images/topics/0-to-15-billion-guests-airbnbs-architectural-evolu/page_57_img_0.jpg"
+      ]
+    },
+    {
+      "title": "12 Algorithms for System Design Interviews",
+      "slug": "12-algorithms-for-system-design-interviews",
+      "category": "System Design",
+      "page": 59,
+      "content": "1. Bloom Filter: Check if a requested item is in the cache before performing disk operations.\n2. Geohash: Used to build location-based services.\n3. HyperLogLog: Counting unique queries performed by users in a search.\n4. Consistent Hashing: Used for efficient data distribution between the cluster\u2019s nodes.\n5. Merkle Tree: Used to detect inconsistencies between data replicas across multiple nodes.",
+      "images": [
+        "/images/topics/12-algorithms-for-system-design-interviews/page_59_img_0.jpg"
+      ]
+    },
+    {
+      "title": "24 Good Resources to Learn Software Architecture in 2025",
+      "slug": "24-good-resources-to-learn-software-architecture-i",
+      "category": "System Design",
+      "page": 67,
+      "content": "24 Good Resources to Learn Software Architecture\nin 2025\nThe resources can be divided into different types such as:\n1. Software Design Books\nSome books that can help are DDIA, System Design Volume 1 & 2, Clean Architecture,\nDomain-Driven Design, and Software Architecture: the Hard Parts\n2. Tech Blogs and Newsletters\nRead technical blogs by companies like Netflix, Uber, Meta, and Airbnb. Also, the\nByteByteGo newsletter provides insights into software design every week.",
+      "images": [
+        "/images/topics/24-good-resources-to-learn-software-architecture-i/page_67_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Design a System like Instagram",
+      "slug": "how-to-design-a-system-like-instagram",
+      "category": "System Design",
+      "page": 89,
+      "content": "Here\u2019s a simple step-by-step approach to build the core functionality:\n1. Users perform an action on their device like tapping the like button, uploading a picture, or\nfollowing another user.\n2. The request goes through a gateway to the backend server built using frameworks like\nDjango, Express, or anything else.\n3. The data is stored in the database.",
+      "images": [
+        "/images/topics/how-to-design-a-system-like-instagram/page_89_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Redis VS Memcached",
+      "slug": "redis-vs-memcached",
+      "category": "System Design",
+      "page": 97,
+      "content": "The diagram below illustrates the key differences.\nThe advantages of data structures make Redis a good choice for:\n\u25cf Recording the number of clicks and comments for each post (hash)\n\u25cf Sorting the commented user list and deduping the users (zset)\n\u25cf Caching user behavior history and filtering malicious behaviors (zset, hash)\n\u25cf Storing boolean information of extremely large data into small space. For example, login\nstatus, membership status. (bitmap)",
+      "images": [
+        "/images/topics/redis-vs-memcached/page_97_img_0.jpg",
+        "/images/topics/redis-vs-memcached/page_98_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Shopify Tech Stack",
+      "slug": "the-shopify-tech-stack",
+      "category": "System Design",
+      "page": 98,
+      "content": "",
+      "images": []
+    },
+    {
+      "title": "How Amazon S3 Works?",
+      "slug": "how-amazon-s3-works",
+      "category": "System Design",
+      "page": 106,
+      "content": "",
+      "images": [
+        "/images/topics/how-amazon-s3-works/page_106_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Netflix Built a Distributed Counter?",
+      "slug": "how-netflix-built-a-distributed-counter",
+      "category": "System Design",
+      "page": 114,
+      "content": "",
+      "images": [
+        "/images/topics/how-netflix-built-a-distributed-counter/page_114_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Everyone talks about Transformers. How Transformers Architecture Works?",
+      "slug": "everyone-talks-about-transformers-how-transformers",
+      "category": "System Design",
+      "page": 130,
+      "content": "",
+      "images": [
+        "/images/topics/everyone-talks-about-transformers-how-transformers/page_130_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 20 System Design Concepts You Should Know",
+      "slug": "top-20-system-design-concepts-you-should-know",
+      "category": "System Design",
+      "page": 134,
+      "content": "",
+      "images": [
+        "/images/topics/top-20-system-design-concepts-you-should-know/page_134_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The System Design Topic Map",
+      "slug": "the-system-design-topic-map",
+      "category": "System Design",
+      "page": 162,
+      "content": "",
+      "images": [
+        "/images/topics/the-system-design-topic-map/page_162_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Transformers Architecture Works?",
+      "slug": "how-transformers-architecture-works",
+      "category": "System Design",
+      "page": 164,
+      "content": "",
+      "images": [
+        "/images/topics/how-transformers-architecture-works/page_164_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Amazon Key Architecture with Third Party Integration",
+      "slug": "amazon-key-architecture-with-third-party-integrati",
+      "category": "System Design",
+      "page": 182,
+      "content": "",
+      "images": [
+        "/images/topics/amazon-key-architecture-with-third-party-integrati/page_182_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What is Event Sourcing? How is it different from normal CRUD design?",
+      "slug": "what-is-event-sourcing-how-is-it-different-from-no",
+      "category": "System Design",
+      "page": 186,
+      "content": "",
+      "images": [
+        "/images/topics/what-is-event-sourcing-how-is-it-different-from-no/page_186_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Data Lake Architecture Works?",
+      "slug": "how-data-lake-architecture-works",
+      "category": "System Design",
+      "page": 188,
+      "content": "",
+      "images": [
+        "/images/topics/how-data-lake-architecture-works/page_188_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Netflix Built a Distributed Counter",
+      "slug": "how-netflix-built-a-distributed-counter-2",
+      "category": "System Design",
+      "page": 190,
+      "content": "",
+      "images": [
+        "/images/topics/how-netflix-built-a-distributed-counter-2/page_190_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Shopify Tech Stacks and Tools",
+      "slug": "shopify-tech-stacks-and-tools",
+      "category": "System Design",
+      "page": 198,
+      "content": "",
+      "images": [
+        "/images/topics/shopify-tech-stacks-and-tools/page_198_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How RabbitMQ Works?",
+      "slug": "how-rabbitmq-works",
+      "category": "System Design",
+      "page": 206,
+      "content": "",
+      "images": [
+        "/images/topics/how-rabbitmq-works/page_206_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How CQRS Works?",
+      "slug": "how-cqrs-works",
+      "category": "System Design",
+      "page": 218,
+      "content": "",
+      "images": [
+        "/images/topics/how-cqrs-works/page_218_img_0.jpg"
+      ]
+    },
+    {
+      "title": "24 Good Resources to Learn Software Architecture in 2025",
+      "slug": "24-good-resources-to-learn-software-architecture-i-2",
+      "category": "System Design",
+      "page": 224,
+      "content": "24 Good Resources to Learn Software Architecture\nin 2025\nThe resources can be divided into different types such as:\n1. Software Design Books\nSome books that can help are DDIA, System Design Volume 1 & 2, Clean Architecture,\nDomain-Driven Design, and Software Architecture: the Hard Parts\n2. Tech Blogs and Newsletters\nRead technical blogs by companies like Netflix, Uber, Meta, and Airbnb. Also, the\nByteByteGo newsletter provides insights into software design every week.",
+      "images": [
+        "/images/topics/24-good-resources-to-learn-software-architecture-i-2/page_224_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How can Cache Systems go wrong?",
+      "slug": "how-can-cache-systems-go-wrong",
+      "category": "System Design",
+      "page": 246,
+      "content": "",
+      "images": [
+        "/images/topics/how-can-cache-systems-go-wrong/page_246_img_0.jpg"
+      ]
+    },
+    {
+      "title": "8 System Design Concepts Explained in 1 Diagram",
+      "slug": "8-system-design-concepts-explained-in-1-diagram",
+      "category": "System Design",
+      "page": 248,
+      "content": "",
+      "images": [
+        "/images/topics/8-system-design-concepts-explained-in-1-diagram/page_248_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Evolution of Scaling at Netflix",
+      "slug": "the-evolution-of-scaling-at-netflix",
+      "category": "System Design",
+      "page": 258,
+      "content": "",
+      "images": [
+        "/images/topics/the-evolution-of-scaling-at-netflix/page_258_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Clean Architecture Works?",
+      "slug": "how-clean-architecture-works",
+      "category": "System Design",
+      "page": 264,
+      "content": "",
+      "images": [
+        "/images/topics/how-clean-architecture-works/page_264_img_0.jpg",
+        "/images/topics/how-clean-architecture-works/page_265_img_0.jpg"
+      ]
+    },
+    {
+      "title": "CI/CD Pipeline Explained",
+      "slug": "cicd-pipeline-explained",
+      "category": "System Design",
+      "page": 290,
+      "content": "",
+      "images": [
+        "/images/topics/cicd-pipeline-explained/page_290_img_0.jpg",
+        "/images/topics/cicd-pipeline-explained/page_291_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Where Do We Cache Data?",
+      "slug": "where-do-we-cache-data",
+      "category": "System Design",
+      "page": 301,
+      "content": "",
+      "images": [
+        "/images/topics/where-do-we-cache-data/page_301_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Apache Kafka Works?",
+      "slug": "how-apache-kafka-works",
+      "category": "System Design",
+      "page": 310,
+      "content": "",
+      "images": [
+        "/images/topics/how-apache-kafka-works/page_310_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Load Balancers vs API Gateways vs Reverse Proxy! And how can they Work Together?",
+      "slug": "load-balancers-vs-api-gateways-vs-reverse-proxy-an",
+      "category": "System Design",
+      "page": 312,
+      "content": "",
+      "images": [
+        "/images/topics/load-balancers-vs-api-gateways-vs-reverse-proxy-an/page_312_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Life of a Redis Query",
+      "slug": "the-life-of-a-redis-query",
+      "category": "System Design",
+      "page": 318,
+      "content": "",
+      "images": [
+        "/images/topics/the-life-of-a-redis-query/page_318_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Apache Kafka Explained (At the high level)",
+      "slug": "apache-kafka-explained-at-the-high-level",
+      "category": "System Design",
+      "page": 330,
+      "content": "",
+      "images": [
+        "/images/topics/apache-kafka-explained-at-the-high-level/page_330_img_0.jpg"
+      ]
+    },
+    {
+      "title": "24 Good Resources to Learn Software Architecture in 2025",
+      "slug": "24-good-resources-to-learn-software-architecture-i-3",
+      "category": "System Design",
+      "page": 345,
+      "content": "24 Good Resources to Learn Software Architecture\nin 2025\nThe resources can be divided into different types such as:\n1. Software Design Books\nSome books that can help are DDIA, System Design Volume 1 & 2, Clean Architecture,\nDomain-Driven Design, and Software Architecture: the Hard Parts\n2. Tech Blogs and Newsletters\nRead technical blogs by companies like Netflix, Uber, Meta, and Airbnb. Also, the\nByteByteGo newsletter provides insights into software design every week.",
+      "images": [
+        "/images/topics/24-good-resources-to-learn-software-architecture-i-3/page_345_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Batch vs Stream Processing",
+      "slug": "batch-vs-stream-processing",
+      "category": "System Design",
+      "page": 351,
+      "content": "",
+      "images": [
+        "/images/topics/batch-vs-stream-processing/page_351_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What are Modular Monoliths?",
+      "slug": "what-are-modular-monoliths",
+      "category": "System Design",
+      "page": 353,
+      "content": "",
+      "images": [
+        "/images/topics/what-are-modular-monoliths/page_353_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 20 System Design Concepts You Should Know",
+      "slug": "top-20-system-design-concepts-you-should-know-2",
+      "category": "System Design",
+      "page": 360,
+      "content": "",
+      "images": [
+        "/images/topics/top-20-system-design-concepts-you-should-know-2/page_360_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Big Data Pipeline Cheatsheet for AWS, Azure, and Google Cloud",
+      "slug": "big-data-pipeline-cheatsheet-for-aws-azure-and-goo",
+      "category": "System Design",
+      "page": 382,
+      "content": "",
+      "images": [
+        "/images/topics/big-data-pipeline-cheatsheet-for-aws-azure-and-goo/page_382_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Forward Proxy versus Reverse Proxy",
+      "slug": "forward-proxy-versus-reverse-proxy",
+      "category": "System Design",
+      "page": 397,
+      "content": "",
+      "images": [
+        "/images/topics/forward-proxy-versus-reverse-proxy/page_397_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Apache Kafka vs. RabbitMQ",
+      "slug": "apache-kafka-vs-rabbitmq",
+      "category": "System Design",
+      "page": 419,
+      "content": "",
+      "images": [
+        "/images/topics/apache-kafka-vs-rabbitmq/page_419_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Why Is Nginx So Popular?",
+      "slug": "why-is-nginx-so-popular",
+      "category": "System Design",
+      "page": 431,
+      "content": "",
+      "images": [
+        "/images/topics/why-is-nginx-so-popular/page_431_img_0.jpg"
+      ]
+    },
+    {
+      "title": "A picture is worth a thousand words: 9 best practices for developing microservices",
+      "slug": "a-picture-is-worth-a-thousand-words-9-best-practic",
+      "category": "System Design",
+      "page": 441,
+      "content": "",
+      "images": [
+        "/images/topics/a-picture-is-worth-a-thousand-words-9-best-practic/page_441_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Open Source AI Stack",
+      "slug": "the-open-source-ai-stack",
+      "category": "AI & Machine Learning",
+      "page": 24,
+      "content": "You don\u2019t need to spend a fortune to build an AI application. The best AI developer tools are\nopen-source, and an excellent ecosystem is evolving that can make AI accessible to everyone.\nThe key components of this open-source AI stack are as follows:\n1. Frontend\nTo build beautiful AI UIs, frameworks like NextJS and Streamlit are extremely useful. Also,\nVercel can help with deployment.",
+      "images": [
+        "/images/topics/the-open-source-ai-stack/page_24_img_0.jpg"
+      ]
+    },
+    {
+      "title": "30 Useful AI Apps That Can Help You in 2025",
+      "slug": "30-useful-ai-apps-that-can-help-you-in-2025",
+      "category": "AI & Machine Learning",
+      "page": 32,
+      "content": "AI apps are taking over the world. There\u2019s an AI app for every conceivable use case. Here are some\nAI apps for different categories:\n1. General Purpose: Perplexity, Anthropic Claude, Grok, ChatGPT, and Gemini\n2. Writing Code: Cursor, Replit, Windsurf AI, Github Copilot, and Tabnine\n3. Productivity: Adobe (PDF Chat), Gemini for Gmail, Gamma (AI slide deck), WisprFlow (AI\nvoice dictation), and Granola (AI notetaker)\n4. Audience Building: Delphi (AI text, voice), HeyGen (video translation), Persona (AI agent\nbuilder), Captions (AI video editing), and OpusClips (Video repurposing)",
+      "images": [
+        "/images/topics/30-useful-ai-apps-that-can-help-you-in-2025/page_32_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Session, Cookie, JWT, Token, SSO, and OAuth 2.0 Explained in One Diagram",
+      "slug": "session-cookie-jwt-token-sso-and-oauth-20-explaine",
+      "category": "AI & Machine Learning",
+      "page": 36,
+      "content": "Session, Cookie, JWT, Token, SSO, and OAuth 2.0\nExplained in One Diagram\nWhen you login to a website, your identity needs to be managed. Here is how different solutions\nwork:",
+      "images": [
+        "/images/topics/session-cookie-jwt-token-sso-and-oauth-20-explaine/page_36_img_0.jpg"
+      ]
+    },
+    {
+      "title": "DeepSeek 1-Pager",
+      "slug": "deepseek-1-pager",
+      "category": "AI & Machine Learning",
+      "page": 38,
+      "content": "It is said to have developed a powerful AI model at a remarkably low cost, approximately $6 million\nfor the final training run. In January 2025, it is said to have released its latest reasoning-focused\nmodel known as DeepSeek R1.\nThe release made it the No. 1 downloaded free app on the Apple Play Store.\nMost AI models are trained using supervised fine-tuning, meaning they learn by mimicking large\ndatasets of human-annotated examples. This method has limitations.",
+      "images": [
+        "/images/topics/deepseek-1-pager/page_38_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What is an AI Agent?",
+      "slug": "what-is-an-ai-agent",
+      "category": "AI & Machine Learning",
+      "page": 42,
+      "content": "An AI agent is a software program that can interact with its environment, gather data, and use that\ndata to achieve predetermined goals. AI agents can choose the best actions to perform to meet\nthose goals.\nKey characteristics of AI agents are as follows:\nAn agent can perform autonomous actions without constant human intervention. Also, they can have\na human in the loop to maintain control.",
+      "images": [
+        "/images/topics/what-is-an-ai-agent/page_42_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Generative Adversarial Network (GAN) - AI by Hand \u270d",
+      "slug": "generative-adversarial-network-gan-ai-by-hand",
+      "category": "AI & Machine Learning",
+      "page": 50,
+      "content": "Generative Adversarial Network (GAN) - AI by Hand\n\u270d\nThis animation is hand drawn by Prof. Tom Yeh exclusively for the readers of the ByteByteGo\nNewsletter..\nIf you want to learn more about GAN, check out Chapter 7 in the System Design Interview book.",
+      "images": [
+        "/images/topics/generative-adversarial-network-gan-ai-by-hand/page_50_img_0.jpg",
+        "/images/topics/generative-adversarial-network-gan-ai-by-hand/page_51_img_0.jpg"
+      ]
+    },
+    {
+      "title": "xAI\u2019s Grok-3 One-Pager",
+      "slug": "xais-grok-3-one-pager",
+      "category": "AI & Machine Learning",
+      "page": 73,
+      "content": "",
+      "images": [
+        "/images/topics/xais-grok-3-one-pager/page_73_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Generative AI Learning Roadmap",
+      "slug": "the-generative-ai-learning-roadmap",
+      "category": "AI & Machine Learning",
+      "page": 77,
+      "content": "",
+      "images": [
+        "/images/topics/the-generative-ai-learning-roadmap/page_77_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What is MCP?",
+      "slug": "what-is-mcp",
+      "category": "AI & Machine Learning",
+      "page": 87,
+      "content": "",
+      "images": [
+        "/images/topics/what-is-mcp/page_87_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What is Retrieval-Augmented Generation (RAG)?",
+      "slug": "what-is-retrieval-augmented-generation-rag",
+      "category": "AI & Machine Learning",
+      "page": 102,
+      "content": "",
+      "images": [
+        "/images/topics/what-is-retrieval-augmented-generation-rag/page_102_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Virtualization vs Containerization",
+      "slug": "virtualization-vs-containerization",
+      "category": "AI & Machine Learning",
+      "page": 112,
+      "content": "",
+      "images": [
+        "/images/topics/virtualization-vs-containerization/page_112_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top AI Coding Tools for Developers You Can Use in 2025",
+      "slug": "top-ai-coding-tools-for-developers-you-can-use-in-",
+      "category": "AI & Machine Learning",
+      "page": 120,
+      "content": "",
+      "images": [
+        "/images/topics/top-ai-coding-tools-for-developers-you-can-use-in-/page_120_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top YouTube Channels and Blogs for AI Learning in 2025",
+      "slug": "top-youtube-channels-and-blogs-for-ai-learning-in-",
+      "category": "AI & Machine Learning",
+      "page": 132,
+      "content": "",
+      "images": [
+        "/images/topics/top-youtube-channels-and-blogs-for-ai-learning-in-/page_132_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Explaining JSON Web Token (JWT) with simple terms",
+      "slug": "explaining-json-web-token-jwt-with-simple-terms",
+      "category": "AI & Machine Learning",
+      "page": 156,
+      "content": "",
+      "images": [
+        "/images/topics/explaining-json-web-token-jwt-with-simple-terms/page_156_img_0.jpg"
+      ]
+    },
+    {
+      "title": "12 MCP Servers You Can Use in 2025",
+      "slug": "12-mcp-servers-you-can-use-in-2025",
+      "category": "AI & Machine Learning",
+      "page": 158,
+      "content": "",
+      "images": [
+        "/images/topics/12-mcp-servers-you-can-use-in-2025/page_158_img_0.jpg"
+      ]
+    },
+    {
+      "title": "JWT Simply Explained",
+      "slug": "jwt-simply-explained",
+      "category": "AI & Machine Learning",
+      "page": 166,
+      "content": "",
+      "images": [
+        "/images/topics/jwt-simply-explained/page_166_img_0.jpg"
+      ]
+    },
+    {
+      "title": "AI Agent versus MCP",
+      "slug": "ai-agent-versus-mcp",
+      "category": "AI & Machine Learning",
+      "page": 174,
+      "content": "",
+      "images": [
+        "/images/topics/ai-agent-versus-mcp/page_174_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 20 AI Concepts You Should Know",
+      "slug": "top-20-ai-concepts-you-should-know",
+      "category": "AI & Machine Learning",
+      "page": 194,
+      "content": "",
+      "images": [
+        "/images/topics/top-20-ai-concepts-you-should-know/page_194_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The AI Application Stack for Building RAG Apps",
+      "slug": "the-ai-application-stack-for-building-rag-apps",
+      "category": "AI & Machine Learning",
+      "page": 196,
+      "content": "",
+      "images": [
+        "/images/topics/the-ai-application-stack-for-building-rag-apps/page_196_img_0.jpg"
+      ]
+    },
+    {
+      "title": "AI Vs Machine Learning Vs Deep Learning Vs Generative AI",
+      "slug": "ai-vs-machine-learning-vs-deep-learning-vs-generat",
+      "category": "AI & Machine Learning",
+      "page": 200,
+      "content": "",
+      "images": [
+        "/images/topics/ai-vs-machine-learning-vs-deep-learning-vs-generat/page_200_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 20 AI Agent Concepts You Should Know",
+      "slug": "top-20-ai-agent-concepts-you-should-know",
+      "category": "AI & Machine Learning",
+      "page": 204,
+      "content": "",
+      "images": [
+        "/images/topics/top-20-ai-agent-concepts-you-should-know/page_204_img_0.jpg"
+      ]
+    },
+    {
+      "title": "RAG vs Agentic RAG",
+      "slug": "rag-vs-agentic-rag",
+      "category": "AI & Machine Learning",
+      "page": 208,
+      "content": "",
+      "images": [
+        "/images/topics/rag-vs-agentic-rag/page_208_img_0.jpg"
+      ]
+    },
+    {
+      "title": "6 Data Structures to Save Storage",
+      "slug": "6-data-structures-to-save-storage",
+      "category": "AI & Machine Learning",
+      "page": 212,
+      "content": "",
+      "images": [
+        "/images/topics/6-data-structures-to-save-storage/page_212_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Generative AI Tech Stack",
+      "slug": "the-generative-ai-tech-stack",
+      "category": "AI & Machine Learning",
+      "page": 222,
+      "content": "",
+      "images": [
+        "/images/topics/the-generative-ai-tech-stack/page_222_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Agentic AI Learning Roadmap",
+      "slug": "the-agentic-ai-learning-roadmap",
+      "category": "AI & Machine Learning",
+      "page": 228,
+      "content": "",
+      "images": [
+        "/images/topics/the-agentic-ai-learning-roadmap/page_228_img_0.jpg"
+      ]
+    },
+    {
+      "title": "12 MCP Servers You Can Use in 2025",
+      "slug": "12-mcp-servers-you-can-use-in-2025-2",
+      "category": "AI & Machine Learning",
+      "page": 230,
+      "content": "",
+      "images": [
+        "/images/topics/12-mcp-servers-you-can-use-in-2025-2/page_230_img_0.jpg"
+      ]
+    },
+    {
+      "title": "12 MCP Servers You Can Use in 2025",
+      "slug": "12-mcp-servers-you-can-use-in-2025-3",
+      "category": "AI & Machine Learning",
+      "page": 242,
+      "content": "",
+      "images": [
+        "/images/topics/12-mcp-servers-you-can-use-in-2025-3/page_242_img_0.jpg"
+      ]
+    },
+    {
+      "title": "MCP Versus A2A Protocol",
+      "slug": "mcp-versus-a2a-protocol",
+      "category": "AI & Machine Learning",
+      "page": 244,
+      "content": "",
+      "images": [
+        "/images/topics/mcp-versus-a2a-protocol/page_244_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Key Terms in Domain-Driven Design",
+      "slug": "key-terms-in-domain-driven-design",
+      "category": "AI & Machine Learning",
+      "page": 272,
+      "content": "",
+      "images": [
+        "/images/topics/key-terms-in-domain-driven-design/page_272_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top AI Agent Frameworks You Should Know",
+      "slug": "top-ai-agent-frameworks-you-should-know",
+      "category": "AI & Machine Learning",
+      "page": 274,
+      "content": "",
+      "images": [
+        "/images/topics/top-ai-agent-frameworks-you-should-know/page_274_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How OpenAI\u2019s GPT-OSS 120B and 20B Models Work?",
+      "slug": "how-openais-gpt-oss-120b-and-20b-models-work",
+      "category": "AI & Machine Learning",
+      "page": 276,
+      "content": "",
+      "images": [
+        "/images/topics/how-openais-gpt-oss-120b-and-20b-models-work/page_276_img_0.jpg"
+      ]
+    },
+    {
+      "title": "AI Agent versus MCP",
+      "slug": "ai-agent-versus-mcp-2",
+      "category": "AI & Machine Learning",
+      "page": 286,
+      "content": "",
+      "images": [
+        "/images/topics/ai-agent-versus-mcp-2/page_286_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Open Source RAG Stack",
+      "slug": "the-open-source-rag-stack",
+      "category": "AI & Machine Learning",
+      "page": 291,
+      "content": "",
+      "images": []
+    },
+    {
+      "title": "Kubernetes Explained",
+      "slug": "kubernetes-explained",
+      "category": "AI & Machine Learning",
+      "page": 297,
+      "content": "",
+      "images": [
+        "/images/topics/kubernetes-explained/page_297_img_0.jpg"
+      ]
+    },
+    {
+      "title": "N8N versus LangGraph",
+      "slug": "n8n-versus-langgraph",
+      "category": "AI & Machine Learning",
+      "page": 299,
+      "content": "",
+      "images": [
+        "/images/topics/n8n-versus-langgraph/page_299_img_0.jpg"
+      ]
+    },
+    {
+      "title": "6 Steps to Create a New AI Model",
+      "slug": "6-steps-to-create-a-new-ai-model",
+      "category": "AI & Machine Learning",
+      "page": 320,
+      "content": "",
+      "images": [
+        "/images/topics/6-steps-to-create-a-new-ai-model/page_320_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Access Control Clearly Explained",
+      "slug": "access-control-clearly-explained",
+      "category": "AI & Machine Learning",
+      "page": 324,
+      "content": "",
+      "images": [
+        "/images/topics/access-control-clearly-explained/page_324_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Full Fine-Tuning vs LoRA vs RAG",
+      "slug": "full-fine-tuning-vs-lora-vs-rag",
+      "category": "AI & Machine Learning",
+      "page": 326,
+      "content": "",
+      "images": [
+        "/images/topics/full-fine-tuning-vs-lora-vs-rag/page_326_img_0.jpg"
+      ]
+    },
+    {
+      "title": "MCP vs API: what\u2019s the difference?",
+      "slug": "mcp-vs-api-whats-the-difference",
+      "category": "AI & Machine Learning",
+      "page": 332,
+      "content": "",
+      "images": [
+        "/images/topics/mcp-vs-api-whats-the-difference/page_332_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Types of AI Agents",
+      "slug": "types-of-ai-agents",
+      "category": "AI & Machine Learning",
+      "page": 343,
+      "content": "",
+      "images": [
+        "/images/topics/types-of-ai-agents/page_343_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How AI Agents Chain Tools, Memory, and Reasoning?",
+      "slug": "how-ai-agents-chain-tools-memory-and-reasoning",
+      "category": "AI & Machine Learning",
+      "page": 356,
+      "content": "",
+      "images": [
+        "/images/topics/how-ai-agents-chain-tools-memory-and-reasoning/page_356_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How LLMs See the World",
+      "slug": "how-llms-see-the-world",
+      "category": "AI & Machine Learning",
+      "page": 364,
+      "content": "",
+      "images": [
+        "/images/topics/how-llms-see-the-world/page_364_img_0.jpg"
+      ]
+    },
+    {
+      "title": "RAG vs Fine-tuning: Which one should you use?",
+      "slug": "rag-vs-fine-tuning-which-one-should-you-use",
+      "category": "AI & Machine Learning",
+      "page": 366,
+      "content": "",
+      "images": [
+        "/images/topics/rag-vs-fine-tuning-which-one-should-you-use/page_366_img_0.jpg",
+        "/images/topics/rag-vs-fine-tuning-which-one-should-you-use/page_367_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Why is DeepSeek-OCR such a BIG DEAL?",
+      "slug": "why-is-deepseek-ocr-such-a-big-deal",
+      "category": "AI & Machine Learning",
+      "page": 373,
+      "content": "",
+      "images": [
+        "/images/topics/why-is-deepseek-ocr-such-a-big-deal/page_373_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The AI Agent Tech Stack",
+      "slug": "the-ai-agent-tech-stack",
+      "category": "AI & Machine Learning",
+      "page": 386,
+      "content": "",
+      "images": [
+        "/images/topics/the-ai-agent-tech-stack/page_386_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Build a Basic RAG Application on AWS?",
+      "slug": "how-to-build-a-basic-rag-application-on-aws",
+      "category": "AI & Machine Learning",
+      "page": 388,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-build-a-basic-rag-application-on-aws/page_388_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Virtualization vs. Containerization",
+      "slug": "virtualization-vs-containerization-2",
+      "category": "AI & Machine Learning",
+      "page": 401,
+      "content": "",
+      "images": [
+        "/images/topics/virtualization-vs-containerization-2/page_401_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How do AirTags work?",
+      "slug": "how-do-airtags-work",
+      "category": "AI & Machine Learning",
+      "page": 405,
+      "content": "",
+      "images": [
+        "/images/topics/how-do-airtags-work/page_405_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Virtualization Explained: From Bare Metal to Hosted Hypervisors",
+      "slug": "virtualization-explained-from-bare-metal-to-hosted",
+      "category": "AI & Machine Learning",
+      "page": 415,
+      "content": "",
+      "images": [
+        "/images/topics/virtualization-explained-from-bare-metal-to-hosted/page_415_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Hub, Switch, & Router Explained",
+      "slug": "hub-switch-router-explained",
+      "category": "AI & Machine Learning",
+      "page": 435,
+      "content": "",
+      "images": [
+        "/images/topics/hub-switch-router-explained/page_435_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How does gRPC work?",
+      "slug": "how-does-grpc-work",
+      "category": "APIs & Web",
+      "page": 12,
+      "content": "RPC (Remote Procedure Call) is called \u201cremote\u201d because it enables communications between\nremote services when services are deployed to different servers under microservice architecture.\nFrom the user\u2019s point of view, it acts like a local function call.\nThe diagram below illustrates the overall data flow for gRPC.\nStep 1: A REST call is made from the client. The request body is usually in JSON format.",
+      "images": [
+        "/images/topics/how-does-grpc-work/page_12_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Ultimate API Learning Roadmap",
+      "slug": "the-ultimate-api-learning-roadmap",
+      "category": "APIs & Web",
+      "page": 30,
+      "content": "APIs are the backbone of communication over the Internet. Every developer needs to learn about\nAPIs. Here\u2019s a roadmap that covers the most important topics:\n1. Introduction to APIs\nAPI is a set of protocols and tools for building applications. Different types of APIs exist, such\nas public, private, and partner.",
+      "images": [
+        "/images/topics/the-ultimate-api-learning-roadmap/page_30_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 12 Tips for API Security",
+      "slug": "top-12-tips-for-api-security",
+      "category": "APIs & Web",
+      "page": 65,
+      "content": "\u25cf Use HTTPS\n\u25cf Use OAuth2\n\u25cf Use WebAuthn\n\u25cf Use Leveled API Keys",
+      "images": [
+        "/images/topics/top-12-tips-for-api-security/page_65_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 5 common ways to improve API performance",
+      "slug": "top-5-common-ways-to-improve-api-performance",
+      "category": "APIs & Web",
+      "page": 71,
+      "content": "Result Pagination:\nThis method is used to optimize large result sets by streaming them back to the client, enhancing\nservice responsiveness and user experience.\nAsynchronous Logging:\nThis approach involves sending logs to a lock-free buffer and returning immediately, rather than\ndealing with the disk on every call. Logs are periodically flushed to the disk, significantly reducing I/O\noverhead.\nData Caching:",
+      "images": [
+        "/images/topics/top-5-common-ways-to-improve-api-performance/page_71_img_0.jpg"
+      ]
+    },
+    {
+      "title": "30 Free APIs for Developers",
+      "slug": "30-free-apis-for-developers",
+      "category": "APIs & Web",
+      "page": 75,
+      "content": "APIs are the backbone of modern software development. Whether it is a hobby project or a\nreal-world application, developers need APIs. These APIs (some completely free and some with\nfree tiers) can help kickstart development.\n1. Public APIs for Open Data\nOpenStreetMap, NASA, World Bank, GeoNames, and Open Library APIs provide a lot of\nuseful data.",
+      "images": [
+        "/images/topics/30-free-apis-for-developers/page_75_img_0.jpg"
+      ]
+    },
+    {
+      "title": "HTTP/1 -> HTTP/2 -> HTTP/3",
+      "slug": "http1-http2-http3",
+      "category": "APIs & Web",
+      "page": 79,
+      "content": "HTTP 1 started in 1996 followed by HTTP 1.1 the very next year. In 2015, HTTP 2 came about and\nin 2019 we got HTTP 3.\nWith each iteration, the protocol has evolved in new and interesting ways.",
+      "images": [
+        "/images/topics/http1-http2-http3/page_79_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Structure of URL",
+      "slug": "structure-of-url",
+      "category": "APIs & Web",
+      "page": 81,
+      "content": "",
+      "images": [
+        "/images/topics/structure-of-url/page_81_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Learn Backend Development?",
+      "slug": "how-to-learn-backend-development",
+      "category": "APIs & Web",
+      "page": 108,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-learn-backend-development/page_108_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Learn API Development?",
+      "slug": "how-to-learn-api-development",
+      "category": "APIs & Web",
+      "page": 116,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-learn-api-development/page_116_img_0.jpg"
+      ]
+    },
+    {
+      "title": "A Cheatsheet on REST API Design Best Practices",
+      "slug": "a-cheatsheet-on-rest-api-design-best-practices",
+      "category": "APIs & Web",
+      "page": 143,
+      "content": "",
+      "images": [
+        "/images/topics/a-cheatsheet-on-rest-api-design-best-practices/page_143_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The 5 Pillars of API Design",
+      "slug": "the-5-pillars-of-api-design",
+      "category": "APIs & Web",
+      "page": 168,
+      "content": "",
+      "images": [
+        "/images/topics/the-5-pillars-of-api-design/page_168_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How does HTTPS work?",
+      "slug": "how-does-https-work",
+      "category": "APIs & Web",
+      "page": 176,
+      "content": "",
+      "images": [
+        "/images/topics/how-does-https-work/page_176_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 5 common ways to improve API performance",
+      "slug": "top-5-common-ways-to-improve-api-performance-2",
+      "category": "APIs & Web",
+      "page": 232,
+      "content": "Result Pagination:\nThis method is used to optimize large result sets by streaming them back to the client, enhancing\nservice responsiveness and user experience.\nAsynchronous Logging:\nThis approach involves sending logs to a lock-free buffer and returning immediately, rather than\ndealing with the disk on every call. Logs are periodically flushed to the disk, significantly reducing I/O\noverhead.\nData Caching:",
+      "images": [
+        "/images/topics/top-5-common-ways-to-improve-api-performance-2/page_232_img_0.jpg"
+      ]
+    },
+    {
+      "title": "REST API Vs. GraphQL",
+      "slug": "rest-api-vs-graphql",
+      "category": "APIs & Web",
+      "page": 234,
+      "content": "",
+      "images": [
+        "/images/topics/rest-api-vs-graphql/page_234_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Tokens vs API Keys",
+      "slug": "tokens-vs-api-keys",
+      "category": "APIs & Web",
+      "page": 236,
+      "content": "",
+      "images": [
+        "/images/topics/tokens-vs-api-keys/page_236_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What happens when you type a URL into a browser?",
+      "slug": "what-happens-when-you-type-a-url-into-a-browser",
+      "category": "APIs & Web",
+      "page": 254,
+      "content": "",
+      "images": [
+        "/images/topics/what-happens-when-you-type-a-url-into-a-browser/page_254_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How HTTPS Works?",
+      "slug": "how-https-works",
+      "category": "APIs & Web",
+      "page": 256,
+      "content": "",
+      "images": [
+        "/images/topics/how-https-works/page_256_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Common HTTP Status Codes",
+      "slug": "common-http-status-codes",
+      "category": "APIs & Web",
+      "page": 262,
+      "content": "",
+      "images": [
+        "/images/topics/common-http-status-codes/page_262_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Best Practices in API Design",
+      "slug": "best-practices-in-api-design",
+      "category": "APIs & Web",
+      "page": 270,
+      "content": "",
+      "images": [
+        "/images/topics/best-practices-in-api-design/page_270_img_0.jpg"
+      ]
+    },
+    {
+      "title": "API Vs SDK!",
+      "slug": "api-vs-sdk",
+      "category": "APIs & Web",
+      "page": 339,
+      "content": "",
+      "images": [
+        "/images/topics/api-vs-sdk/page_339_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Debug a Slow API?",
+      "slug": "how-to-debug-a-slow-api",
+      "category": "APIs & Web",
+      "page": 362,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-debug-a-slow-api/page_362_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Design Good APIs",
+      "slug": "how-to-design-good-apis",
+      "category": "APIs & Web",
+      "page": 380,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-design-good-apis/page_380_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Popular Backend Tech Stack",
+      "slug": "popular-backend-tech-stack",
+      "category": "APIs & Web",
+      "page": 394,
+      "content": "",
+      "images": [
+        "/images/topics/popular-backend-tech-stack/page_394_img_0.jpg",
+        "/images/topics/popular-backend-tech-stack/page_395_img_0.jpg"
+      ]
+    },
+    {
+      "title": "HTTP vs. HTTPS",
+      "slug": "http-vs-https",
+      "category": "APIs & Web",
+      "page": 395,
+      "content": "",
+      "images": []
+    },
+    {
+      "title": "5 REST API Authentication Methods",
+      "slug": "5-rest-api-authentication-methods",
+      "category": "APIs & Web",
+      "page": 403,
+      "content": "",
+      "images": [
+        "/images/topics/5-rest-api-authentication-methods/page_403_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What is a REST API?",
+      "slug": "what-is-a-rest-api",
+      "category": "APIs & Web",
+      "page": 411,
+      "content": "",
+      "images": [
+        "/images/topics/what-is-a-rest-api/page_411_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The HTTP Mindmap",
+      "slug": "the-http-mindmap",
+      "category": "APIs & Web",
+      "page": 421,
+      "content": "",
+      "images": [
+        "/images/topics/the-http-mindmap/page_421_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Can a web server provide real-time updates?",
+      "slug": "can-a-web-server-provide-real-time-updates",
+      "category": "APIs & Web",
+      "page": 425,
+      "content": "",
+      "images": [
+        "/images/topics/can-a-web-server-provide-real-time-updates/page_425_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Evolution of HTTP",
+      "slug": "evolution-of-http",
+      "category": "APIs & Web",
+      "page": 427,
+      "content": "",
+      "images": [
+        "/images/topics/evolution-of-http/page_427_img_0.jpg"
+      ]
+    },
+    {
+      "title": "A Cheatsheet on Database Performance",
+      "slug": "a-cheatsheet-on-database-performance",
+      "category": "Databases",
+      "page": 46,
+      "content": "Good database performance is critical since it directly impacts user experience, operational costs,\nand scalability.\nBut what impacts database performance?\nEvaluating database performance depends on key metrics such as query execution time,\nthroughput, latency, and resource utilization.",
+      "images": [
+        "/images/topics/a-cheatsheet-on-database-performance/page_46_img_0.jpg"
+      ]
+    },
+    {
+      "title": "PostgreSQL 101: The Everything Database",
+      "slug": "postgresql-101-the-everything-database",
+      "category": "Databases",
+      "page": 63,
+      "content": "Built using C language, PostgreSQL is the most popular choice of database from small web apps to\nenterprise systems. It runs as a multiprocess system and follows ACID principles.\nThe key points about PostgreSQL\u2019s Architecture are as follows:",
+      "images": [
+        "/images/topics/postgresql-101-the-everything-database/page_63_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Which Database Should I Use on AWS?",
+      "slug": "which-database-should-i-use-on-aws",
+      "category": "Databases",
+      "page": 85,
+      "content": "This question often comes up when we start deploying an application on AWS. There are many\noptions available to choose from.\nBroadly, there are three categories of databases:\n1. Relational\nThe two main choices in this space are AWS RDS and AWS Aurora.\nAWS RDS is a managed relational DB service that supports MySQL, PostgreSQL, Oracle,\netc. AWS Aurora is a cloud-native relational database that supports high availability and\nscalability\n2. Non-Relational\nThe three main choices in this category are DynamoDB, DocumentDB, and AWS",
+      "images": [
+        "/images/topics/which-database-should-i-use-on-aws/page_85_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The 4 Types of SQL Joins",
+      "slug": "the-4-types-of-sql-joins",
+      "category": "Databases",
+      "page": 151,
+      "content": "SQL joins combine rows from two or more tables based on a related column. Here are the different\ntypes of joins you can use:\n1. Inner Join\nReturns only the matching rows between both tables. It keeps common data only.\n2. Left Join\nReturns all rows from the left table and matching rows from the right table. If a row in the left",
+      "images": [
+        "/images/topics/the-4-types-of-sql-joins/page_151_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Visualizing a SQL query",
+      "slug": "visualizing-a-sql-query",
+      "category": "Databases",
+      "page": 155,
+      "content": "SQL statements are executed by the database system in several steps, including:\n\u25cf Parsing the SQL statement and checking its validity\n\u25cf Transforming the SQL into an internal representation, such as relational algebra\n\u25cf Optimizing the internal representation and creating an execution plan that utilizes index\ninformation\n\u25cf Executing the plan and returning the results",
+      "images": [
+        "/images/topics/visualizing-a-sql-query/page_155_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How SQL Query Executes In A Database?",
+      "slug": "how-sql-query-executes-in-a-database",
+      "category": "Databases",
+      "page": 202,
+      "content": "STEP 1\nThe query string first reaches the Transport Subsystem of the database. This subsystem manages\nthe connection with the client. Also, it performs authentication and authorization checks, and if\neverything looks fine, it lets the query go to the next step.\nSTEP 2\nThe query now reaches the Query Processor subsystem, which has two parts: Query Parser and\nQuery Optimizer.",
+      "images": [
+        "/images/topics/how-sql-query-executes-in-a-database/page_202_img_0.jpg"
+      ]
+    },
+    {
+      "title": "5 Database Normal Forms Every Developer Should Know",
+      "slug": "5-database-normal-forms-every-developer-should-kno",
+      "category": "Databases",
+      "page": 214,
+      "content": "",
+      "images": [
+        "/images/topics/5-database-normal-forms-every-developer-should-kno/page_214_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How MongoDB Works?",
+      "slug": "how-mongodb-works",
+      "category": "Databases",
+      "page": 220,
+      "content": "",
+      "images": [
+        "/images/topics/how-mongodb-works/page_220_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Database Index Types Every Developer Should Know",
+      "slug": "database-index-types-every-developer-should-know",
+      "category": "Databases",
+      "page": 226,
+      "content": "",
+      "images": [
+        "/images/topics/database-index-types-every-developer-should-know/page_226_img_0.jpg"
+      ]
+    },
+    {
+      "title": "5 Data Structures That Make DB Queries Super Fast",
+      "slug": "5-data-structures-that-make-db-queries-super-fast",
+      "category": "Databases",
+      "page": 240,
+      "content": "",
+      "images": [
+        "/images/topics/5-data-structures-that-make-db-queries-super-fast/page_240_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Learn Databases?",
+      "slug": "how-to-learn-databases",
+      "category": "Databases",
+      "page": 252,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-learn-databases/page_252_img_0.jpg"
+      ]
+    },
+    {
+      "title": "SQL Injection (SQLi)",
+      "slug": "sql-injection-sqli",
+      "category": "Databases",
+      "page": 341,
+      "content": "",
+      "images": [
+        "/images/topics/sql-injection-sqli/page_341_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Database Types You Should Know in 2025",
+      "slug": "database-types-you-should-know-in-2025",
+      "category": "Databases",
+      "page": 417,
+      "content": "",
+      "images": [
+        "/images/topics/database-types-you-should-know-in-2025/page_417_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Docker vs. Kubernetes. Which one should we use?",
+      "slug": "docker-vs-kubernetes-which-one-should-we-use",
+      "category": "DevOps & Cloud",
+      "page": 14,
+      "content": "What is Docker ?\nDocker is an open-source platform that allows you to package, distribute, and run applications in\nisolated containers. It focuses on containerization, providing lightweight environments that\nencapsulate applications and their dependencies.\nWhat is Kubernetes ?\nKubernetes, often referred to as K8s, is an open-source container orchestration platform. It provides\na framework for automating the deployment, scaling, and management of containerized applications\nacross a cluster of nodes.\nHow are both different from each other ?\nDocker: Docker operates at the individual container level on a single operating system host.\nYou must manually manage each host and setting up networks, security policies, and storage for\nmultiple related containers can be complex.\nKubernetes: Kubernetes operates at the cluster level. It manages multiple containerized applications\nacross multiple hosts, providing automation for tasks like load balancing, scaling, and ensuring the\ndesired state of applications.",
+      "images": [
+        "/images/topics/docker-vs-kubernetes-which-one-should-we-use/page_14_img_0.jpg"
+      ]
+    },
+    {
+      "title": "10 Essential Components of a Production Web Application",
+      "slug": "10-essential-components-of-a-production-web-applic",
+      "category": "DevOps & Cloud",
+      "page": 34,
+      "content": "10 Essential Components of a Production Web\nApplication\n1. It all starts with CI/CD pipelines that deploy code to the server instances. Tools like Jenkins\nand GitHub help over here.\n2. The user requests originate from the web browser. After DNS resolution, the requests reach\nthe app servers.\n3. Load balancers and reverse proxies (such as Nginx & HAProxy) distribute user requests\nevenly across the web application servers.\n4. The requests can also be served by a Content Delivery Network (CDN).\n5. The web app communicates with backend services via APIs.",
+      "images": [
+        "/images/topics/10-essential-components-of-a-production-web-applic/page_34_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Git vs GitHub",
+      "slug": "git-vs-github",
+      "category": "DevOps & Cloud",
+      "page": 44,
+      "content": "Git and GitHub are popular tools for version control. They work together and complement each other\nto provide effective source control management.\nOn a high level, Git is focused on version control and code sharing, whereas GitHub is focused on\ncentralized source code hosting for sharing with other developers.\nHowever, they have some key differences",
+      "images": [
+        "/images/topics/git-vs-github/page_44_img_0.jpg"
+      ]
+    },
+    {
+      "title": "A handy cheat sheet for the most popular cloud services",
+      "slug": "a-handy-cheat-sheet-for-the-most-popular-cloud-ser",
+      "category": "DevOps & Cloud",
+      "page": 53,
+      "content": "A handy cheat sheet for the most popular cloud\nservices",
+      "images": [
+        "/images/topics/a-handy-cheat-sheet-for-the-most-popular-cloud-ser/page_53_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Kubernetes Works?",
+      "slug": "how-kubernetes-works",
+      "category": "DevOps & Cloud",
+      "page": 61,
+      "content": "Kubernetes (K8S) is an open-source container orchestration platform originally developed by Google\nand now maintained by the Cloud Native Computing Foundation (CNCF).\nHere\u2019s how developers interact with Kubernetes:\n1. Developers create manifest files describing the application.",
+      "images": [
+        "/images/topics/how-kubernetes-works/page_61_img_0.jpg"
+      ]
+    },
+    {
+      "title": "A Simplified Git Workflow",
+      "slug": "a-simplified-git-workflow",
+      "category": "DevOps & Cloud",
+      "page": 110,
+      "content": "Learning Git is one of the fundamental skills for every developer out there. Here are the steps within\na simple and basic Git workflow.\n1. Developer\u2019s Working Directory (Untracked) to Staging Area (Index)\nThe command for the same is \u201cgit add\u201d. The files go from untracked to staged.\n2. Staging Area to Local Repository (Head)\nThe command for this move is \u201cgit commit -m \u201cmessage\u201d\u201d. It saves changes to the local\nrepository (HEAD), marking a version history.\n3. Local Repository to Remote Repository (Remote)\nThe command for this move is \u201cgit push\u201d. It uploads the committed changes to the remote\nrepository (such as on GitHub) for collaboration.",
+      "images": [
+        "/images/topics/a-simplified-git-workflow/page_110_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 30 AWS Services That Are Commonly Used",
+      "slug": "top-30-aws-services-that-are-commonly-used",
+      "category": "DevOps & Cloud",
+      "page": 145,
+      "content": "",
+      "images": [
+        "/images/topics/top-30-aws-services-that-are-commonly-used/page_145_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Learn Cloud Computing?",
+      "slug": "how-to-learn-cloud-computing",
+      "category": "DevOps & Cloud",
+      "page": 153,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-learn-cloud-computing/page_153_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top Kubernetes Scaling Strategies You Must Know",
+      "slug": "top-kubernetes-scaling-strategies-you-must-know",
+      "category": "DevOps & Cloud",
+      "page": 172,
+      "content": "",
+      "images": [
+        "/images/topics/top-kubernetes-scaling-strategies-you-must-know/page_172_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Learn Kubernetes?",
+      "slug": "how-to-learn-kubernetes",
+      "category": "DevOps & Cloud",
+      "page": 178,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-learn-kubernetes/page_178_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Do Companies Ship Code to Production?",
+      "slug": "how-do-companies-ship-code-to-production",
+      "category": "DevOps & Cloud",
+      "page": 184,
+      "content": "",
+      "images": [
+        "/images/topics/how-do-companies-ship-code-to-production/page_184_img_0.jpg"
+      ]
+    },
+    {
+      "title": "A Cheatsheet on Kubernetes",
+      "slug": "a-cheatsheet-on-kubernetes",
+      "category": "DevOps & Cloud",
+      "page": 210,
+      "content": "",
+      "images": [
+        "/images/topics/a-cheatsheet-on-kubernetes/page_210_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The AWS Tech Stack",
+      "slug": "the-aws-tech-stack",
+      "category": "DevOps & Cloud",
+      "page": 238,
+      "content": "",
+      "images": [
+        "/images/topics/the-aws-tech-stack/page_238_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How does Docker Work?",
+      "slug": "how-does-docker-work",
+      "category": "DevOps & Cloud",
+      "page": 265,
+      "content": "",
+      "images": [
+        "/images/topics/how-does-docker-work/page_266_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Linux Cron Cheatsheet",
+      "slug": "the-linux-cron-cheatsheet",
+      "category": "DevOps & Cloud",
+      "page": 284,
+      "content": "",
+      "images": [
+        "/images/topics/the-linux-cron-cheatsheet/page_284_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Lifecycle of a Kubernetes Pod",
+      "slug": "the-lifecycle-of-a-kubernetes-pod",
+      "category": "DevOps & Cloud",
+      "page": 288,
+      "content": "",
+      "images": [
+        "/images/topics/the-lifecycle-of-a-kubernetes-pod/page_288_img_0.jpg"
+      ]
+    },
+    {
+      "title": "9 Docker Best Practices You Should Know",
+      "slug": "9-docker-best-practices-you-should-know",
+      "category": "DevOps & Cloud",
+      "page": 295,
+      "content": "",
+      "images": [
+        "/images/topics/9-docker-best-practices-you-should-know/page_295_img_0.jpg"
+      ]
+    },
+    {
+      "title": "CI/CD Simplified Visual Guide",
+      "slug": "cicd-simplified-visual-guide",
+      "category": "DevOps & Cloud",
+      "page": 308,
+      "content": "",
+      "images": [
+        "/images/topics/cicd-simplified-visual-guide/page_308_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Gitflow Branching Works?",
+      "slug": "how-gitflow-branching-works",
+      "category": "DevOps & Cloud",
+      "page": 316,
+      "content": "",
+      "images": [
+        "/images/topics/how-gitflow-branching-works/page_316_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Git Reset Works?",
+      "slug": "how-git-reset-works",
+      "category": "DevOps & Cloud",
+      "page": 328,
+      "content": "",
+      "images": [
+        "/images/topics/how-git-reset-works/page_328_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Docker vs Kubernetes",
+      "slug": "docker-vs-kubernetes",
+      "category": "DevOps & Cloud",
+      "page": 349,
+      "content": "",
+      "images": [
+        "/images/topics/docker-vs-kubernetes/page_349_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Learn AWS?",
+      "slug": "how-to-learn-aws",
+      "category": "DevOps & Cloud",
+      "page": 384,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-learn-aws/page_384_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Types of Virtualization",
+      "slug": "types-of-virtualization",
+      "category": "DevOps & Cloud",
+      "page": 390,
+      "content": "",
+      "images": [
+        "/images/topics/types-of-virtualization/page_390_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Cloudflare vs. AWS vs. Azure",
+      "slug": "cloudflare-vs-aws-vs-azure",
+      "category": "DevOps & Cloud",
+      "page": 392,
+      "content": "",
+      "images": [
+        "/images/topics/cloudflare-vs-aws-vs-azure/page_392_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Must-Know Network Protocol Dependencies",
+      "slug": "must-know-network-protocol-dependencies",
+      "category": "Networking",
+      "page": 118,
+      "content": "Understanding network protocol dependencies is essential for cybersecurity and networking. Here\u2019s\na quick understanding of the same:\n1. IPv4 and IPv6 are the foundation of all networking. ICMP and ICMPv6 handle diagnostics,\nwhile IPsec ensures secure communication.\n2. TCP and UDP support various protocols. SCTP and DCCP serve specific cases.\n3. Some TCP-based protocols are HTTP, SSH, BGP, RDP, IMAP, SMTP, POP, etc.\n4. UDP-based protocols are DNS, DHCP, SIP, RTP, NTP, etc.",
+      "images": [
+        "/images/topics/must-know-network-protocol-dependencies/page_118_img_0.jpg"
+      ]
+    },
+    {
+      "title": "9 Clean Code Principles To Keep In Mind",
+      "slug": "9-clean-code-principles-to-keep-in-mind",
+      "category": "Networking",
+      "page": 149,
+      "content": "1. Meaningful Names: Name variables and functions to reveal their purpose, not just their\nvalue.",
+      "images": [
+        "/images/topics/9-clean-code-principles-to-keep-in-mind/page_149_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What is the SOLID Principle?",
+      "slug": "what-is-the-solid-principle",
+      "category": "Networking",
+      "page": 260,
+      "content": "SOLID offers guidelines to create software that is easy to understand, modify, and extend.\nThe SOLID acronym stands for:\nS -> Single Responsibility Principle\nO -> Open/Closed Principle\nL -> Liskov Substitution Principle\nI -> Interface Segregation Principle\nD -> Dependency Inversion Principle",
+      "images": [
+        "/images/topics/what-is-the-solid-principle/page_260_img_0.jpg"
+      ]
+    },
+    {
+      "title": "TCP vs UDP",
+      "slug": "tcp-vs-udp",
+      "category": "Networking",
+      "page": 334,
+      "content": "Every time data moves across the internet, it chooses between accuracy and speed. That\u2019s TCP vs\nUDP.\nTCP: Connection-oriented and reliable. It ensures ordered, duplicate-free delivery with flow and\ncongestion control, making it ideal for web browsing, email, and file transfers.\nUDP: Connectionless and lightweight. It sends packets without guarantees of delivery or order, but\nwith minimal overhead. It is perfect for gaming, streaming, and real-time communication.",
+      "images": [
+        "/images/topics/tcp-vs-udp/page_334_img_0.jpg",
+        "/images/topics/tcp-vs-udp/page_335_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Cross-Site Scripting (XSS) Attacks",
+      "slug": "cross-site-scripting-xss-attacks",
+      "category": "Networking",
+      "page": 347,
+      "content": "A small script can cause big damage. XSS lets attackers inject malicious code into web pages and\nhijack user sessions, steal cookies, or manipulate the browser.\nReflected XSS: This type of attack happens when someone clicks a malicious link. The payload sits\nin the URL, gets reflected back in the response, and executes. It\u2019s often used in phishing campaigns\nbecause you need to trick someone into clicking.\nStored XSS: The malicious code gets saved in your database, maybe in a comment field or user\nprofile. Then it runs automatically every time someone loads that page.",
+      "images": [
+        "/images/topics/cross-site-scripting-xss-attacks/page_347_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Latency vs. Throughput",
+      "slug": "latency-vs-throughput",
+      "category": "Networking",
+      "page": 358,
+      "content": "Ever wondered why your app feels slow even when the bandwidth looks fine? Latency and\nthroughput explain two very different stories of performance.\nLatency measures the delay per packet. It is what users feel when they click a button. It\u2019s\nresponsiveness. It is the time for one request to travel from the server to the end device. This\nincludes server processing time, queuing delays, propagation through the network, transmission\ndelays, and the last-mile connection to the user\u2019s device.",
+      "images": [
+        "/images/topics/latency-vs-throughput/page_358_img_0.jpg"
+      ]
+    },
+    {
+      "title": "IP Address Cheat Sheet Every Engineer Should Know",
+      "slug": "ip-address-cheat-sheet-every-engineer-should-know",
+      "category": "Networking",
+      "page": 369,
+      "content": "",
+      "images": [
+        "/images/topics/ip-address-cheat-sheet-every-engineer-should-know/page_369_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Which Protocols Run on TCP and UDP",
+      "slug": "which-protocols-run-on-tcp-and-udp",
+      "category": "Networking",
+      "page": 371,
+      "content": "",
+      "images": [
+        "/images/topics/which-protocols-run-on-tcp-and-udp/page_371_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Building Blocks of Modern Networking",
+      "slug": "the-building-blocks-of-modern-networking",
+      "category": "Networking",
+      "page": 376,
+      "content": "",
+      "images": [
+        "/images/topics/the-building-blocks-of-modern-networking/page_376_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Network Services That Power Modern Connectivity",
+      "slug": "network-services-that-power-modern-connectivity",
+      "category": "Networking",
+      "page": 378,
+      "content": "",
+      "images": [
+        "/images/topics/network-services-that-power-modern-connectivity/page_378_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What is a Firewall?",
+      "slug": "what-is-a-firewall",
+      "category": "Networking",
+      "page": 407,
+      "content": "",
+      "images": [
+        "/images/topics/what-is-a-firewall/page_407_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Modem vs. Router",
+      "slug": "modem-vs-router",
+      "category": "Networking",
+      "page": 409,
+      "content": "",
+      "images": [
+        "/images/topics/modem-vs-router/page_409_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How DNS Works",
+      "slug": "how-dns-works",
+      "category": "Networking",
+      "page": 423,
+      "content": "",
+      "images": [
+        "/images/topics/how-dns-works/page_423_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Network Debugging Commands Every Engineer Should Know",
+      "slug": "network-debugging-commands-every-engineer-should-k",
+      "category": "Networking",
+      "page": 433,
+      "content": "",
+      "images": [
+        "/images/topics/network-debugging-commands-every-engineer-should-k/page_433_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Common Network Protocols Every Engineer Should Know",
+      "slug": "common-network-protocols-every-engineer-should-kno",
+      "category": "Networking",
+      "page": 437,
+      "content": "",
+      "images": [
+        "/images/topics/common-network-protocols-every-engineer-should-kno/page_437_img_0.jpg"
+      ]
+    },
+    {
+      "title": "8 Popular Network Protocols",
+      "slug": "8-popular-network-protocols",
+      "category": "Networking",
+      "page": 439,
+      "content": "",
+      "images": [
+        "/images/topics/8-popular-network-protocols/page_439_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Cookies Vs Sessions Vs JWT Vs PASETO",
+      "slug": "cookies-vs-sessions-vs-jwt-vs-paseto",
+      "category": "Security & Authentication",
+      "page": 26,
+      "content": "Authentication ensures that only authorized users gain access to an application\u2019s resources. It\nanswers the question of the user\u2019s identity i.e. \u201cWho are you?\u201d\nThe modern authentication landscape has multiple approaches: Cookies, Sessions, JWTs, and\nPASETO. Here\u2019s what they mean:\n1. Cookies and Sessions\nCookies and sessions are authentication mechanisms where session data is stored on the\nserver and referenced via a client-side cookie.",
+      "images": [
+        "/images/topics/cookies-vs-sessions-vs-jwt-vs-paseto/page_26_img_0.jpg"
+      ]
+    },
+    {
+      "title": "JWT 101: Key to Stateless Authentication",
+      "slug": "jwt-101-key-to-stateless-authentication",
+      "category": "Security & Authentication",
+      "page": 51,
+      "content": "JWT or JSON Web Tokens is an open standard for securely transmitting information between two\nparties. They are widely used for authentication and authorization.\nA JWT consists of three main components:\n1. Header\nEvery JWT carries a header specifying the algorithms for signing the JWT. It\u2019s written in\nJSON format.\n2. Payload\nThe payload consists of the claims and the user data. There are different types of claims\nsuch as registered, public, and private claims.",
+      "images": []
+    },
+    {
+      "title": "What is SSO (Single Sign-On)?",
+      "slug": "what-is-sso-single-sign-on",
+      "category": "Security & Authentication",
+      "page": 93,
+      "content": "Basically, Single Sign-On (SSO) is an authentication scheme. It allows a user to log in to different\nsystems using a single ID.\nThe diagram below illustrates how SSO works.\n\u25cf Step 1: A user visits Gmail, or any email service. Gmail finds the user is not logged in and so\nredirects them to the SSO authentication server, which also finds the user is not logged in.\nAs a result, the user is redirected to the SSO login page, where they enter their login\ncredentials.",
+      "images": [
+        "/images/topics/what-is-sso-single-sign-on/page_93_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Two-factor Authentication (2FA) Works?",
+      "slug": "how-two-factor-authentication-2fa-works",
+      "category": "Security & Authentication",
+      "page": 104,
+      "content": "Two-factor authentication (2FA) is a type of multi-factor authentication that makes accounts more\nsecure.\nThe idea behind 2FA is that you need to provide two identifying factors to prove your identity and\ngain access to your account.\nThe first factor is the knowledge factor, where a user needs to know a secret, such as a password.\nThe second factor depends on the possession factor (such as RSA, authenticator app) or inherence\nfactor (biometrics).\nHere\u2019s how 2FA works:",
+      "images": [
+        "/images/topics/how-two-factor-authentication-2fa-works/page_104_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Does SSO Work?",
+      "slug": "how-does-sso-work",
+      "category": "Security & Authentication",
+      "page": 268,
+      "content": "Single Sign-On (SSO) is an authentication scheme. It allows a user to log in to different systems\nusing a single ID.\nLet\u2019s walk through a typical SSO login flow:\nStep 1: A user accesses a protected resource on an application like Gmail, which is a Service\nProvider (SP).\nStep 2: The Gmail server detects that the user is not logged in and redirects the browser to the\ncompany\u2019s Identity Provider (IdP) with an authentication request.\nStep 3: The browser sends the user to the IdP.\nStep 4: The IdP shows the login page where the user enters their login credentials.\nStep 5: The IdP creates a secure token and returns it to the browser. The IdP also creates a session\nfor future access. The browser forwards the token to Gmail.",
+      "images": [
+        "/images/topics/how-does-sso-work/page_268_img_0.jpg"
+      ]
+    },
+    {
+      "title": "JWT vs PASETO: The Two Players of Token-Based Authentication",
+      "slug": "jwt-vs-paseto-the-two-players-of-token-based-authe",
+      "category": "Security & Authentication",
+      "page": 282,
+      "content": "JWT vs PASETO: The Two Players of Token-Based\nAuthentication\nToken-based authentication has become quite popular over the years. Traditionally, JWTs have\ndominated this space.\nBut now, a new player is making waves: PASETO, or Platform-Agnostic Security Tokens.\nSo, what\u2019s the difference between the two?",
+      "images": [
+        "/images/topics/jwt-vs-paseto-the-two-players-of-token-based-authe/page_282_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Cookies vs Sessions",
+      "slug": "cookies-vs-sessions",
+      "category": "Security & Authentication",
+      "page": 322,
+      "content": "",
+      "images": [
+        "/images/topics/cookies-vs-sessions/page_322_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Java Virtual Threads Work?",
+      "slug": "how-java-virtual-threads-work",
+      "category": "Programming & Concepts",
+      "page": 95,
+      "content": "Virtual Threads are lightweight threads introduced in Java 19 (Preview) and Java 21 (Stable). They\nallow Java to create millions of threads efficiently, helping handle concurrent tasks without wasting\nmemory or CPU.\nVirtual Threads do not map 1:1 to OS Threads and do not replace the original Platform Threads. The\nPlatform Threads are backed by the OS Threads and are sometimes also known as Carrier Threads\nin this context.\nThink of the Platform Threads as a small group of workers, and Virtual threads as tasks. With Virtual\nthreads, tasks are given to workers only when needed, allowing one worker to handle thousands of\ntasks efficiently.\nHere\u2019s how Virtual Threads work:",
+      "images": [
+        "/images/topics/how-java-virtual-threads-work/page_95_img_0.jpg"
+      ]
+    },
+    {
+      "title": "18 Key Design Patterns Every Developer Should Know",
+      "slug": "18-key-design-patterns-every-developer-should-know",
+      "category": "Programming & Concepts",
+      "page": 122,
+      "content": "18 Key Design Patterns Every Developer Should\nKnow\nPatterns are reusable solutions to common design problems, resulting in a smoother, more efficient\ndevelopment process. They serve as blueprints for building better software structures. These are\nsome of the most popular patterns:\n\u25cf Abstract Factory: Family Creator - Makes groups of related items.\n\u25cf Builder: Lego Master - Builds objects step by step, keeping creation and appearance",
+      "images": [
+        "/images/topics/18-key-design-patterns-every-developer-should-know/page_122_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What do version numbers mean?",
+      "slug": "what-do-version-numbers-mean",
+      "category": "Programming & Concepts",
+      "page": 128,
+      "content": "Semantic Versioning (SemVer) is a versioning scheme for software that aims to convey meaning\nabout the underlying changes in a release.\n\u25cf SemVer uses a three-part version number: MAJOR.MINOR.PATCH.\n1. MAJOR version: Incremented when there are incompatible API changes.\n2. MINOR version: Incremented when functionality is added in a backward-compatible\nmanner.\n3. PATCH version: Incremented when backward-compatible bug fixes are made.\n\u25cf Example Workflow\n1. Initial Development Phase\nStart with version 0.1.0.\n2. First Stable Release\nReach a stable release: 1.0.0.",
+      "images": [
+        "/images/topics/what-do-version-numbers-mean/page_128_img_0.jpg"
+      ]
+    },
+    {
+      "title": "9 OOP Design Patterns You Must Know",
+      "slug": "9-oop-design-patterns-you-must-know",
+      "category": "Programming & Concepts",
+      "page": 139,
+      "content": "These patterns can be divided into 3 categories:\nA - Creational Patterns\nDeal with object creation mechanism to decouple the client code from concrete classes.\n1. Factory Pattern: Centralizes object creation logic and returns different subclasses based on\ninput\n2. Singleton Pattern: Ensures only one instance of a class exists and provides global access to\nit.\n3. Builder Pattern: Constructs complex objects step-by-step, allowing optional configuration.",
+      "images": [
+        "/images/topics/9-oop-design-patterns-you-must-know/page_139_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Computer Memory Works?",
+      "slug": "how-computer-memory-works",
+      "category": "Programming & Concepts",
+      "page": 170,
+      "content": "Here\u2019s a simple breakdown that shows how data moves through a system from input to processing\nto storage.\n1. Data enters through input sources like keyboard, mouse, camera, or remote systems.\n2. Permanent storage holds your system files, apps, and media. This includes hard drives, USB\ndrives, ROM/BIOS, and network-based storage.",
+      "images": [
+        "/images/topics/how-computer-memory-works/page_170_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Concurrency is NOT Parallelism",
+      "slug": "concurrency-is-not-parallelism",
+      "category": "Programming & Concepts",
+      "page": 280,
+      "content": "Concurrency: It\u2019s a design approach where tasks can start, run, and complete in overlapping\nperiods, even on a single CPU core. It is about managing multiple tasks at the same time.\nThe CPU rapidly switches between tasks (context switching), creating the illusion that tasks are\nprogressing simultaneously, though they are not.",
+      "images": [
+        "/images/topics/concurrency-is-not-parallelism/page_280_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What are some of the most popular versioning strategies?",
+      "slug": "what-are-some-of-the-most-popular-versioning-strat",
+      "category": "Programming & Concepts",
+      "page": 293,
+      "content": "",
+      "images": [
+        "/images/topics/what-are-some-of-the-most-popular-versioning-strat/page_293_img_0.jpg",
+        "/images/topics/what-are-some-of-the-most-popular-versioning-strat/page_294_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Python vs Java",
+      "slug": "python-vs-java",
+      "category": "Programming & Concepts",
+      "page": 303,
+      "content": "",
+      "images": [
+        "/images/topics/python-vs-java/page_303_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Design Patterns Cheat Sheet",
+      "slug": "design-patterns-cheat-sheet",
+      "category": "Programming & Concepts",
+      "page": 305,
+      "content": "",
+      "images": [
+        "/images/topics/design-patterns-cheat-sheet/page_305_img_0.jpg",
+        "/images/topics/design-patterns-cheat-sheet/page_306_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Java Works",
+      "slug": "how-java-works",
+      "category": "Programming & Concepts",
+      "page": 314,
+      "content": "",
+      "images": [
+        "/images/topics/how-java-works/page_314_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Python Works",
+      "slug": "how-python-works",
+      "category": "Programming & Concepts",
+      "page": 337,
+      "content": "",
+      "images": [
+        "/images/topics/how-python-works/page_337_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Popular interview question: What is the difference between Process and Thread?",
+      "slug": "popular-interview-question-what-is-the-difference-",
+      "category": "Programming & Concepts",
+      "page": 355,
+      "content": "",
+      "images": [
+        "/images/topics/popular-interview-question-what-is-the-difference-/page_355_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Things Every Developer Should Know: Concurrency is NOT parallelism",
+      "slug": "things-every-developer-should-know-concurrency-is-",
+      "category": "Programming & Concepts",
+      "page": 399,
+      "content": "",
+      "images": [
+        "/images/topics/things-every-developer-should-know-concurrency-is-/page_399_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Java HashMaps Work?",
+      "slug": "how-java-hashmaps-work",
+      "category": "Programming & Concepts",
+      "page": 413,
+      "content": "",
+      "images": [
+        "/images/topics/how-java-hashmaps-work/page_413_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The 9 Algorithms That Dominate Our World",
+      "slug": "the-9-algorithms-that-dominate-our-world",
+      "category": "Algorithms & Data Structures",
+      "page": 8,
+      "content": "The diagram below shows the most commonly used algorithms in our daily lives. They are used in\ninternet search engines, social networks, WiFi, cell phones, and even satellites.\n1. Sorting\n2. Dijkstra\u2019s Algorithm\n3. Transformers\n4. Link Analysis\n5. RSA Algorithm\n6. Integer Factorization",
+      "images": [
+        "/images/topics/the-9-algorithms-that-dominate-our-world/page_8_img_0.jpg"
+      ]
+    },
+    {
+      "title": "What happens when you type google .com into a browser?",
+      "slug": "what-happens-when-you-type-google-com-into-a-brows",
+      "category": "Career & Learning",
+      "page": 18,
+      "content": "What happens when you type google .com into a\nbrowser?\n1. First up, you type the website address in the browser\u2019s address bar.\n2. The browser checks its cache first. If there\u2019s a cache miss, it must find the IP address.\n3. DNS lookup begins (think of it as looking up a phone number). The request goes through\ndifferent DNS servers (root, TLD, and authoritative). Finally, the IP address is retrieved.",
+      "images": [
+        "/images/topics/what-happens-when-you-type-google-com-into-a-brows/page_18_img_0.jpg"
+      ]
+    },
+    {
+      "title": "A Cheatsheet on Infrastructure as Code Landscape",
+      "slug": "a-cheatsheet-on-infrastructure-as-code-landscape",
+      "category": "Career & Learning",
+      "page": 20,
+      "content": "Scalable infrastructure provisioning provides several benefits related to availability, scalability,\nrepeatability, and cost-effectiveness.\nBut how do you achieve this?",
+      "images": [
+        "/images/topics/a-cheatsheet-on-infrastructure-as-code-landscape/page_20_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How TikTok Manages a 200K File Frontend MonoRepo?",
+      "slug": "how-tiktok-manages-a-200k-file-frontend-monorepo",
+      "category": "Career & Learning",
+      "page": 28,
+      "content": "How TikTok Manages a 200K File Frontend\nMonoRepo?\nA MonoRepo, short for a monolithic repository, is a software development strategy where a single\nrepository contains multiple projects, libraries, and services.\nThe good parts of a MonoRepo are:\n\u25cf Better code sharing",
+      "images": [
+        "/images/topics/how-tiktok-manages-a-200k-file-frontend-monorepo/page_28_img_0.jpg"
+      ]
+    },
+    {
+      "title": "My Favorite 10 Books for Software Developers",
+      "slug": "my-favorite-10-books-for-software-developers",
+      "category": "Career & Learning",
+      "page": 40,
+      "content": "General Advice\n1. The Pragmatic Programmer by Andrew Hunt and David Thomas\n2. Code Complete by Steve McConnell: Often considered a bible for software developers, this\ncomprehensive book covers all aspects of software development, from design and coding to\ntesting and maintenance.\nCoding",
+      "images": [
+        "/images/topics/my-favorite-10-books-for-software-developers/page_40_img_0.jpg"
+      ]
+    },
+    {
+      "title": "18 Common Ports Worth Knowing",
+      "slug": "18-common-ports-worth-knowing",
+      "category": "Career & Learning",
+      "page": 48,
+      "content": "1. FTP (File Transfer Protocol): Uses TCP Port 21\n2. SSH (Secure Sheel for Login): Uses TCP Port 22\n3. Telnet: Uses TCP Port 23 for remote login\n4. SMTP (Simple Mail Transfer Protocol): Uses TCP Port 25\n5. DNS: Uses UDP or TCP on Port 53 for DNS queries",
+      "images": [
+        "/images/topics/18-common-ports-worth-knowing/page_48_img_0.jpg"
+      ]
+    },
+    {
+      "title": "SQS vs SNS vs EventBridge vs Kinesis",
+      "slug": "sqs-vs-sns-vs-eventbridge-vs-kinesis",
+      "category": "Career & Learning",
+      "page": 69,
+      "content": "1. AWS SQS: It is a fully managed message queuing service that helps decouple\ncommunication between distributed components.\n2. AWS SNS: A fully managed publish/subscribe messaging service using topics to send\nmessages to multiple subscribers or endpoints (such as email, Lambda, SQS, and so on).\n3. AWS EventBridge: It is a serverless event bus that facilitates the routing of events between\nAWS services, and applications based on specific routing rules and filters.",
+      "images": [
+        "/images/topics/sqs-vs-sns-vs-eventbridge-vs-kinesis/page_69_img_0.jpg"
+      ]
+    },
+    {
+      "title": "A Cheatsheet on Comparing Key-Value Stores",
+      "slug": "a-cheatsheet-on-comparing-key-value-stores",
+      "category": "Career & Learning",
+      "page": 83,
+      "content": "",
+      "images": [
+        "/images/topics/a-cheatsheet-on-comparing-key-value-stores/page_83_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to load your websites at lightning speed",
+      "slug": "how-to-load-your-websites-at-lightning-speed",
+      "category": "Career & Learning",
+      "page": 91,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-load-your-websites-at-lightning-speed/page_91_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Data Engineering Roadmap",
+      "slug": "the-data-engineering-roadmap",
+      "category": "Career & Learning",
+      "page": 124,
+      "content": "",
+      "images": [
+        "/images/topics/the-data-engineering-roadmap/page_124_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Large-Language Model Glossary",
+      "slug": "the-large-language-model-glossary",
+      "category": "Career & Learning",
+      "page": 147,
+      "content": "",
+      "images": [
+        "/images/topics/the-large-language-model-glossary/page_147_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How to Deploy Services",
+      "slug": "how-to-deploy-services",
+      "category": "Career & Learning",
+      "page": 160,
+      "content": "",
+      "images": [
+        "/images/topics/how-to-deploy-services/page_160_img_0.jpg"
+      ]
+    },
+    {
+      "title": "Top 6 most commonly used Server Types",
+      "slug": "top-6-most-commonly-used-server-types",
+      "category": "Career & Learning",
+      "page": 180,
+      "content": "",
+      "images": [
+        "/images/topics/top-6-most-commonly-used-server-types/page_180_img_0.jpg"
+      ]
+    },
+    {
+      "title": "16 Coding Patterns That Make Interviews Easy",
+      "slug": "16-coding-patterns-that-make-interviews-easy",
+      "category": "Career & Learning",
+      "page": 250,
+      "content": "",
+      "images": [
+        "/images/topics/16-coding-patterns-that-make-interviews-easy/page_250_img_0.jpg"
+      ]
+    },
+    {
+      "title": "How Large Language Models Work?",
+      "slug": "how-large-language-models-work",
+      "category": "Career & Learning",
+      "page": 266,
+      "content": "",
+      "images": []
+    },
+    {
+      "title": "The Modern Software Stack",
+      "slug": "the-modern-software-stack",
+      "category": "Career & Learning",
+      "page": 278,
+      "content": "",
+      "images": [
+        "/images/topics/the-modern-software-stack/page_278_img_0.jpg"
+      ]
+    },
+    {
+      "title": "The Testing Pyramid",
+      "slug": "the-testing-pyramid",
+      "category": "Career & Learning",
+      "page": 294,
+      "content": "",
+      "images": []
+    },
+    {
+      "title": "Servers You Should Know in Modern Systems",
+      "slug": "servers-you-should-know-in-modern-systems",
+      "category": "Career & Learning",
+      "page": 375,
+      "content": "",
+      "images": [
+        "/images/topics/servers-you-should-know-in-modern-systems/page_375_img_0.jpg"
+      ]
+    },
+    {
+      "title": "System Performance Metrics Every Engineer Should Know",
+      "slug": "system-performance-metrics-every-engineer-should-k",
+      "category": "Career & Learning",
+      "page": 429,
+      "content": "",
+      "images": [
+        "/images/topics/system-performance-metrics-every-engineer-should-k/page_429_img_0.jpg"
+      ]
+    }
+  ]
+}

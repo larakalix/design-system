@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/organisms/Header.astro';
+import Footer from '../components/organisms/Footer.astro';
+import TopicCard from '../components/molecules/TopicCard.astro';
+import Badge from '../components/atoms/Badge.astro';
+import { Layers } from 'lucide-astro';
+import topicsData from '../data/topics.json';
+
+const { categories, topics } = topicsData;
+
+const categoryList = Object.entries(categories).map(([name, meta]: [string, any]) => ({
+  name,
+  slug: name.toLowerCase().replace(/\s+/g, '-'),
+  ...meta,
+  topics: topics.filter((t: any) => t.category === name),
+}));
+---
+
+<Layout title="Categories - System Design Archive 2025">
+  <Header />
+  
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <!-- Page Header -->
+    <div class="mb-10">
+      <div class="flex items-center gap-2 mb-2">
+        <Layers class="w-5 h-5 text-accent" />
+        <h1 class="text-3xl font-bold text-primary">Categories</h1>
+      </div>
+      <p class="text-text-muted">Browse all {categoryList.length} knowledge domains</p>
+    </div>
+
+    <!-- Categories -->
+    <div class="space-y-16">
+      {categoryList.map(cat => (
+        <section id={cat.slug} class="scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-border">
+            <Badge color={cat.color}>{cat.topics.length} topics</Badge>
+            <h2 class="text-2xl font-bold text-primary">{cat.name}</h2>
+          </div>
+          <p class="text-text-muted mb-6">{cat.description}</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {cat.topics.map((topic: any) => (
+              <TopicCard
+                title={topic.title}
+                slug={topic.slug}
+                category={topic.category}
+                categoryColor={cat.color}
+                content={topic.content}
+              />
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>

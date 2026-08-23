@@ -1,0 +1,332 @@
+[
+  {
+    "title": "A Crash Course on Architectural Scalability",
+    "page": 22,
+    "category": "System Design",
+    "content": "Scalability is the ability of a system to handle an increased workload without losing performance.\nHowever, we can also look at scalability in terms of the scaling strategy."
+  },
+  {
+    "title": "0 to 1.5 Billion Guests: Airbnb\u2019s Architectural Evolution",
+    "page": 57,
+    "category": "System Design",
+    "content": "0 to 1.5 Billion Guests: Airbnb\u2019s Architectural\nEvolution\nAirbnb operates in 200+ countries and has helped 4 million hosts welcome over 1.5 billion guests\nacross the world.\nWhat powers Airbnb technically?\nAirbnb started as a monolithic application. It was built using Ruby-on-Rails and was internally known\nas the Monorail."
+  },
+  {
+    "title": "12 Algorithms for System Design Interviews",
+    "page": 59,
+    "category": "System Design",
+    "content": "1. Bloom Filter: Check if a requested item is in the cache before performing disk operations.\n2. Geohash: Used to build location-based services.\n3. HyperLogLog: Counting unique queries performed by users in a search.\n4. Consistent Hashing: Used for efficient data distribution between the cluster\u2019s nodes.\n5. Merkle Tree: Used to detect inconsistencies between data replicas across multiple nodes."
+  },
+  {
+    "title": "24 Good Resources to Learn Software Architecture in 2025",
+    "page": 67,
+    "category": "System Design",
+    "content": "24 Good Resources to Learn Software Architecture\nin 2025\nThe resources can be divided into different types such as:\n1. Software Design Books\nSome books that can help are DDIA, System Design Volume 1 & 2, Clean Architecture,\nDomain-Driven Design, and Software Architecture: the Hard Parts\n2. Tech Blogs and Newsletters\nRead technical blogs by companies like Netflix, Uber, Meta, and Airbnb. Also, the\nByteByteGo newsletter provides insights into software design every week."
+  },
+  {
+    "title": "How to Design a System like Instagram",
+    "page": 89,
+    "category": "System Design",
+    "content": "Here\u2019s a simple step-by-step approach to build the core functionality:\n1. Users perform an action on their device like tapping the like button, uploading a picture, or\nfollowing another user.\n2. The request goes through a gateway to the backend server built using frameworks like\nDjango, Express, or anything else.\n3. The data is stored in the database."
+  },
+  {
+    "title": "Redis VS Memcached",
+    "page": 97,
+    "category": "System Design",
+    "content": "The diagram below illustrates the key differences.\nThe advantages of data structures make Redis a good choice for:\n\u25cf Recording the number of clicks and comments for each post (hash)\n\u25cf Sorting the commented user list and deduping the users (zset)\n\u25cf Caching user behavior history and filtering malicious behaviors (zset, hash)\n\u25cf Storing boolean information of extremely large data into small space. For example, login\nstatus, membership status. (bitmap)"
+  },
+  {
+    "title": "The Open Source AI Stack",
+    "page": 24,
+    "category": "AI & Machine Learning",
+    "content": "You don\u2019t need to spend a fortune to build an AI application. The best AI developer tools are\nopen-source, and an excellent ecosystem is evolving that can make AI accessible to everyone.\nThe key components of this open-source AI stack are as follows:\n1. Frontend\nTo build beautiful AI UIs, frameworks like NextJS and Streamlit are extremely useful. Also,\nVercel can help with deployment."
+  },
+  {
+    "title": "30 Useful AI Apps That Can Help You in 2025",
+    "page": 32,
+    "category": "AI & Machine Learning",
+    "content": "AI apps are taking over the world. There\u2019s an AI app for every conceivable use case. Here are some\nAI apps for different categories:\n1. General Purpose: Perplexity, Anthropic Claude, Grok, ChatGPT, and Gemini\n2. Writing Code: Cursor, Replit, Windsurf AI, Github Copilot, and Tabnine\n3. Productivity: Adobe (PDF Chat), Gemini for Gmail, Gamma (AI slide deck), WisprFlow (AI\nvoice dictation), and Granola (AI notetaker)\n4. Audience Building: Delphi (AI text, voice), HeyGen (video translation), Persona (AI agent\nbuilder), Captions (AI video editing), and OpusClips (Video repurposing)"
+  },
+  {
+    "title": "Session, Cookie, JWT, Token, SSO, and OAuth 2.0 Explained in One Diagram",
+    "page": 36,
+    "category": "AI & Machine Learning",
+    "content": "Session, Cookie, JWT, Token, SSO, and OAuth 2.0\nExplained in One Diagram\nWhen you login to a website, your identity needs to be managed. Here is how different solutions\nwork:"
+  },
+  {
+    "title": "DeepSeek 1-Pager",
+    "page": 38,
+    "category": "AI & Machine Learning",
+    "content": "It is said to have developed a powerful AI model at a remarkably low cost, approximately $6 million\nfor the final training run. In January 2025, it is said to have released its latest reasoning-focused\nmodel known as DeepSeek R1.\nThe release made it the No. 1 downloaded free app on the Apple Play Store.\nMost AI models are trained using supervised fine-tuning, meaning they learn by mimicking large\ndatasets of human-annotated examples. This method has limitations."
+  },
+  {
+    "title": "What is an AI Agent?",
+    "page": 42,
+    "category": "AI & Machine Learning",
+    "content": "An AI agent is a software program that can interact with its environment, gather data, and use that\ndata to achieve predetermined goals. AI agents can choose the best actions to perform to meet\nthose goals.\nKey characteristics of AI agents are as follows:\nAn agent can perform autonomous actions without constant human intervention. Also, they can have\na human in the loop to maintain control."
+  },
+  {
+    "title": "Generative Adversarial Network (GAN) - AI by Hand \u270d",
+    "page": 50,
+    "category": "AI & Machine Learning",
+    "content": "Generative Adversarial Network (GAN) - AI by Hand\n\u270d\nThis animation is hand drawn by Prof. Tom Yeh exclusively for the readers of the ByteByteGo\nNewsletter..\nIf you want to learn more about GAN, check out Chapter 7 in the System Design Interview book."
+  },
+  {
+    "title": "How does gRPC work?",
+    "page": 12,
+    "category": "APIs & Web",
+    "content": "RPC (Remote Procedure Call) is called \u201cremote\u201d because it enables communications between\nremote services when services are deployed to different servers under microservice architecture.\nFrom the user\u2019s point of view, it acts like a local function call.\nThe diagram below illustrates the overall data flow for gRPC.\nStep 1: A REST call is made from the client. The request body is usually in JSON format."
+  },
+  {
+    "title": "The Ultimate API Learning Roadmap",
+    "page": 30,
+    "category": "APIs & Web",
+    "content": "APIs are the backbone of communication over the Internet. Every developer needs to learn about\nAPIs. Here\u2019s a roadmap that covers the most important topics:\n1. Introduction to APIs\nAPI is a set of protocols and tools for building applications. Different types of APIs exist, such\nas public, private, and partner."
+  },
+  {
+    "title": "Top 12 Tips for API Security",
+    "page": 65,
+    "category": "APIs & Web",
+    "content": "\u25cf Use HTTPS\n\u25cf Use OAuth2\n\u25cf Use WebAuthn\n\u25cf Use Leveled API Keys"
+  },
+  {
+    "title": "Top 5 common ways to improve API performance",
+    "page": 71,
+    "category": "APIs & Web",
+    "content": "Result Pagination:\nThis method is used to optimize large result sets by streaming them back to the client, enhancing\nservice responsiveness and user experience.\nAsynchronous Logging:\nThis approach involves sending logs to a lock-free buffer and returning immediately, rather than\ndealing with the disk on every call. Logs are periodically flushed to the disk, significantly reducing I/O\noverhead.\nData Caching:"
+  },
+  {
+    "title": "30 Free APIs for Developers",
+    "page": 75,
+    "category": "APIs & Web",
+    "content": "APIs are the backbone of modern software development. Whether it is a hobby project or a\nreal-world application, developers need APIs. These APIs (some completely free and some with\nfree tiers) can help kickstart development.\n1. Public APIs for Open Data\nOpenStreetMap, NASA, World Bank, GeoNames, and Open Library APIs provide a lot of\nuseful data."
+  },
+  {
+    "title": "HTTP/1 -> HTTP/2 -> HTTP/3",
+    "page": 79,
+    "category": "APIs & Web",
+    "content": "HTTP 1 started in 1996 followed by HTTP 1.1 the very next year. In 2015, HTTP 2 came about and\nin 2019 we got HTTP 3.\nWith each iteration, the protocol has evolved in new and interesting ways."
+  },
+  {
+    "title": "A Cheatsheet on Database Performance",
+    "page": 46,
+    "category": "Databases",
+    "content": "Good database performance is critical since it directly impacts user experience, operational costs,\nand scalability.\nBut what impacts database performance?\nEvaluating database performance depends on key metrics such as query execution time,\nthroughput, latency, and resource utilization."
+  },
+  {
+    "title": "PostgreSQL 101: The Everything Database",
+    "page": 63,
+    "category": "Databases",
+    "content": "Built using C language, PostgreSQL is the most popular choice of database from small web apps to\nenterprise systems. It runs as a multiprocess system and follows ACID principles.\nThe key points about PostgreSQL\u2019s Architecture are as follows:"
+  },
+  {
+    "title": "Which Database Should I Use on AWS?",
+    "page": 85,
+    "category": "Databases",
+    "content": "This question often comes up when we start deploying an application on AWS. There are many\noptions available to choose from.\nBroadly, there are three categories of databases:\n1. Relational\nThe two main choices in this space are AWS RDS and AWS Aurora.\nAWS RDS is a managed relational DB service that supports MySQL, PostgreSQL, Oracle,\netc. AWS Aurora is a cloud-native relational database that supports high availability and\nscalability\n2. Non-Relational\nThe three main choices in this category are DynamoDB, DocumentDB, and AWS"
+  },
+  {
+    "title": "The 4 Types of SQL Joins",
+    "page": 151,
+    "category": "Databases",
+    "content": "SQL joins combine rows from two or more tables based on a related column. Here are the different\ntypes of joins you can use:\n1. Inner Join\nReturns only the matching rows between both tables. It keeps common data only.\n2. Left Join\nReturns all rows from the left table and matching rows from the right table. If a row in the left"
+  },
+  {
+    "title": "Visualizing a SQL query",
+    "page": 155,
+    "category": "Databases",
+    "content": "SQL statements are executed by the database system in several steps, including:\n\u25cf Parsing the SQL statement and checking its validity\n\u25cf Transforming the SQL into an internal representation, such as relational algebra\n\u25cf Optimizing the internal representation and creating an execution plan that utilizes index\ninformation\n\u25cf Executing the plan and returning the results"
+  },
+  {
+    "title": "How SQL Query Executes In A Database?",
+    "page": 202,
+    "category": "Databases",
+    "content": "STEP 1\nThe query string first reaches the Transport Subsystem of the database. This subsystem manages\nthe connection with the client. Also, it performs authentication and authorization checks, and if\neverything looks fine, it lets the query go to the next step.\nSTEP 2\nThe query now reaches the Query Processor subsystem, which has two parts: Query Parser and\nQuery Optimizer."
+  },
+  {
+    "title": "Docker vs. Kubernetes. Which one should we use?",
+    "page": 14,
+    "category": "DevOps & Cloud",
+    "content": "What is Docker ?\nDocker is an open-source platform that allows you to package, distribute, and run applications in\nisolated containers. It focuses on containerization, providing lightweight environments that\nencapsulate applications and their dependencies.\nWhat is Kubernetes ?\nKubernetes, often referred to as K8s, is an open-source container orchestration platform. It provides\na framework for automating the deployment, scaling, and management of containerized applications\nacross a cluster of nodes.\nHow are both different from each other ?\nDocker: Docker operates at the individual container level on a single operating system host.\nYou must manually manage each host and setting up networks, security policies, and storage for\nmultiple related containers can be complex.\nKubernetes: Kubernetes operates at the cluster level. It manages multiple containerized applications\nacross multiple hosts, providing automation for tasks like load balancing, scaling, and ensuring the\ndesired state of applications."
+  },
+  {
+    "title": "10 Essential Components of a Production Web Application",
+    "page": 34,
+    "category": "DevOps & Cloud",
+    "content": "10 Essential Components of a Production Web\nApplication\n1. It all starts with CI/CD pipelines that deploy code to the server instances. Tools like Jenkins\nand GitHub help over here.\n2. The user requests originate from the web browser. After DNS resolution, the requests reach\nthe app servers.\n3. Load balancers and reverse proxies (such as Nginx & HAProxy) distribute user requests\nevenly across the web application servers.\n4. The requests can also be served by a Content Delivery Network (CDN).\n5. The web app communicates with backend services via APIs."
+  },
+  {
+    "title": "Git vs GitHub",
+    "page": 44,
+    "category": "DevOps & Cloud",
+    "content": "Git and GitHub are popular tools for version control. They work together and complement each other\nto provide effective source control management.\nOn a high level, Git is focused on version control and code sharing, whereas GitHub is focused on\ncentralized source code hosting for sharing with other developers.\nHowever, they have some key differences"
+  },
+  {
+    "title": "A handy cheat sheet for the most popular cloud services",
+    "page": 53,
+    "category": "DevOps & Cloud",
+    "content": "A handy cheat sheet for the most popular cloud\nservices"
+  },
+  {
+    "title": "How Kubernetes Works?",
+    "page": 61,
+    "category": "DevOps & Cloud",
+    "content": "Kubernetes (K8S) is an open-source container orchestration platform originally developed by Google\nand now maintained by the Cloud Native Computing Foundation (CNCF).\nHere\u2019s how developers interact with Kubernetes:\n1. Developers create manifest files describing the application."
+  },
+  {
+    "title": "A Simplified Git Workflow",
+    "page": 110,
+    "category": "DevOps & Cloud",
+    "content": "Learning Git is one of the fundamental skills for every developer out there. Here are the steps within\na simple and basic Git workflow.\n1. Developer\u2019s Working Directory (Untracked) to Staging Area (Index)\nThe command for the same is \u201cgit add\u201d. The files go from untracked to staged.\n2. Staging Area to Local Repository (Head)\nThe command for this move is \u201cgit commit -m \u201cmessage\u201d\u201d. It saves changes to the local\nrepository (HEAD), marking a version history.\n3. Local Repository to Remote Repository (Remote)\nThe command for this move is \u201cgit push\u201d. It uploads the committed changes to the remote\nrepository (such as on GitHub) for collaboration."
+  },
+  {
+    "title": "Must-Know Network Protocol Dependencies",
+    "page": 118,
+    "category": "Networking",
+    "content": "Understanding network protocol dependencies is essential for cybersecurity and networking. Here\u2019s\na quick understanding of the same:\n1. IPv4 and IPv6 are the foundation of all networking. ICMP and ICMPv6 handle diagnostics,\nwhile IPsec ensures secure communication.\n2. TCP and UDP support various protocols. SCTP and DCCP serve specific cases.\n3. Some TCP-based protocols are HTTP, SSH, BGP, RDP, IMAP, SMTP, POP, etc.\n4. UDP-based protocols are DNS, DHCP, SIP, RTP, NTP, etc."
+  },
+  {
+    "title": "9 Clean Code Principles To Keep In Mind",
+    "page": 149,
+    "category": "Networking",
+    "content": "1. Meaningful Names: Name variables and functions to reveal their purpose, not just their\nvalue."
+  },
+  {
+    "title": "What is the SOLID Principle?",
+    "page": 260,
+    "category": "Networking",
+    "content": "SOLID offers guidelines to create software that is easy to understand, modify, and extend.\nThe SOLID acronym stands for:\nS -> Single Responsibility Principle\nO -> Open/Closed Principle\nL -> Liskov Substitution Principle\nI -> Interface Segregation Principle\nD -> Dependency Inversion Principle"
+  },
+  {
+    "title": "TCP vs UDP",
+    "page": 334,
+    "category": "Networking",
+    "content": "Every time data moves across the internet, it chooses between accuracy and speed. That\u2019s TCP vs\nUDP.\nTCP: Connection-oriented and reliable. It ensures ordered, duplicate-free delivery with flow and\ncongestion control, making it ideal for web browsing, email, and file transfers.\nUDP: Connectionless and lightweight. It sends packets without guarantees of delivery or order, but\nwith minimal overhead. It is perfect for gaming, streaming, and real-time communication."
+  },
+  {
+    "title": "Cross-Site Scripting (XSS) Attacks",
+    "page": 347,
+    "category": "Networking",
+    "content": "A small script can cause big damage. XSS lets attackers inject malicious code into web pages and\nhijack user sessions, steal cookies, or manipulate the browser.\nReflected XSS: This type of attack happens when someone clicks a malicious link. The payload sits\nin the URL, gets reflected back in the response, and executes. It\u2019s often used in phishing campaigns\nbecause you need to trick someone into clicking.\nStored XSS: The malicious code gets saved in your database, maybe in a comment field or user\nprofile. Then it runs automatically every time someone loads that page."
+  },
+  {
+    "title": "Latency vs. Throughput",
+    "page": 358,
+    "category": "Networking",
+    "content": "Ever wondered why your app feels slow even when the bandwidth looks fine? Latency and\nthroughput explain two very different stories of performance.\nLatency measures the delay per packet. It is what users feel when they click a button. It\u2019s\nresponsiveness. It is the time for one request to travel from the server to the end device. This\nincludes server processing time, queuing delays, propagation through the network, transmission\ndelays, and the last-mile connection to the user\u2019s device."
+  },
+  {
+    "title": "Cookies Vs Sessions Vs JWT Vs PASETO",
+    "page": 26,
+    "category": "Security & Authentication",
+    "content": "Authentication ensures that only authorized users gain access to an application\u2019s resources. It\nanswers the question of the user\u2019s identity i.e. \u201cWho are you?\u201d\nThe modern authentication landscape has multiple approaches: Cookies, Sessions, JWTs, and\nPASETO. Here\u2019s what they mean:\n1. Cookies and Sessions\nCookies and sessions are authentication mechanisms where session data is stored on the\nserver and referenced via a client-side cookie."
+  },
+  {
+    "title": "JWT 101: Key to Stateless Authentication",
+    "page": 51,
+    "category": "Security & Authentication",
+    "content": "JWT or JSON Web Tokens is an open standard for securely transmitting information between two\nparties. They are widely used for authentication and authorization.\nA JWT consists of three main components:\n1. Header\nEvery JWT carries a header specifying the algorithms for signing the JWT. It\u2019s written in\nJSON format.\n2. Payload\nThe payload consists of the claims and the user data. There are different types of claims\nsuch as registered, public, and private claims."
+  },
+  {
+    "title": "What is SSO (Single Sign-On)?",
+    "page": 93,
+    "category": "Security & Authentication",
+    "content": "Basically, Single Sign-On (SSO) is an authentication scheme. It allows a user to log in to different\nsystems using a single ID.\nThe diagram below illustrates how SSO works.\n\u25cf Step 1: A user visits Gmail, or any email service. Gmail finds the user is not logged in and so\nredirects them to the SSO authentication server, which also finds the user is not logged in.\nAs a result, the user is redirected to the SSO login page, where they enter their login\ncredentials."
+  },
+  {
+    "title": "How Two-factor Authentication (2FA) Works?",
+    "page": 104,
+    "category": "Security & Authentication",
+    "content": "Two-factor authentication (2FA) is a type of multi-factor authentication that makes accounts more\nsecure.\nThe idea behind 2FA is that you need to provide two identifying factors to prove your identity and\ngain access to your account.\nThe first factor is the knowledge factor, where a user needs to know a secret, such as a password.\nThe second factor depends on the possession factor (such as RSA, authenticator app) or inherence\nfactor (biometrics).\nHere\u2019s how 2FA works:"
+  },
+  {
+    "title": "How Does SSO Work?",
+    "page": 268,
+    "category": "Security & Authentication",
+    "content": "Single Sign-On (SSO) is an authentication scheme. It allows a user to log in to different systems\nusing a single ID.\nLet\u2019s walk through a typical SSO login flow:\nStep 1: A user accesses a protected resource on an application like Gmail, which is a Service\nProvider (SP).\nStep 2: The Gmail server detects that the user is not logged in and redirects the browser to the\ncompany\u2019s Identity Provider (IdP) with an authentication request.\nStep 3: The browser sends the user to the IdP.\nStep 4: The IdP shows the login page where the user enters their login credentials.\nStep 5: The IdP creates a secure token and returns it to the browser. The IdP also creates a session\nfor future access. The browser forwards the token to Gmail."
+  },
+  {
+    "title": "JWT vs PASETO: The Two Players of Token-Based Authentication",
+    "page": 282,
+    "category": "Security & Authentication",
+    "content": "JWT vs PASETO: The Two Players of Token-Based\nAuthentication\nToken-based authentication has become quite popular over the years. Traditionally, JWTs have\ndominated this space.\nBut now, a new player is making waves: PASETO, or Platform-Agnostic Security Tokens.\nSo, what\u2019s the difference between the two?"
+  },
+  {
+    "title": "How Java Virtual Threads Work?",
+    "page": 95,
+    "category": "Programming & Concepts",
+    "content": "Virtual Threads are lightweight threads introduced in Java 19 (Preview) and Java 21 (Stable). They\nallow Java to create millions of threads efficiently, helping handle concurrent tasks without wasting\nmemory or CPU.\nVirtual Threads do not map 1:1 to OS Threads and do not replace the original Platform Threads. The\nPlatform Threads are backed by the OS Threads and are sometimes also known as Carrier Threads\nin this context.\nThink of the Platform Threads as a small group of workers, and Virtual threads as tasks. With Virtual\nthreads, tasks are given to workers only when needed, allowing one worker to handle thousands of\ntasks efficiently.\nHere\u2019s how Virtual Threads work:"
+  },
+  {
+    "title": "18 Key Design Patterns Every Developer Should Know",
+    "page": 122,
+    "category": "Programming & Concepts",
+    "content": "18 Key Design Patterns Every Developer Should\nKnow\nPatterns are reusable solutions to common design problems, resulting in a smoother, more efficient\ndevelopment process. They serve as blueprints for building better software structures. These are\nsome of the most popular patterns:\n\u25cf Abstract Factory: Family Creator - Makes groups of related items.\n\u25cf Builder: Lego Master - Builds objects step by step, keeping creation and appearance"
+  },
+  {
+    "title": "What do version numbers mean?",
+    "page": 128,
+    "category": "Programming & Concepts",
+    "content": "Semantic Versioning (SemVer) is a versioning scheme for software that aims to convey meaning\nabout the underlying changes in a release.\n\u25cf SemVer uses a three-part version number: MAJOR.MINOR.PATCH.\n1. MAJOR version: Incremented when there are incompatible API changes.\n2. MINOR version: Incremented when functionality is added in a backward-compatible\nmanner.\n3. PATCH version: Incremented when backward-compatible bug fixes are made.\n\u25cf Example Workflow\n1. Initial Development Phase\nStart with version 0.1.0.\n2. First Stable Release\nReach a stable release: 1.0.0."
+  },
+  {
+    "title": "9 OOP Design Patterns You Must Know",
+    "page": 139,
+    "category": "Programming & Concepts",
+    "content": "These patterns can be divided into 3 categories:\nA - Creational Patterns\nDeal with object creation mechanism to decouple the client code from concrete classes.\n1. Factory Pattern: Centralizes object creation logic and returns different subclasses based on\ninput\n2. Singleton Pattern: Ensures only one instance of a class exists and provides global access to\nit.\n3. Builder Pattern: Constructs complex objects step-by-step, allowing optional configuration."
+  },
+  {
+    "title": "How Computer Memory Works?",
+    "page": 170,
+    "category": "Programming & Concepts",
+    "content": "Here\u2019s a simple breakdown that shows how data moves through a system from input to processing\nto storage.\n1. Data enters through input sources like keyboard, mouse, camera, or remote systems.\n2. Permanent storage holds your system files, apps, and media. This includes hard drives, USB\ndrives, ROM/BIOS, and network-based storage."
+  },
+  {
+    "title": "Concurrency is NOT Parallelism",
+    "page": 280,
+    "category": "Programming & Concepts",
+    "content": "Concurrency: It\u2019s a design approach where tasks can start, run, and complete in overlapping\nperiods, even on a single CPU core. It is about managing multiple tasks at the same time.\nThe CPU rapidly switches between tasks (context switching), creating the illusion that tasks are\nprogressing simultaneously, though they are not."
+  },
+  {
+    "title": "The 9 Algorithms That Dominate Our World",
+    "page": 8,
+    "category": "Algorithms & Data Structures",
+    "content": "The diagram below shows the most commonly used algorithms in our daily lives. They are used in\ninternet search engines, social networks, WiFi, cell phones, and even satellites.\n1. Sorting\n2. Dijkstra\u2019s Algorithm\n3. Transformers\n4. Link Analysis\n5. RSA Algorithm\n6. Integer Factorization"
+  },
+  {
+    "title": "What happens when you type google .com into a browser?",
+    "page": 18,
+    "category": "Career & Learning",
+    "content": "What happens when you type google .com into a\nbrowser?\n1. First up, you type the website address in the browser\u2019s address bar.\n2. The browser checks its cache first. If there\u2019s a cache miss, it must find the IP address.\n3. DNS lookup begins (think of it as looking up a phone number). The request goes through\ndifferent DNS servers (root, TLD, and authoritative). Finally, the IP address is retrieved."
+  },
+  {
+    "title": "A Cheatsheet on Infrastructure as Code Landscape",
+    "page": 20,
+    "category": "Career & Learning",
+    "content": "Scalable infrastructure provisioning provides several benefits related to availability, scalability,\nrepeatability, and cost-effectiveness.\nBut how do you achieve this?"
+  },
+  {
+    "title": "How TikTok Manages a 200K File Frontend MonoRepo?",
+    "page": 28,
+    "category": "Career & Learning",
+    "content": "How TikTok Manages a 200K File Frontend\nMonoRepo?\nA MonoRepo, short for a monolithic repository, is a software development strategy where a single\nrepository contains multiple projects, libraries, and services.\nThe good parts of a MonoRepo are:\n\u25cf Better code sharing"
+  },
+  {
+    "title": "My Favorite 10 Books for Software Developers",
+    "page": 40,
+    "category": "Career & Learning",
+    "content": "General Advice\n1. The Pragmatic Programmer by Andrew Hunt and David Thomas\n2. Code Complete by Steve McConnell: Often considered a bible for software developers, this\ncomprehensive book covers all aspects of software development, from design and coding to\ntesting and maintenance.\nCoding"
+  },
+  {
+    "title": "18 Common Ports Worth Knowing",
+    "page": 48,
+    "category": "Career & Learning",
+    "content": "1. FTP (File Transfer Protocol): Uses TCP Port 21\n2. SSH (Secure Sheel for Login): Uses TCP Port 22\n3. Telnet: Uses TCP Port 23 for remote login\n4. SMTP (Simple Mail Transfer Protocol): Uses TCP Port 25\n5. DNS: Uses UDP or TCP on Port 53 for DNS queries"
+  },
+  {
+    "title": "SQS vs SNS vs EventBridge vs Kinesis",
+    "page": 69,
+    "category": "Career & Learning",
+    "content": "1. AWS SQS: It is a fully managed message queuing service that helps decouple\ncommunication between distributed components.\n2. AWS SNS: A fully managed publish/subscribe messaging service using topics to send\nmessages to multiple subscribers or endpoints (such as email, Lambda, SQS, and so on).\n3. AWS EventBridge: It is a serverless event bus that facilitates the routing of events between\nAWS services, and applications based on specific routing rules and filters."
+  }
+]

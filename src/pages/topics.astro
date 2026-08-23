@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/organisms/Header.astro';
+import Footer from '../components/organisms/Footer.astro';
+import TopicCard from '../components/molecules/TopicCard.astro';
+import { Search, X, Grid3X3, List } from 'lucide-astro';
+import topicsData from '../data/topics.json';
+
+const { categories, topics } = topicsData;
+
+// Get unique categories for filter
+const categoryNames = Object.keys(categories);
+---
+
+<Layout title="All Topics - System Design Archive 2025">
+  <Header />
+
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <!-- Page Header -->
+    <div class="mb-8 text-center sm:text-left">
+      <h1 class="text-3xl font-bold text-primary mb-2">All Topics</h1>
+      <p class="text-text-muted">Search and explore {topics.length} topics from the archive</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="relative mb-6">
+      <div class="relative">
+        <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" />
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search topics..."
+          class="w-full rounded-2xl border border-border bg-surface px-4 py-4 pl-12 text-text placeholder:text-text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all text-base shadow-sm"
+        />
+        <button
+          id="clear-search"
+          class="absolute right-4 top-1/2 -translate-y-1/2 p-1 rounded-lg text-text-muted hover:text-text hover:bg-surface-muted transition-all hidden"
+          aria-label="Clear search"
+        >
+          <X class="w-4 h-4" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Pills -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-6 scrollbar-hide">
+      <button
+        data-filter="all"
+        class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-accent text-white transition-all whitespace-nowrap shadow-sm"
+      >
+        All Topics
+      </button>
+      {categoryNames.map(cat => (
+        <button
+          data-filter={cat}
+          class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-surface border border-border text-text-muted hover:border-accent/50 hover:text-text transition-all whitespace-nowrap"
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Results Count -->
+    <div class="flex items-center justify-between mb-6">
+      <p class="text-sm text-text-muted">
+        Showing <span id="result-count" class="font-semibold text-text">{topics.length}</span> topics
+      </p>
+    </div>
+
+    <!-- Topics Grid -->
+    <div id="topics-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {topics.map(topic => (
+        <div
+          class="topic-item"
+          data-title={topic.title.toLowerCase()}
+          data-category={topic.category}
+        >
+          <TopicCard
+            title={topic.title}
+            slug={topic.slug}
+            category={topic.category}
+            categoryColor={categories[topic.category as keyof typeof categories]?.color || 'accent'}
+            content={topic.content}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-20">
+      <div class="w-16 h-16 rounded-2xl bg-surface-muted border border-border flex items-center justify-center mx-auto mb-4">
+        <Search class="w-8 h-8 text-text-muted" />
+      </div>
+      <h3 class="text-lg font-semibold text-primary mb-2">No topics found</h3>
+      <p class="text-text-muted mb-4">Try adjusting your search or filters</p>
+      <button
+        id="reset-filters"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all"
+      >
+        <X class="w-4 h-4" />
+        Reset filters
+      </button>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const clearBtn = document.getElementById('clear-search');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const topicItems = document.querySelectorAll('.topic-item');
+  const resultCount = document.getElementById('result-count');
+  const emptyState = document.getElementById('empty-state');
+  const topicsGrid = document.getElementById('topics-grid');
+  const resetBtn = document.getElementById('reset-filters');
+
+  let activeFilter = 'all';
+  let searchQuery = '';
+
+  function updateVisibility() {
+    let visible = 0;
+    topicItems.forEach(item => {
+      const title = item.getAttribute('data-title') || '';
+      const category = item.getAttribute('data-category') || '';
+
+      const matchesSearch = title.includes(searchQuery.toLowerCase());
+      const matchesFilter = activeFilter === 'all' || category === activeFilter;
+
+      if (matchesSearch && matchesFilter) {
+        (item as HTMLElement).style.display = '';
+        visible++;
+      } else {
+        (item as HTMLElement).style.display = 'none';
+      }
+    });
+
+    if (resultCount) resultCount.textContent = String(visible);
+
+    if (visible === 0) {
+      emptyState?.classList.remove('hidden');
+      topicsGrid?.classList.add('hidden');
+    } else {
+      emptyState?.classList.add('hidden');
+      topicsGrid?.classList.remove('hidden');
+    }
+
+    // Show/hide clear button
+    if (searchQuery) {
+      clearBtn?.classList.remove('hidden');
+    } else {
+      clearBtn?.classList.add('hidden');
+    }
+  }
+
+  searchInput?.addEventListener('input', (e) => {
+    searchQuery = (e.target as HTMLInputElement).value;
+    updateVisibility();
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    searchQuery = '';
+    if (searchInput) searchInput.value = '';
+    updateVisibility();
+    searchInput?.focus();
+  });
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-accent', 'text-white', 'shadow-sm');
+        b.classList.add('bg-surface', 'text-text-muted', 'border', 'border-border');
+      });
+      btn.classList.remove('bg-surface', 'text-text-muted', 'border', 'border-border');
+      btn.classList.add('bg-accent', 'text-white', 'shadow-sm');
+
+      activeFilter = btn.getAttribute('data-filter') || 'all';
+      updateVisibility();
+    });
+  });
+
+  resetBtn?.addEventListener('click', () => {
+    searchQuery = '';
+    activeFilter = 'all';
+    if (searchInput) searchInput.value = '';
+
+    filterBtns.forEach(b => {
+      b.classList.remove('bg-accent', 'text-white', 'shadow-sm');
+      b.classList.add('bg-surface', 'text-text-muted', 'border', 'border-border');
+    });
+    const allBtn = document.querySelector('[data-filter="all"]');
+    allBtn?.classList.remove('bg-surface', 'text-text-muted', 'border', 'border-border');
+    allBtn?.classList.add('bg-accent', 'text-white', 'shadow-sm');
+
+    updateVisibility();
+    searchInput?.focus();
+  });
+
+  // Focus search on mount
+  searchInput?.focus();
+</script>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

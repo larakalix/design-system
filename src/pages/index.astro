@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/organisms/Header.astro';
+import Footer from '../components/organisms/Footer.astro';
+import TopicCard from '../components/molecules/TopicCard.astro';
+import CategoryCard from '../components/molecules/CategoryCard.astro';
+import { Search, ArrowRight, BookOpen, Layers, Zap } from 'lucide-astro';
+import topicsData from '../data/topics.json';
+
+const { categories, topics } = topicsData;
+
+// Get featured topics (one from each category with content)
+const featuredTopics: any[] = [];
+const seenCats = new Set();
+for (const t of topics) {
+  if (t.content && !seenCats.has(t.category)) {
+    seenCats.add(t.category);
+    featuredTopics.push(t);
+  }
+  if (featuredTopics.length >= 6) break;
+}
+
+// Get category stats
+const categoryList = Object.entries(categories).map(([name, meta]: [string, any]) => ({
+  name,
+  slug: name.toLowerCase().replace(/\s+/g, '-'),
+  ...meta,
+  count: topics.filter((t: any) => t.category === name).length,
+}));
+
+const totalTopics = topics.length;
+---
+
+<Layout title="System Design Archive 2025 - Interactive Knowledge Base">
+  <Header />
+  
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-surface border-b border-border">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-violet-50/50 dark:from-blue-900/20 dark:via-transparent dark:to-violet-900/20"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs font-medium mb-6">
+            <Zap class="w-3.5 h-3.5" />
+            <span>212 topics curated from the Big Archive</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary mb-6">
+            Master <span class="gradient-text">System Design</span><br />One Topic at a Time
+          </h1>
+          
+          <p class="text-lg text-text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
+            An interactive, free knowledge base covering algorithms, AI, databases, DevOps, networking, and more. 
+            Built for engineers who never stop learning.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="/topics"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent-hover transition-all shadow-lg shadow-blue-500/25"
+            >
+              <Search class="w-4 h-4" />
+              Explore Topics
+            </a>
+            <a
+              href="/categories"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-muted border border-border text-text font-semibold hover:border-accent/50 hover:bg-surface transition-all"
+            >
+              <Layers class="w-4 h-4" />
+              Browse Categories
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+          <div class="text-center p-4 rounded-xl bg-surface-muted border border-border">
+            <div class="text-2xl font-bold text-primary">{totalTopics}</div>
+            <div class="text-xs text-text-muted mt-1">Topics</div>
+          </div>
+          <div class="text-center p-4 rounded-xl bg-surface-muted border border-border">
+            <div class="text-2xl font-bold text-primary">{categoryList.length}</div>
+            <div class="text-xs text-text-muted mt-1">Categories</div>
+          </div>
+          <div class="text-center p-4 rounded-xl bg-surface-muted border border-border">
+            <div class="text-2xl font-bold text-primary">442</div>
+            <div class="text-xs text-text-muted mt-1">Source Pages</div>
+          </div>
+          <div class="text-center p-4 rounded-xl bg-surface-muted border border-border">
+            <div class="text-2xl font-bold text-primary">Free</div>
+            <div class="text-xs text-text-muted mt-1">Forever</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl font-bold text-primary">Browse by Category</h2>
+          <p class="text-text-muted mt-1">Organized topics across 10 key domains</p>
+        </div>
+        <a href="/categories" class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-hover transition-colors">
+          View all <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        {categoryList.map(cat => (
+          <CategoryCard
+            name={cat.name}
+            slug={cat.slug}
+            color={cat.color}
+            description={cat.description}
+            count={cat.count}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- Featured Topics -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-border">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl font-bold text-primary">Featured Topics</h2>
+          <p class="text-text-muted mt-1">Hand-picked highlights from the archive</p>
+        </div>
+        <a href="/topics" class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-hover transition-colors">
+          View all topics <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {featuredTopics.map(topic => (
+          <TopicCard
+            title={topic.title}
+            slug={topic.slug}
+            category={topic.category}
+            categoryColor={categories[topic.category as keyof typeof categories]?.color || 'accent'}
+            content={topic.content}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="relative overflow-hidden rounded-3xl bg-primary-light dark:bg-slate-900 p-8 sm:p-12 text-center border border-border">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-violet-600/20"></div>
+        <div class="relative">
+          <BookOpen class="w-10 h-10 text-blue-400 mx-auto mb-4" />
+          <h2 class="text-2xl sm:text-3xl font-bold text-primary dark:text-white mb-3">Ready to dive deeper?</h2>
+          <p class="text-text-muted max-w-xl mx-auto mb-6">
+            This is a community tribute to the incredible work behind the Big Archive System Design 2025.
+            All content is free and attribution is always given.
+          </p>
+          <a
+            href="/credits"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface dark:bg-slate-800 text-primary dark:text-white font-semibold hover:bg-surface-muted dark:hover:bg-slate-700 transition-all border border-border"
+          >
+            View Credits & Attribution
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

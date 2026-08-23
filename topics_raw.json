@@ -1,0 +1,850 @@
+[
+  {
+    "title": "The 9 Algorithms That Dominate Our World",
+    "page": 8
+  },
+  {
+    "title": "How does gRPC work?",
+    "page": 12
+  },
+  {
+    "title": "Docker vs. Kubernetes. Which one should we use?",
+    "page": 14
+  },
+  {
+    "title": "What happens when you type google .com into a browser?",
+    "page": 18
+  },
+  {
+    "title": "A Cheatsheet on Infrastructure as Code Landscape",
+    "page": 20
+  },
+  {
+    "title": "A Crash Course on Architectural Scalability",
+    "page": 22
+  },
+  {
+    "title": "The Open Source AI Stack",
+    "page": 24
+  },
+  {
+    "title": "Cookies Vs Sessions Vs JWT Vs PASETO",
+    "page": 26
+  },
+  {
+    "title": "How TikTok Manages a 200K File Frontend MonoRepo?",
+    "page": 28
+  },
+  {
+    "title": "The Ultimate API Learning Roadmap",
+    "page": 30
+  },
+  {
+    "title": "30 Useful AI Apps That Can Help You in 2025",
+    "page": 32
+  },
+  {
+    "title": "10 Essential Components of a Production Web Application",
+    "page": 34
+  },
+  {
+    "title": "Session, Cookie, JWT, Token, SSO, and OAuth 2.0 Explained in One Diagram",
+    "page": 36
+  },
+  {
+    "title": "DeepSeek 1-Pager",
+    "page": 38
+  },
+  {
+    "title": "My Favorite 10 Books for Software Developers",
+    "page": 40
+  },
+  {
+    "title": "What is an AI Agent?",
+    "page": 42
+  },
+  {
+    "title": "Git vs GitHub",
+    "page": 44
+  },
+  {
+    "title": "A Cheatsheet on Database Performance",
+    "page": 46
+  },
+  {
+    "title": "18 Common Ports Worth Knowing",
+    "page": 48
+  },
+  {
+    "title": "Generative Adversarial Network (GAN) - AI by Hand \u270d",
+    "page": 50
+  },
+  {
+    "title": "JWT 101: Key to Stateless Authentication",
+    "page": 51
+  },
+  {
+    "title": "A handy cheat sheet for the most popular cloud services",
+    "page": 53
+  },
+  {
+    "title": "0 to 1.5 Billion Guests: Airbnb\u2019s Architectural Evolution",
+    "page": 57
+  },
+  {
+    "title": "12 Algorithms for System Design Interviews",
+    "page": 59
+  },
+  {
+    "title": "How Kubernetes Works?",
+    "page": 61
+  },
+  {
+    "title": "PostgreSQL 101: The Everything Database",
+    "page": 63
+  },
+  {
+    "title": "Top 12 Tips for API Security",
+    "page": 65
+  },
+  {
+    "title": "24 Good Resources to Learn Software Architecture in 2025",
+    "page": 67
+  },
+  {
+    "title": "SQS vs SNS vs EventBridge vs Kinesis",
+    "page": 69
+  },
+  {
+    "title": "Top 5 common ways to improve API performance",
+    "page": 71
+  },
+  {
+    "title": "xAI\u2019s Grok-3 One-Pager",
+    "page": 73
+  },
+  {
+    "title": "30 Free APIs for Developers",
+    "page": 75
+  },
+  {
+    "title": "The Generative AI Learning Roadmap",
+    "page": 77
+  },
+  {
+    "title": "HTTP/1 -> HTTP/2 -> HTTP/3",
+    "page": 79
+  },
+  {
+    "title": "Structure of URL",
+    "page": 81
+  },
+  {
+    "title": "A Cheatsheet on Comparing Key-Value Stores",
+    "page": 83
+  },
+  {
+    "title": "Which Database Should I Use on AWS?",
+    "page": 85
+  },
+  {
+    "title": "What is MCP?",
+    "page": 87
+  },
+  {
+    "title": "How to Design a System like Instagram",
+    "page": 89
+  },
+  {
+    "title": "How to load your websites at lightning speed",
+    "page": 91
+  },
+  {
+    "title": "What is SSO (Single Sign-On)?",
+    "page": 93
+  },
+  {
+    "title": "How Java Virtual Threads Work?",
+    "page": 95
+  },
+  {
+    "title": "Redis VS Memcached",
+    "page": 97
+  },
+  {
+    "title": "The Shopify Tech Stack",
+    "page": 98
+  },
+  {
+    "title": "What is Retrieval-Augmented Generation (RAG)?",
+    "page": 102
+  },
+  {
+    "title": "How Two-factor Authentication (2FA) Works?",
+    "page": 104
+  },
+  {
+    "title": "How Amazon S3 Works?",
+    "page": 106
+  },
+  {
+    "title": "How to Learn Backend Development?",
+    "page": 108
+  },
+  {
+    "title": "A Simplified Git Workflow",
+    "page": 110
+  },
+  {
+    "title": "Virtualization vs Containerization",
+    "page": 112
+  },
+  {
+    "title": "How Netflix Built a Distributed Counter?",
+    "page": 114
+  },
+  {
+    "title": "How to Learn API Development?",
+    "page": 116
+  },
+  {
+    "title": "Must-Know Network Protocol Dependencies",
+    "page": 118
+  },
+  {
+    "title": "Top AI Coding Tools for Developers You Can Use in 2025",
+    "page": 120
+  },
+  {
+    "title": "18 Key Design Patterns Every Developer Should Know",
+    "page": 122
+  },
+  {
+    "title": "The Data Engineering Roadmap",
+    "page": 124
+  },
+  {
+    "title": "What do version numbers mean?",
+    "page": 128
+  },
+  {
+    "title": "Everyone talks about Transformers. How Transformers Architecture Works?",
+    "page": 130
+  },
+  {
+    "title": "Top YouTube Channels and Blogs for AI Learning in 2025",
+    "page": 132
+  },
+  {
+    "title": "Top 20 System Design Concepts You Should Know",
+    "page": 134
+  },
+  {
+    "title": "9 OOP Design Patterns You Must Know",
+    "page": 139
+  },
+  {
+    "title": "A Cheatsheet on REST API Design Best Practices",
+    "page": 143
+  },
+  {
+    "title": "Top 30 AWS Services That Are Commonly Used",
+    "page": 145
+  },
+  {
+    "title": "The Large-Language Model Glossary",
+    "page": 147
+  },
+  {
+    "title": "9 Clean Code Principles To Keep In Mind",
+    "page": 149
+  },
+  {
+    "title": "The 4 Types of SQL Joins",
+    "page": 151
+  },
+  {
+    "title": "How to Learn Cloud Computing?",
+    "page": 153
+  },
+  {
+    "title": "Visualizing a SQL query",
+    "page": 155
+  },
+  {
+    "title": "Explaining JSON Web Token (JWT) with simple terms",
+    "page": 156
+  },
+  {
+    "title": "12 MCP Servers You Can Use in 2025",
+    "page": 158
+  },
+  {
+    "title": "How to Deploy Services",
+    "page": 160
+  },
+  {
+    "title": "The System Design Topic Map",
+    "page": 162
+  },
+  {
+    "title": "How Transformers Architecture Works?",
+    "page": 164
+  },
+  {
+    "title": "JWT Simply Explained",
+    "page": 166
+  },
+  {
+    "title": "The 5 Pillars of API Design",
+    "page": 168
+  },
+  {
+    "title": "How Computer Memory Works?",
+    "page": 170
+  },
+  {
+    "title": "Top Kubernetes Scaling Strategies You Must Know",
+    "page": 172
+  },
+  {
+    "title": "AI Agent versus MCP",
+    "page": 174
+  },
+  {
+    "title": "How does HTTPS work?",
+    "page": 176
+  },
+  {
+    "title": "How to Learn Kubernetes?",
+    "page": 178
+  },
+  {
+    "title": "Top 6 most commonly used Server Types",
+    "page": 180
+  },
+  {
+    "title": "Amazon Key Architecture with Third Party Integration",
+    "page": 182
+  },
+  {
+    "title": "How Do Companies Ship Code to Production?",
+    "page": 184
+  },
+  {
+    "title": "What is Event Sourcing? How is it different from normal CRUD design?",
+    "page": 186
+  },
+  {
+    "title": "How Data Lake Architecture Works?",
+    "page": 188
+  },
+  {
+    "title": "How Netflix Built a Distributed Counter",
+    "page": 190
+  },
+  {
+    "title": "Top 20 AI Concepts You Should Know",
+    "page": 194
+  },
+  {
+    "title": "The AI Application Stack for Building RAG Apps",
+    "page": 196
+  },
+  {
+    "title": "Shopify Tech Stacks and Tools",
+    "page": 198
+  },
+  {
+    "title": "AI Vs Machine Learning Vs Deep Learning Vs Generative AI",
+    "page": 200
+  },
+  {
+    "title": "How SQL Query Executes In A Database?",
+    "page": 202
+  },
+  {
+    "title": "Top 20 AI Agent Concepts You Should Know",
+    "page": 204
+  },
+  {
+    "title": "How RabbitMQ Works?",
+    "page": 206
+  },
+  {
+    "title": "RAG vs Agentic RAG",
+    "page": 208
+  },
+  {
+    "title": "A Cheatsheet on Kubernetes",
+    "page": 210
+  },
+  {
+    "title": "6 Data Structures to Save Storage",
+    "page": 212
+  },
+  {
+    "title": "5 Database Normal Forms Every Developer Should Know",
+    "page": 214
+  },
+  {
+    "title": "How CQRS Works?",
+    "page": 218
+  },
+  {
+    "title": "How MongoDB Works?",
+    "page": 220
+  },
+  {
+    "title": "The Generative AI Tech Stack",
+    "page": 222
+  },
+  {
+    "title": "24 Good Resources to Learn Software Architecture in 2025",
+    "page": 224
+  },
+  {
+    "title": "Database Index Types Every Developer Should Know",
+    "page": 226
+  },
+  {
+    "title": "The Agentic AI Learning Roadmap",
+    "page": 228
+  },
+  {
+    "title": "12 MCP Servers You Can Use in 2025",
+    "page": 230
+  },
+  {
+    "title": "Top 5 common ways to improve API performance",
+    "page": 232
+  },
+  {
+    "title": "REST API Vs. GraphQL",
+    "page": 234
+  },
+  {
+    "title": "Tokens vs API Keys",
+    "page": 236
+  },
+  {
+    "title": "The AWS Tech Stack",
+    "page": 238
+  },
+  {
+    "title": "5 Data Structures That Make DB Queries Super Fast",
+    "page": 240
+  },
+  {
+    "title": "12 MCP Servers You Can Use in 2025",
+    "page": 242
+  },
+  {
+    "title": "MCP Versus A2A Protocol",
+    "page": 244
+  },
+  {
+    "title": "How can Cache Systems go wrong?",
+    "page": 246
+  },
+  {
+    "title": "8 System Design Concepts Explained in 1 Diagram",
+    "page": 248
+  },
+  {
+    "title": "16 Coding Patterns That Make Interviews Easy",
+    "page": 250
+  },
+  {
+    "title": "How to Learn Databases?",
+    "page": 252
+  },
+  {
+    "title": "What happens when you type a URL into a browser?",
+    "page": 254
+  },
+  {
+    "title": "How HTTPS Works?",
+    "page": 256
+  },
+  {
+    "title": "The Evolution of Scaling at Netflix",
+    "page": 258
+  },
+  {
+    "title": "What is the SOLID Principle?",
+    "page": 260
+  },
+  {
+    "title": "Common HTTP Status Codes",
+    "page": 262
+  },
+  {
+    "title": "How Clean Architecture Works?",
+    "page": 264
+  },
+  {
+    "title": "How does Docker Work?",
+    "page": 265
+  },
+  {
+    "title": "How Large Language Models Work?",
+    "page": 266
+  },
+  {
+    "title": "How Does SSO Work?",
+    "page": 268
+  },
+  {
+    "title": "Best Practices in API Design",
+    "page": 270
+  },
+  {
+    "title": "Key Terms in Domain-Driven Design",
+    "page": 272
+  },
+  {
+    "title": "Top AI Agent Frameworks You Should Know",
+    "page": 274
+  },
+  {
+    "title": "How OpenAI\u2019s GPT-OSS 120B and 20B Models Work?",
+    "page": 276
+  },
+  {
+    "title": "The Modern Software Stack",
+    "page": 278
+  },
+  {
+    "title": "Concurrency is NOT Parallelism",
+    "page": 280
+  },
+  {
+    "title": "JWT vs PASETO: The Two Players of Token-Based Authentication",
+    "page": 282
+  },
+  {
+    "title": "The Linux Cron Cheatsheet",
+    "page": 284
+  },
+  {
+    "title": "AI Agent versus MCP",
+    "page": 286
+  },
+  {
+    "title": "The Lifecycle of a Kubernetes Pod",
+    "page": 288
+  },
+  {
+    "title": "CI/CD Pipeline Explained",
+    "page": 290
+  },
+  {
+    "title": "The Open Source RAG Stack",
+    "page": 291
+  },
+  {
+    "title": "What are some of the most popular versioning strategies?",
+    "page": 293
+  },
+  {
+    "title": "The Testing Pyramid",
+    "page": 294
+  },
+  {
+    "title": "9 Docker Best Practices You Should Know",
+    "page": 295
+  },
+  {
+    "title": "Kubernetes Explained",
+    "page": 297
+  },
+  {
+    "title": "N8N versus LangGraph",
+    "page": 299
+  },
+  {
+    "title": "Where Do We Cache Data?",
+    "page": 301
+  },
+  {
+    "title": "Python vs Java",
+    "page": 303
+  },
+  {
+    "title": "Design Patterns Cheat Sheet",
+    "page": 305
+  },
+  {
+    "title": "CI/CD Simplified Visual Guide",
+    "page": 308
+  },
+  {
+    "title": "How Apache Kafka Works?",
+    "page": 310
+  },
+  {
+    "title": "Load Balancers vs API Gateways vs Reverse Proxy! And how can they Work Together?",
+    "page": 312
+  },
+  {
+    "title": "How Java Works",
+    "page": 314
+  },
+  {
+    "title": "How Gitflow Branching Works?",
+    "page": 316
+  },
+  {
+    "title": "The Life of a Redis Query",
+    "page": 318
+  },
+  {
+    "title": "6 Steps to Create a New AI Model",
+    "page": 320
+  },
+  {
+    "title": "Cookies vs Sessions",
+    "page": 322
+  },
+  {
+    "title": "Access Control Clearly Explained",
+    "page": 324
+  },
+  {
+    "title": "Full Fine-Tuning vs LoRA vs RAG",
+    "page": 326
+  },
+  {
+    "title": "How Git Reset Works?",
+    "page": 328
+  },
+  {
+    "title": "Apache Kafka Explained (At the high level)",
+    "page": 330
+  },
+  {
+    "title": "MCP vs API: what\u2019s the difference?",
+    "page": 332
+  },
+  {
+    "title": "TCP vs UDP",
+    "page": 334
+  },
+  {
+    "title": "How Python Works",
+    "page": 337
+  },
+  {
+    "title": "API Vs SDK!",
+    "page": 339
+  },
+  {
+    "title": "SQL Injection (SQLi)",
+    "page": 341
+  },
+  {
+    "title": "Types of AI Agents",
+    "page": 343
+  },
+  {
+    "title": "24 Good Resources to Learn Software Architecture in 2025",
+    "page": 345
+  },
+  {
+    "title": "Cross-Site Scripting (XSS) Attacks",
+    "page": 347
+  },
+  {
+    "title": "Docker vs Kubernetes",
+    "page": 349
+  },
+  {
+    "title": "Batch vs Stream Processing",
+    "page": 351
+  },
+  {
+    "title": "What are Modular Monoliths?",
+    "page": 353
+  },
+  {
+    "title": "Popular interview question: What is the difference between Process and Thread?",
+    "page": 355
+  },
+  {
+    "title": "How AI Agents Chain Tools, Memory, and Reasoning?",
+    "page": 356
+  },
+  {
+    "title": "Latency vs. Throughput",
+    "page": 358
+  },
+  {
+    "title": "Top 20 System Design Concepts You Should Know",
+    "page": 360
+  },
+  {
+    "title": "How to Debug a Slow API?",
+    "page": 362
+  },
+  {
+    "title": "How LLMs See the World",
+    "page": 364
+  },
+  {
+    "title": "RAG vs Fine-tuning: Which one should you use?",
+    "page": 366
+  },
+  {
+    "title": "IP Address Cheat Sheet Every Engineer Should Know",
+    "page": 369
+  },
+  {
+    "title": "Which Protocols Run on TCP and UDP",
+    "page": 371
+  },
+  {
+    "title": "Why is DeepSeek-OCR such a BIG DEAL?",
+    "page": 373
+  },
+  {
+    "title": "Servers You Should Know in Modern Systems",
+    "page": 375
+  },
+  {
+    "title": "The Building Blocks of Modern Networking",
+    "page": 376
+  },
+  {
+    "title": "Network Services That Power Modern Connectivity",
+    "page": 378
+  },
+  {
+    "title": "How to Design Good APIs",
+    "page": 380
+  },
+  {
+    "title": "Big Data Pipeline Cheatsheet for AWS, Azure, and Google Cloud",
+    "page": 382
+  },
+  {
+    "title": "How to Learn AWS?",
+    "page": 384
+  },
+  {
+    "title": "The AI Agent Tech Stack",
+    "page": 386
+  },
+  {
+    "title": "How to Build a Basic RAG Application on AWS?",
+    "page": 388
+  },
+  {
+    "title": "Types of Virtualization",
+    "page": 390
+  },
+  {
+    "title": "Cloudflare vs. AWS vs. Azure",
+    "page": 392
+  },
+  {
+    "title": "Popular Backend Tech Stack",
+    "page": 394
+  },
+  {
+    "title": "HTTP vs. HTTPS",
+    "page": 395
+  },
+  {
+    "title": "Forward Proxy versus Reverse Proxy",
+    "page": 397
+  },
+  {
+    "title": "Things Every Developer Should Know: Concurrency is NOT parallelism",
+    "page": 399
+  },
+  {
+    "title": "Virtualization vs. Containerization",
+    "page": 401
+  },
+  {
+    "title": "5 REST API Authentication Methods",
+    "page": 403
+  },
+  {
+    "title": "How do AirTags work?",
+    "page": 405
+  },
+  {
+    "title": "What is a Firewall?",
+    "page": 407
+  },
+  {
+    "title": "Modem vs. Router",
+    "page": 409
+  },
+  {
+    "title": "What is a REST API?",
+    "page": 411
+  },
+  {
+    "title": "How Java HashMaps Work?",
+    "page": 413
+  },
+  {
+    "title": "Virtualization Explained: From Bare Metal to Hosted Hypervisors",
+    "page": 415
+  },
+  {
+    "title": "Database Types You Should Know in 2025",
+    "page": 417
+  },
+  {
+    "title": "Apache Kafka vs. RabbitMQ",
+    "page": 419
+  },
+  {
+    "title": "The HTTP Mindmap",
+    "page": 421
+  },
+  {
+    "title": "How DNS Works",
+    "page": 423
+  },
+  {
+    "title": "Can a web server provide real-time updates?",
+    "page": 425
+  },
+  {
+    "title": "Evolution of HTTP",
+    "page": 427
+  },
+  {
+    "title": "System Performance Metrics Every Engineer Should Know",
+    "page": 429
+  },
+  {
+    "title": "Why Is Nginx So Popular?",
+    "page": 431
+  },
+  {
+    "title": "Network Debugging Commands Every Engineer Should Know",
+    "page": 433
+  },
+  {
+    "title": "Hub, Switch, & Router Explained",
+    "page": 435
+  },
+  {
+    "title": "Common Network Protocols Every Engineer Should Know",
+    "page": 437
+  },
+  {
+    "title": "8 Popular Network Protocols",
+    "page": 439
+  },
+  {
+    "title": "A picture is worth a thousand words: 9 best practices for developing microservices",
+    "page": 441
+  }
+]

@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/organisms/Header.astro';
+import Footer from '../../components/organisms/Footer.astro';
+import Badge from '../../components/atoms/Badge.astro';
+import TopicCard from '../../components/molecules/TopicCard.astro';
+import DiagramViewer from '../../components/react/DiagramViewer';
+import { ArrowLeft, BookOpen, ExternalLink, Hash } from 'lucide-astro';
+import topicsData from '../../data/topics.json';
+
+export function getStaticPaths() {
+  const { topics } = topicsData;
+  return topics.map((topic: any) => ({
+    params: { slug: topic.slug },
+    props: { topic },
+  }));
+}
+
+const { topic } = Astro.props;
+const { categories, topics } = topicsData;
+
+// Get related topics from same category
+const related = topics
+  .filter((t: any) => t.category === topic.category && t.slug !== topic.slug)
+  .slice(0, 3);
+
+const categoryMeta = categories[topic.category as keyof typeof categories] as any;
+---
+
+<Layout title={`${topic.title} - System Design Archive 2025`}>
+  <Header />
+  
+  <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <!-- Back Link -->
+    <a
+      href="/topics"
+      class="inline-flex items-center gap-1 text-sm text-text-muted hover:text-accent transition-colors mb-6"
+    >
+      <ArrowLeft class="w-4 h-4" />
+      Back to topics
+    </a>
+
+    <!-- Article Header -->
+    <article class="bg-surface rounded-2xl border border-border overflow-hidden">
+      <div class="p-6 sm:p-10">
+        <div class="flex items-center gap-3 mb-4">
+          <Badge color={categoryMeta?.color || 'accent'}>{topic.category}</Badge>
+          <span class="text-xs text-text-muted">Page {topic.page} in source</span>
+        </div>
+        
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-6 leading-tight">
+          {topic.title}
+        </h1>
+        
+        {topic.content ? (
+          <div class="prose prose-slate max-w-none">
+            {topic.content.split('\n').map((paragraph: string) => (
+              paragraph.trim() && (
+                <p class="text-text-muted leading-relaxed mb-4 text-base sm:text-lg">
+                  {paragraph}
+                </p>
+              )
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-12">
+            <BookOpen class="w-12 h-12 text-text-muted mx-auto mb-4" />
+            <p class="text-text-muted">
+              This topic is listed in the archive. Full content extraction is in progress.
+            </p>
+            <p class="text-sm text-text-muted mt-2">
+              Source page: {topic.page}
+            </p>
+          </div>
+        )}
+
+        <!-- Interactive Diagrams & Images -->
+        {(topic.images?.length > 0) && (
+          <div class="mt-10">
+            <DiagramViewer
+              client:load
+              slug={topic.slug}
+              images={topic.images}
+              topicTitle={topic.title}
+            />
+          </div>
+        )}
+      </div>
+      
+      <!-- Source Attribution -->
+      <div class="px-6 sm:px-10 py-4 bg-surface-muted border-t border-border">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <p class="text-xs text-text-muted">
+            Source: <strong>Big Archive System Design 2025</strong>
+          </p>
+          <a
+            href="/credits"
+            class="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-hover transition-colors"
+          >
+            View full attribution <ExternalLink class="w-3 h-3" />
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Topics -->
+    {related.length > 0 && (
+      <section class="mt-10">
+        <div class="flex items-center gap-2 mb-6">
+          <Hash class="w-5 h-5 text-text-muted" />
+          <h2 class="text-xl font-bold text-primary">Related in {topic.category}</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {related.map((t: any) => (
+            <TopicCard
+              title={t.title}
+              slug={t.slug}
+              category={t.category}
+              categoryColor={categoryMeta?.color || 'accent'}
+              content={t.content}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+  </main>
+  
+  <Footer />
+</Layout>
