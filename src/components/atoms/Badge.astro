@@ -7,20 +7,34 @@ interface Props {
 const { color = 'accent' } = Astro.props;
 
 const colorMap: Record<string, string> = {
-  'category-system': 'bg-blue-50 text-blue-700 border-blue-200',
-  'category-ai': 'bg-violet-50 text-violet-700 border-violet-200',
-  'category-api': 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  'category-database': 'bg-amber-50 text-amber-700 border-amber-200',
-  'category-devops': 'bg-red-50 text-red-700 border-red-200',
-  'category-networking': 'bg-cyan-50 text-cyan-700 border-cyan-200',
-  'category-security': 'bg-pink-50 text-pink-700 border-pink-200',
-  'category-programming': 'bg-indigo-50 text-indigo-700 border-indigo-200',
-  'category-algorithms': 'bg-teal-50 text-teal-700 border-teal-200',
-  'category-career': 'bg-orange-50 text-orange-700 border-orange-200',
-  'accent': 'bg-blue-50 text-blue-700 border-blue-200',
+  'category-system': 'bg-blue-100 text-blue-800',
+  'category-ai': 'bg-violet-100 text-violet-800',
+  'category-api': 'bg-emerald-100 text-emerald-800',
+  'category-database': 'bg-amber-100 text-amber-800',
+  'category-devops': 'bg-red-100 text-red-800',
+  'category-networking': 'bg-cyan-100 text-cyan-800',
+  'category-security': 'bg-pink-100 text-pink-800',
+  'category-programming': 'bg-indigo-100 text-indigo-800',
+  'category-algorithms': 'bg-teal-100 text-teal-800',
+  'category-career': 'bg-orange-100 text-orange-800',
+  'accent': 'bg-emerald-100 text-emerald-800',
+};
+
+const darkColorMap: Record<string, string> = {
+  'category-system': 'dark:bg-blue-900/50 dark:text-blue-200',
+  'category-ai': 'dark:bg-violet-900/50 dark:text-violet-200',
+  'category-api': 'dark:bg-emerald-900/50 dark:text-emerald-200',
+  'category-database': 'dark:bg-amber-900/50 dark:text-amber-200',
+  'category-devops': 'dark:bg-red-900/50 dark:text-red-200',
+  'category-networking': 'dark:bg-cyan-900/50 dark:text-cyan-200',
+  'category-security': 'dark:bg-pink-900/50 dark:text-pink-200',
+  'category-programming': 'dark:bg-indigo-900/50 dark:text-indigo-200',
+  'category-algorithms': 'dark:bg-teal-900/50 dark:text-teal-200',
+  'category-career': 'dark:bg-orange-900/50 dark:text-orange-200',
+  'accent': 'dark:bg-emerald-900/50 dark:text-emerald-200',
 };
 ---
 
-<span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${colorMap[color] || colorMap['accent']}`}>
+<span class={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold ${colorMap[color] || colorMap['accent']} ${darkColorMap[color] || darkColorMap['accent']}`}>
   <slot />
 </span>

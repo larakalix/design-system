@@ -3,38 +3,34 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/organisms/Header.astro';
 import Footer from '../components/organisms/Footer.astro';
 import TopicCard from '../components/molecules/TopicCard.astro';
-import { Search, X, Grid3X3, List } from 'lucide-astro';
+import { Search, X } from 'lucide-astro';
 import topicsData from '../data/topics.json';
 
 const { categories, topics } = topicsData;
-
-// Get unique categories for filter
 const categoryNames = Object.keys(categories);
 ---
 
 <Layout title="All Topics - System Design Archive 2025">
   <Header />
-
-  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-    <!-- Page Header -->
-    <div class="mb-8 text-center sm:text-left">
-      <h1 class="text-3xl font-bold text-primary mb-2">All Topics</h1>
-      <p class="text-text-muted">Search and explore {topics.length} topics from the archive</p>
+  
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-3">All Topics</h1>
+      <p class="text-stone-500 dark:text-stone-400">Search and explore {topics.length} topics from the archive</p>
     </div>
 
-    <!-- Search Bar -->
-    <div class="relative mb-6">
+    <div class="max-w-2xl mx-auto mb-8">
       <div class="relative">
-        <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text-muted" />
+        <Search class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-400 dark:text-stone-500" />
         <input
           type="text"
           id="search-input"
           placeholder="Search topics..."
-          class="w-full rounded-2xl border border-border bg-surface px-4 py-4 pl-12 text-text placeholder:text-text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all text-base shadow-sm"
+          class="w-full rounded-xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 px-4 py-4 pl-12 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/10 transition-all text-base"
         />
         <button
           id="clear-search"
-          class="absolute right-4 top-1/2 -translate-y-1/2 p-1 rounded-lg text-text-muted hover:text-text hover:bg-surface-muted transition-all hidden"
+          class="absolute right-4 top-1/2 -translate-y-1/2 p-1 rounded-lg text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all hidden"
           aria-label="Clear search"
         >
           <X class="w-4 h-4" />
@@ -42,33 +38,30 @@ const categoryNames = Object.keys(categories);
       </div>
     </div>
 
-    <!-- Category Pills -->
-    <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-6 scrollbar-hide">
+    <div class="flex items-center justify-center gap-2 overflow-x-auto pb-2 mb-10 scrollbar-hide">
       <button
         data-filter="all"
-        class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-accent text-white transition-all whitespace-nowrap shadow-sm"
+        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 transition-all whitespace-nowrap"
       >
         All Topics
       </button>
       {categoryNames.map(cat => (
         <button
           data-filter={cat}
-          class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-surface border border-border text-text-muted hover:border-accent/50 hover:text-text transition-all whitespace-nowrap"
+          class="filter-btn px-4 py-2 rounded-lg text-sm font-medium bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-300 hover:border-stone-300 dark:hover:border-stone-600 hover:text-stone-900 dark:hover:text-stone-100 transition-all whitespace-nowrap"
         >
           {cat}
         </button>
       ))}
     </div>
 
-    <!-- Results Count -->
     <div class="flex items-center justify-between mb-6">
-      <p class="text-sm text-text-muted">
-        Showing <span id="result-count" class="font-semibold text-text">{topics.length}</span> topics
+      <p class="text-sm text-stone-400 dark:text-stone-500">
+        Showing <span id="result-count" class="font-medium text-stone-900 dark:text-stone-100">{topics.length}</span> topics
       </p>
     </div>
 
-    <!-- Topics Grid -->
-    <div id="topics-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div id="topics-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {topics.map(topic => (
         <div
           class="topic-item"
@@ -86,23 +79,22 @@ const categoryNames = Object.keys(categories);
       ))}
     </div>
 
-    <!-- Empty State -->
     <div id="empty-state" class="hidden text-center py-20">
-      <div class="w-16 h-16 rounded-2xl bg-surface-muted border border-border flex items-center justify-center mx-auto mb-4">
-        <Search class="w-8 h-8 text-text-muted" />
+      <div class="w-16 h-16 rounded-2xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center mx-auto mb-4">
+        <Search class="w-8 h-8 text-stone-400 dark:text-stone-500" />
       </div>
-      <h3 class="text-lg font-semibold text-primary mb-2">No topics found</h3>
-      <p class="text-text-muted mb-4">Try adjusting your search or filters</p>
+      <h3 class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-2">No topics found</h3>
+      <p class="text-stone-500 dark:text-stone-400 mb-4">Try adjusting your search or filters</p>
       <button
         id="reset-filters"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent-hover transition-all"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm font-medium hover:bg-emerald-700 transition-all"
       >
         <X class="w-4 h-4" />
         Reset filters
       </button>
     </div>
   </main>
-
+  
   <Footer />
 </Layout>
 
@@ -146,7 +138,6 @@ const categoryNames = Object.keys(categories);
       topicsGrid?.classList.remove('hidden');
     }
 
-    // Show/hide clear button
     if (searchQuery) {
       clearBtn?.classList.remove('hidden');
     } else {
@@ -169,11 +160,11 @@ const categoryNames = Object.keys(categories);
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
-        b.classList.remove('bg-accent', 'text-white', 'shadow-sm');
-        b.classList.add('bg-surface', 'text-text-muted', 'border', 'border-border');
+        b.classList.remove('bg-stone-900', 'dark:bg-stone-100', 'text-white', 'dark:text-stone-900');
+        b.classList.add('bg-white', 'dark:bg-stone-900', 'text-stone-600', 'dark:text-stone-300', 'border', 'border-stone-200', 'dark:border-stone-700');
       });
-      btn.classList.remove('bg-surface', 'text-text-muted', 'border', 'border-border');
-      btn.classList.add('bg-accent', 'text-white', 'shadow-sm');
+      btn.classList.remove('bg-white', 'dark:bg-stone-900', 'text-stone-600', 'dark:text-stone-300', 'border', 'border-stone-200', 'dark:border-stone-700');
+      btn.classList.add('bg-stone-900', 'dark:bg-stone-100', 'text-white', 'dark:text-stone-900');
 
       activeFilter = btn.getAttribute('data-filter') || 'all';
       updateVisibility();
@@ -186,27 +177,21 @@ const categoryNames = Object.keys(categories);
     if (searchInput) searchInput.value = '';
 
     filterBtns.forEach(b => {
-      b.classList.remove('bg-accent', 'text-white', 'shadow-sm');
-      b.classList.add('bg-surface', 'text-text-muted', 'border', 'border-border');
+      b.classList.remove('bg-stone-900', 'dark:bg-stone-100', 'text-white', 'dark:text-stone-900');
+      b.classList.add('bg-white', 'dark:bg-stone-900', 'text-stone-600', 'dark:text-stone-300', 'border', 'border-stone-200', 'dark:border-stone-700');
     });
     const allBtn = document.querySelector('[data-filter="all"]');
-    allBtn?.classList.remove('bg-surface', 'text-text-muted', 'border', 'border-border');
-    allBtn?.classList.add('bg-accent', 'text-white', 'shadow-sm');
+    allBtn?.classList.remove('bg-white', 'dark:bg-stone-900', 'text-stone-600', 'dark:text-stone-300', 'border', 'border-stone-200', 'dark:border-stone-700');
+    allBtn?.classList.add('bg-stone-900', 'dark:bg-stone-100', 'text-white', 'dark:text-stone-900');
 
     updateVisibility();
     searchInput?.focus();
   });
 
-  // Focus search on mount
   searchInput?.focus();
 </script>
 
 <style>
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 </style>

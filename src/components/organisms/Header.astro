@@ -2,22 +2,23 @@
 import { Search, Menu, X, BookOpen, Sun, Moon } from 'lucide-astro';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/topics', label: 'All Topics' },
+  { href: '/topics', label: 'Topics' },
   { href: '/categories', label: 'Categories' },
   { href: '/credits', label: 'Credits' },
 ];
 ---
 
-<header class="sticky top-0 z-50 glass border-b border-border">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="sticky top-0 z-50 glass" transition:persist>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
-        <div class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-          <BookOpen class="w-5 h-5 text-white" />
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center">
+          <BookOpen class="w-4 h-4 text-white" />
         </div>
-        <span class="font-bold text-lg text-primary group-hover:text-accent transition-colors">SystemDesign<span class="text-accent">.archive</span></span>
+        <span class="font-semibold text-[15px] tracking-tight text-stone-900 dark:text-stone-100">
+          SystemDesign<span class="text-emerald-600 dark:text-emerald-400">.archive</span>
+        </span>
       </a>
 
       <!-- Desktop Nav -->
@@ -25,37 +26,35 @@ const navLinks = [
         {navLinks.map(link => (
           <a
             href={link.href}
-            class="px-3 py-2 rounded-lg text-sm font-medium text-text-muted hover:text-text hover:bg-surface-muted transition-all"
+            class="px-3 py-2 rounded-lg text-sm font-medium text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-colors"
           >
             {link.label}
           </a>
         ))}
       </nav>
 
-      <!-- Search + Theme + Mobile Menu -->
-      <div class="flex items-center gap-2">
+      <!-- Right side -->
+      <div class="flex items-center gap-1">
         <a
           href="/topics"
-          class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-text-muted bg-surface-muted border border-border hover:border-accent/50 transition-all"
+          class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-600 text-white hover:bg-emerald-700 transition-colors"
         >
-          <Search class="w-4 h-4" />
-          <span class="text-xs">Search topics...</span>
-          <kbd class="hidden lg:inline-flex px-1.5 py-0.5 text-xs font-mono bg-surface border border-border rounded">⌘K</kbd>
+          <Search class="w-3.5 h-3.5" />
+          Search
         </a>
 
-        <!-- Dark mode toggle -->
         <button
           id="theme-toggle"
-          class="p-2 rounded-lg text-text-muted hover:text-text hover:bg-surface-muted transition-all"
+          class="p-2 rounded-lg text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all"
           aria-label="Toggle dark mode"
         >
-          <Sun class="w-5 h-5 dark:hidden" />
-          <Moon class="w-5 h-5 hidden dark:block" />
+          <Sun class="w-4 h-4 dark:hidden" />
+          <Moon class="w-4 h-4 hidden dark:block" />
         </button>
         
         <button
           id="mobile-menu-btn"
-          class="md:hidden p-2 rounded-lg text-text-muted hover:text-text hover:bg-surface-muted transition-all"
+          class="md:hidden p-2 rounded-lg text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-all"
           aria-label="Toggle menu"
         >
           <Menu class="w-5 h-5 menu-open" />
@@ -66,57 +65,38 @@ const navLinks = [
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-950">
     <div class="px-4 py-3 space-y-1">
       {navLinks.map(link => (
         <a
           href={link.href}
-          class="block px-3 py-2 rounded-lg text-sm font-medium text-text-muted hover:text-text hover:bg-surface-muted transition-all"
+          class="block px-3 py-2 rounded-lg text-sm font-medium text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 transition-colors"
         >
           {link.label}
         </a>
       ))}
-      <a
-        href="/topics"
-        class="sm:hidden flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-text-muted hover:bg-surface-muted transition-all"
-      >
-        <Search class="w-4 h-4" />
-        Search topics
-      </a>
     </div>
   </div>
 </header>
 
-<script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const openIcon = btn?.querySelector('.menu-open');
-  const closeIcon = btn?.querySelector('.menu-close');
+<script is:inline>
+  (function() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const openIcon = btn?.querySelector('.menu-open');
+    const closeIcon = btn?.querySelector('.menu-close');
 
-  btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
-    openIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
-  });
+    btn?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+      openIcon?.classList.toggle('hidden');
+      closeIcon?.classList.toggle('hidden');
+    });
 
-  // Dark mode toggle
-  const themeToggle = document.getElementById('theme-toggle');
-  themeToggle?.addEventListener('click', () => {
-    const html = document.documentElement;
-    if (html.classList.contains('dark')) {
-      html.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    } else {
-      html.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    }
-  });
-
-  // Keyboard shortcut for search
-  document.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      window.location.href = '/topics';
-    }
-  });
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        window.location.href = '/topics';
+      }
+    });
+  })();
 </script>

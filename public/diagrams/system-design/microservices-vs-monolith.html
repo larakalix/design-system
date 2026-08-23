@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microservices vs Monolith</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #fafaf9;
+      --color-ink:     #1c1917;
+      --color-muted:   #78716c;
+      --color-soft:    #a8a29e;
+      --color-accent:  #059669;
+      --color-accent-tint: rgba(5,150,105,0.08);
+      --color-link:    #0891b2;
+      --font-sans:     'Geist', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+    .frame { max-width: 1200px; width: 100%; }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+    svg { width: 100%; min-width: 900px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Architecture · Diagram Design</p>
+    <h1>Microservices vs Monolith</h1>
+
+    <svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ms-title ms-desc">
+      <title id="ms-title">Microservices vs Monolith</title>
+      <desc id="ms-desc">A side-by-side architecture comparison showing a single monolithic application versus a set of independently deployable microservices with an API gateway.</desc>
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#78716c"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#059669"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0891b2"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#fafaf9"/>
+
+      <!-- Zone: Monolith -->
+      <rect x="20" y="80" width="460" height="280" rx="8" fill="rgba(28,25,23,0.02)" stroke="rgba(28,25,23,0.10)" stroke-width="0.8"/>
+      <rect x="32" y="84" width="80" height="12" rx="2" fill="#fafaf9"/>
+      <text x="72" y="93" fill="rgba(28,25,23,0.40)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">MONOLITH</text>
+
+      <!-- Zone: Microservices -->
+      <rect x="520" y="80" width="460" height="280" rx="8" fill="rgba(28,25,23,0.02)" stroke="rgba(28,25,23,0.10)" stroke-width="0.8"/>
+      <rect x="532" y="84" width="100" height="12" rx="2" fill="#fafaf9"/>
+      <text x="582" y="93" fill="rgba(28,25,23,0.40)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">MICROSERVICES</text>
+
+      <!-- Divider -->
+      <line x1="500" y1="80" x2="500" y2="380" stroke="rgba(28,25,23,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+
+      <!-- Arrows -->
+
+      <!-- Client -> Monolith -->
+      <path d="M 120,140 H 192" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+      <rect x="132" y="116" width="48" height="12" rx="2" fill="#fafaf9"/>
+      <text x="156" y="125" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">HTTP</text>
+
+      <!-- Monolith -> DB -->
+      <path d="M 300,200 V 260" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+      <rect x="256" y="228" width="48" height="12" rx="2" fill="#fafaf9"/>
+      <text x="280" y="237" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">SQL</text>
+
+      <!-- Client -> API Gateway -->
+      <path d="M 620,140 H 692" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+      <rect x="632" y="116" width="48" height="12" rx="2" fill="#fafaf9"/>
+      <text x="656" y="125" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">HTTP</text>
+
+      <!-- API Gateway -> Service A -->
+      <path d="M 800,180 V 212 Q 800,220 808,220 H 832 Q 840,220 840,228 V 260" fill="none" stroke="#059669" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+      <rect x="812" y="200" width="48" height="12" rx="2" fill="#fafaf9"/>
+      <text x="836" y="209" fill="#059669" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">ROUTE</text>
+
+      <!-- API Gateway -> Service B -->
+      <path d="M 800,180 V 260" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+
+      <!-- API Gateway -> Service C -->
+      <path d="M 800,180 V 212 Q 800,220 792,220 H 768 Q 760,220 760,228 V 260" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+
+      <!-- Service A -> DB A -->
+      <path d="M 860,300 V 340" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+
+      <!-- Service B -> DB B -->
+      <path d="M 800,300 V 340" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+
+      <!-- Service C -> DB C -->
+      <path d="M 740,300 V 340" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+
+      <!-- Nodes -->
+
+      <!-- Client -->
+      <rect x="60" y="116" width="80" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="60" y="116" width="80" height="48" rx="6" fill="rgba(120,113,108,0.10)" stroke="#a8a29e" stroke-width="1"/>
+      <rect x="68" y="122" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="82" y="131" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">USER</text>
+      <text x="100" y="150" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Client</text>
+
+      <!-- Monolith App -->
+      <rect x="200" y="108" width="200" height="80" rx="6" fill="#fafaf9"/>
+      <rect x="200" y="108" width="200" height="80" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1.5"/>
+      <rect x="208" y="114" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="222" y="123" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">APP</text>
+      <text x="300" y="144" fill="#1c1917" font-size="14" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Monolith</text>
+      <text x="300" y="164" fill="#78716c" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">UI + API + Logic + DB Access</text>
+
+      <!-- Monolith DB -->
+      <rect x="260" y="268" width="80" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="260" y="268" width="80" height="48" rx="6" fill="rgba(28,25,23,0.05)" stroke="#78716c" stroke-width="1"/>
+      <rect x="268" y="274" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="282" y="283" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">DB</text>
+      <text x="300" y="302" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Single DB</text>
+
+      <!-- API Gateway (Focal) -->
+      <rect x="700" y="108" width="160" height="64" rx="6" fill="#fafaf9"/>
+      <rect x="700" y="108" width="160" height="64" rx="6" fill="rgba(5,150,105,0.08)" stroke="#059669" stroke-width="1.5"/>
+      <rect x="708" y="114" width="36" height="12" rx="2" fill="transparent" stroke="rgba(5,150,105,0.50)" stroke-width="0.8"/>
+      <text x="726" y="123" fill="rgba(5,150,105,0.90)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">GATEWAY</text>
+      <text x="780" y="144" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">API Gateway</text>
+      <text x="780" y="160" fill="#78716c" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">Auth, Rate Limit, Route</text>
+
+      <!-- Service A -->
+      <rect x="840" y="268" width="80" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="840" y="268" width="80" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="848" y="274" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="862" y="283" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="880" y="302" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Orders</text>
+
+      <!-- Service B -->
+      <rect x="760" y="268" width="80" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="760" y="268" width="80" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="768" y="274" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="782" y="283" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="800" y="302" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Users</text>
+
+      <!-- Service C -->
+      <rect x="680" y="268" width="80" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="680" y="268" width="80" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="688" y="274" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="702" y="283" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="720" y="302" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Payments</text>
+
+      <!-- DB A -->
+      <rect x="840" y="348" width="80" height="40" rx="6" fill="#fafaf9"/>
+      <rect x="840" y="348" width="80" height="40" rx="6" fill="rgba(28,25,23,0.05)" stroke="#78716c" stroke-width="1"/>
+      <text x="880" y="374" fill="#78716c" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">DB Orders</text>
+
+      <!-- DB B -->
+      <rect x="760" y="348" width="80" height="40" rx="6" fill="#fafaf9"/>
+      <rect x="760" y="348" width="80" height="40" rx="6" fill="rgba(28,25,23,0.05)" stroke="#78716c" stroke-width="1"/>
+      <text x="800" y="374" fill="#78716c" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">DB Users</text>
+
+      <!-- DB C -->
+      <rect x="680" y="348" width="80" height="40" rx="6" fill="#fafaf9"/>
+      <rect x="680" y="348" width="80" height="40" rx="6" fill="rgba(28,25,23,0.05)" stroke="#78716c" stroke-width="1"/>
+      <text x="720" y="374" fill="#78716c" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">DB Pay</text>
+
+      <!-- Summary -->
+      <rect x="60" y="400" width="400" height="80" rx="6" fill="#ffffff" stroke="rgba(28,25,23,0.12)" stroke-width="1"/>
+      <circle cx="80" cy="420" r="4" fill="#78716c"/>
+      <text x="92" y="424" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif">Monolith</text>
+      <text x="80" y="444" fill="#78716c" font-size="10" font-family="'Geist', sans-serif">Simple to build, harder to scale. Single deploy unit.</text>
+      <text x="80" y="460" fill="#a8a29e" font-size="9" font-family="'Geist Mono', monospace">Tight coupling, one language, one DB</text>
+
+      <rect x="540" y="400" width="400" height="80" rx="6" fill="#ffffff" stroke="rgba(28,25,23,0.12)" stroke-width="1"/>
+      <circle cx="560" cy="420" r="4" fill="#059669"/>
+      <text x="572" y="424" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif">Microservices</text>
+      <text x="560" y="444" fill="#78716c" font-size="10" font-family="'Geist', sans-serif">Independent deploy, polyglot, own data. More ops.</text>
+      <text x="560" y="460" fill="#a8a29e" font-size="9" font-family="'Geist Mono', monospace">Loose coupling, team autonomy, distributed</text>
+
+      <!-- Legend -->
+      <line x1="30" y1="496" x2="970" y2="496" stroke="rgba(28,25,23,0.10)" stroke-width="0.8"/>
+      <text x="30" y="512" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.14em">LEGEND</text>
+      <rect x="100" y="504" width="8" height="8" rx="2" fill="rgba(5,150,105,0.08)" stroke="#059669" stroke-width="1"/>
+      <text x="116" y="512" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace">Focal</text>
+      <rect x="160" y="504" width="8" height="8" rx="2" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <text x="176" y="512" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace">Service</text>
+      <rect x="240" y="504" width="8" height="8" rx="2" fill="rgba(28,25,23,0.05)" stroke="#78716c" stroke-width="1"/>
+      <text x="256" y="512" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace">Store</text>
+    </svg>
+  </div>
+</body>
+</html>

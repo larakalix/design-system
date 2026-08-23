@@ -19,6 +19,12 @@
       "skillPath": "skills/engineering/code-review/SKILL.md",
       "computedHash": "caa9a086baaf9e0f7cd71f64edfa83da6821c05e826b083221f3d02e3d6a1905"
     },
+    "diagram-design": {
+      "source": "cathrynlavery/diagram-design",
+      "sourceType": "github",
+      "skillPath": "skills/diagram-design/SKILL.md",
+      "computedHash": "5506bb95b187ea8aaf6823388d7027885ee5c56f90af674d775c8f015ef560f2"
+    },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",

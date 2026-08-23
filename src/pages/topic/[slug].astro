@@ -4,8 +4,10 @@ import Header from '../../components/organisms/Header.astro';
 import Footer from '../../components/organisms/Footer.astro';
 import Badge from '../../components/atoms/Badge.astro';
 import TopicCard from '../../components/molecules/TopicCard.astro';
-import DiagramViewer from '../../components/react/DiagramViewer';
-import { ArrowLeft, BookOpen, ExternalLink, Hash } from 'lucide-astro';
+import SystemDiagram from '../../components/react/SystemDiagram';
+import DiagramEmbed from '../../components/atoms/DiagramEmbed.astro';
+import { getDiagramForSlug, getStaticDiagramForSlug } from '../../data/diagrams';
+import { ArrowLeft, BookOpen, ExternalLink, GitBranch, Image } from 'lucide-astro';
 import topicsData from '../../data/topics.json';
 
 export function getStaticPaths() {
@@ -19,83 +21,127 @@ export function getStaticPaths() {
 const { topic } = Astro.props;
 const { categories, topics } = topicsData;
 
-// Get related topics from same category
 const related = topics
   .filter((t: any) => t.category === topic.category && t.slug !== topic.slug)
   .slice(0, 3);
 
 const categoryMeta = categories[topic.category as keyof typeof categories] as any;
+const diagram = getDiagramForSlug(topic.slug);
+const staticDiagram = getStaticDiagramForSlug(topic.slug);
 ---
 
 <Layout title={`${topic.title} - System Design Archive 2025`}>
   <Header />
-  
-  <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
     <!-- Back Link -->
     <a
       href="/topics"
-      class="inline-flex items-center gap-1 text-sm text-text-muted hover:text-accent transition-colors mb-6"
+      class="inline-flex items-center gap-1 text-sm text-stone-400 dark:text-stone-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mb-8"
     >
       <ArrowLeft class="w-4 h-4" />
       Back to topics
     </a>
 
-    <!-- Article Header -->
-    <article class="bg-surface rounded-2xl border border-border overflow-hidden">
-      <div class="p-6 sm:p-10">
-        <div class="flex items-center gap-3 mb-4">
+    <!-- Article -->
+    <article class="card-premium overflow-hidden mb-10">
+      <div class="p-8 sm:p-10">
+        <div class="flex items-center gap-3 mb-5">
           <Badge color={categoryMeta?.color || 'accent'}>{topic.category}</Badge>
-          <span class="text-xs text-text-muted">Page {topic.page} in source</span>
+          <span class="text-xs text-stone-400 dark:text-stone-500">Page {topic.page}</span>
         </div>
-        
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-6 leading-tight">
+
+        <h1 class="text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-8 leading-tight">
           {topic.title}
         </h1>
-        
+
         {topic.content ? (
-          <div class="prose prose-slate max-w-none">
-            {topic.content.split('\n').map((paragraph: string) => (
-              paragraph.trim() && (
-                <p class="text-text-muted leading-relaxed mb-4 text-base sm:text-lg">
+          <div class="prose max-w-none">
+            {(() => {
+              // Join mid-sentence line breaks back into paragraphs
+              const lines = topic.content.split('\n').map(l => l.trim()).filter(Boolean);
+              const paragraphs: string[] = [];
+              let current = '';
+              
+              for (const line of lines) {
+                // Check if this line starts a new paragraph (numbered list, bullet, or uppercase start after a blank)
+                const isNewParagraph = /^\d+\./.test(line) || /^[-•*]\s/.test(line);
+                // Check if previous line ended a sentence
+                const prevEndedSentence = current.match(/[.!?;:]\s*$/);
+                
+                if (isNewParagraph || (current && prevEndedSentence)) {
+                  if (current) paragraphs.push(current);
+                  current = line;
+                } else if (current) {
+                  // Join with space if mid-sentence break
+                  current += ' ' + line;
+                } else {
+                  current = line;
+                }
+              }
+              if (current) paragraphs.push(current);
+              
+              return paragraphs.map((paragraph) => (
+                <p class="text-stone-600 dark:text-stone-300 leading-relaxed mb-4 text-base">
                   {paragraph}
                 </p>
-              )
-            ))}
+              ));
+            })()}
           </div>
         ) : (
           <div class="text-center py-12">
-            <BookOpen class="w-12 h-12 text-text-muted mx-auto mb-4" />
-            <p class="text-text-muted">
+            <BookOpen class="w-12 h-12 text-stone-300 dark:text-stone-600 mx-auto mb-4" />
+            <p class="text-stone-500 dark:text-stone-400">
               This topic is listed in the archive. Full content extraction is in progress.
             </p>
-            <p class="text-sm text-text-muted mt-2">
+            <p class="text-sm text-stone-400 dark:text-stone-500 mt-2">
               Source page: {topic.page}
             </p>
           </div>
         )}
 
-        <!-- Interactive Diagrams & Images -->
-        {(topic.images?.length > 0) && (
-          <div class="mt-10">
-            <DiagramViewer
+        <!-- Interactive Diagram (React Flow) -->
+        {diagram && (
+          <div class="mt-10 pt-8 border-t border-stone-200 dark:border-stone-800">
+            <div class="flex items-center gap-2 mb-6">
+              <GitBranch class="w-4 h-4 text-stone-400 dark:text-stone-500" />
+              <h3 class="text-sm font-semibold text-stone-900 dark:text-stone-100 uppercase tracking-wider">Interactive Diagram</h3>
+            </div>
+            <SystemDiagram
               client:load
-              slug={topic.slug}
-              images={topic.images}
-              topicTitle={topic.title}
+              nodes={diagram.nodes}
+              edges={diagram.edges}
+              title={diagram.title}
+              height={diagram.height || 400}
+            />
+          </div>
+        )}
+
+        <!-- Static Diagram (diagram-design) -->
+        {!diagram && staticDiagram && (
+          <div class="mt-10 pt-8 border-t border-stone-200 dark:border-stone-800">
+            <div class="flex items-center gap-2 mb-6">
+              <Image class="w-4 h-4 text-stone-400 dark:text-stone-500" />
+              <h3 class="text-sm font-semibold text-stone-900 dark:text-stone-100 uppercase tracking-wider">Architecture Diagram</h3>
+            </div>
+            <DiagramEmbed
+              src={staticDiagram.src}
+              title={staticDiagram.title}
+              height={staticDiagram.height || 500}
             />
           </div>
         )}
       </div>
-      
-      <!-- Source Attribution -->
-      <div class="px-6 sm:px-10 py-4 bg-surface-muted border-t border-border">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <p class="text-xs text-text-muted">
-            Source: <strong>Big Archive System Design 2025</strong>
+
+      <!-- Attribution -->
+      <div class="px-8 sm:px-10 py-4 bg-stone-50 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          <p class="text-xs text-stone-400 dark:text-stone-500">
+            Source: <strong class="text-stone-600 dark:text-stone-300">Big Archive System Design 2025</strong>
           </p>
           <a
             href="/credits"
-            class="inline-flex items-center gap-1 text-xs text-accent hover:text-accent-hover transition-colors"
+            class="inline-flex items-center gap-1 text-xs text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
           >
             View full attribution <ExternalLink class="w-3 h-3" />
           </a>
@@ -105,12 +151,9 @@ const categoryMeta = categories[topic.category as keyof typeof categories] as an
 
     <!-- Related Topics -->
     {related.length > 0 && (
-      <section class="mt-10">
-        <div class="flex items-center gap-2 mb-6">
-          <Hash class="w-5 h-5 text-text-muted" />
-          <h2 class="text-xl font-bold text-primary">Related in {topic.category}</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section>
+        <h2 class="text-xl font-bold text-stone-900 dark:text-stone-100 mb-5">Related in {topic.category}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
           {related.map((t: any) => (
             <TopicCard
               title={t.title}
@@ -124,6 +167,6 @@ const categoryMeta = categories[topic.category as keyof typeof categories] as an
       </section>
     )}
   </main>
-  
+
   <Footer />
 </Layout>

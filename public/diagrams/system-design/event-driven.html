@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event-Driven Architecture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #fafaf9;
+      --color-ink:     #1c1917;
+      --color-muted:   #78716c;
+      --color-soft:    #a8a29e;
+      --color-accent:  #059669;
+      --color-accent-tint: rgba(5,150,105,0.08);
+      --color-link:    #0891b2;
+      --font-sans:     'Geist', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+    .frame { max-width: 1200px; width: 100%; }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+    svg { width: 100%; min-width: 900px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Process · Diagram Design</p>
+    <h1>Event-Driven Architecture</h1>
+
+    <svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ed-title ed-desc">
+      <title id="ed-title">Event-Driven Architecture</title>
+      <desc id="ed-desc">A process diagram showing producers publishing events to a message broker, which fans out to multiple consumers for independent async processing.</desc>
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#78716c"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#059669"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0891b2"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#fafaf9"/>
+
+      <!-- Zone: Producers -->
+      <rect x="20" y="80" width="280" height="140" rx="8" fill="rgba(28,25,23,0.02)" stroke="rgba(28,25,23,0.10)" stroke-width="0.8"/>
+      <rect x="32" y="84" width="80" height="12" rx="2" fill="#fafaf9"/>
+      <text x="72" y="93" fill="rgba(28,25,23,0.40)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">PRODUCERS</text>
+
+      <!-- Zone: Broker -->
+      <rect x="320" y="80" width="360" height="140" rx="8" fill="rgba(28,25,23,0.02)" stroke="rgba(28,25,23,0.10)" stroke-width="0.8"/>
+      <rect x="332" y="84" width="80" height="12" rx="2" fill="#fafaf9"/>
+      <text x="372" y="93" fill="rgba(28,25,23,0.40)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">BROKER</text>
+
+      <!-- Zone: Consumers -->
+      <rect x="700" y="80" width="280" height="320" rx="8" fill="rgba(28,25,23,0.02)" stroke="rgba(28,25,23,0.10)" stroke-width="0.8"/>
+      <rect x="712" y="84" width="90" height="12" rx="2" fill="#fafaf9"/>
+      <text x="757" y="93" fill="rgba(28,25,23,0.40)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">CONSUMERS</text>
+
+      <!-- Arrows -->
+
+      <!-- User Service -> Event Bus -->
+      <path d="M 200,140 H 312" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+      <rect x="228" y="116" width="56" height="12" rx="2" fill="#fafaf9"/>
+      <text x="256" y="125" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">PUBLISH</text>
+
+      <!-- Order Service -> Event Bus -->
+      <path d="M 200,200 H 312" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+      <rect x="228" y="176" width="56" height="12" rx="2" fill="#fafaf9"/>
+      <text x="256" y="185" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">PUBLISH</text>
+
+      <!-- Event Bus -> Notification Service -->
+      <path d="M 680,140 H 752" fill="none" stroke="#059669" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+      <rect x="700" y="116" width="48" height="12" rx="2" fill="#fafaf9"/>
+      <text x="724" y="125" fill="#059669" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">SUB</text>
+
+      <!-- Event Bus -> Analytics -->
+      <path d="M 680,180 H 752" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+      <rect x="700" y="156" width="48" height="12" rx="2" fill="#fafaf9"/>
+      <text x="724" y="165" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">SUB</text>
+
+      <!-- Event Bus -> Search Index -->
+      <path d="M 680,220 H 752" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+      <rect x="700" y="196" width="48" height="12" rx="2" fill="#fafaf9"/>
+      <text x="724" y="205" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">SUB</text>
+
+      <!-- Event Bus -> Audit Log -->
+      <path d="M 680,260 H 752" fill="none" stroke="#78716c" stroke-width="1" marker-end="url(#arrow)"/>
+      <rect x="700" y="236" width="48" height="12" rx="2" fill="#fafaf9"/>
+      <text x="724" y="245" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">SUB</text>
+
+      <!-- Nodes -->
+
+      <!-- User Service -->
+      <rect x="80" y="116" width="120" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="80" y="116" width="120" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="88" y="122" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="102" y="131" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="140" y="150" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">User Service</text>
+
+      <!-- Order Service -->
+      <rect x="80" y="176" width="120" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="80" y="176" width="120" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="88" y="182" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="102" y="191" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="140" y="210" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Order Service</text>
+
+      <!-- Event Bus (Focal) -->
+      <rect x="400" y="108" width="200" height="64" rx="6" fill="#fafaf9"/>
+      <rect x="400" y="108" width="200" height="64" rx="6" fill="rgba(5,150,105,0.08)" stroke="#059669" stroke-width="1.5"/>
+      <rect x="408" y="114" width="36" height="12" rx="2" fill="transparent" stroke="rgba(5,150,105,0.50)" stroke-width="0.8"/>
+      <text x="426" y="123" fill="rgba(5,150,105,0.90)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">BROKER</text>
+      <text x="500" y="144" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Event Bus</text>
+      <text x="500" y="160" fill="#78716c" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">Kafka / RabbitMQ</text>
+
+      <!-- Notification Service -->
+      <rect x="760" y="116" width="140" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="760" y="116" width="140" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="768" y="122" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="782" y="131" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="830" y="150" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Notifications</text>
+
+      <!-- Analytics -->
+      <rect x="760" y="176" width="140" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="760" y="176" width="140" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="768" y="182" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="782" y="191" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="830" y="210" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Analytics</text>
+
+      <!-- Search Index -->
+      <rect x="760" y="236" width="140" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="760" y="236" width="140" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="768" y="242" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="782" y="251" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="830" y="270" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Search Index</text>
+
+      <!-- Audit Log -->
+      <rect x="760" y="296" width="140" height="48" rx="6" fill="#fafaf9"/>
+      <rect x="760" y="296" width="140" height="48" rx="6" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <rect x="768" y="302" width="28" height="12" rx="2" fill="transparent" stroke="rgba(28,25,23,0.40)" stroke-width="0.8"/>
+      <text x="782" y="311" fill="rgba(28,25,23,0.80)" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SVC</text>
+      <text x="830" y="330" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Audit Log</text>
+
+      <!-- Summary Cards -->
+      <rect x="60" y="380" width="260" height="80" rx="6" fill="#ffffff" stroke="rgba(28,25,23,0.12)" stroke-width="1"/>
+      <circle cx="80" cy="400" r="4" fill="#059669"/>
+      <text x="92" y="404" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif">Loose Coupling</text>
+      <text x="80" y="424" fill="#78716c" font-size="10" font-family="'Geist', sans-serif">Producers don't know consumers exist.</text>
+      <text x="80" y="440" fill="#a8a29e" font-size="9" font-family="'Geist Mono', monospace">Add consumers without changing producers</text>
+
+      <rect x="340" y="380" width="260" height="80" rx="6" fill="#ffffff" stroke="rgba(28,25,23,0.12)" stroke-width="1"/>
+      <circle cx="360" cy="400" r="4" fill="#0891b2"/>
+      <text x="372" y="404" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif">Async Processing</text>
+      <text x="360" y="424" fill="#78716c" font-size="10" font-family="'Geist', sans-serif">Consumers process at their own pace.</text>
+      <text x="360" y="440" fill="#a8a29e" font-size="9" font-family="'Geist Mono', monospace">Backpressure handling via queue depth</text>
+
+      <rect x="620" y="380" width="320" height="80" rx="6" fill="#ffffff" stroke="rgba(28,25,23,0.12)" stroke-width="1"/>
+      <circle cx="640" cy="400" r="4" fill="#78716c"/>
+      <text x="652" y="404" fill="#1c1917" font-size="12" font-weight="600" font-family="'Geist', sans-serif">Fan-Out</text>
+      <text x="640" y="424" fill="#78716c" font-size="10" font-family="'Geist', sans-serif">One event triggers multiple independent actions.</text>
+      <text x="640" y="440" fill="#a8a29e" font-size="9" font-family="'Geist Mono', monospace">Scale consumers independently</text>
+
+      <!-- Legend -->
+      <line x1="30" y1="480" x2="970" y2="480" stroke="rgba(28,25,23,0.10)" stroke-width="0.8"/>
+      <text x="30" y="496" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.14em">LEGEND</text>
+      <rect x="100" y="488" width="8" height="8" rx="2" fill="rgba(5,150,105,0.08)" stroke="#059669" stroke-width="1"/>
+      <text x="116" y="496" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace">Focal</text>
+      <rect x="160" y="488" width="8" height="8" rx="2" fill="#ffffff" stroke="#1c1917" stroke-width="1"/>
+      <text x="176" y="496" fill="#78716c" font-size="8" font-family="'Geist Mono', monospace">Service</text>
+    </svg>
+  </div>
+</body>
+</html>

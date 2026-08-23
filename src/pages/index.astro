@@ -4,12 +4,11 @@ import Header from '../components/organisms/Header.astro';
 import Footer from '../components/organisms/Footer.astro';
 import TopicCard from '../components/molecules/TopicCard.astro';
 import CategoryCard from '../components/molecules/CategoryCard.astro';
-import { Search, ArrowRight, BookOpen, Layers, Zap } from 'lucide-astro';
+import { Search, ArrowRight, Layers, Zap } from 'lucide-astro';
 import topicsData from '../data/topics.json';
 
 const { categories, topics } = topicsData;
 
-// Get featured topics (one from each category with content)
 const featuredTopics: any[] = [];
 const seenCats = new Set();
 for (const t of topics) {
@@ -20,7 +19,6 @@ for (const t of topics) {
   if (featuredTopics.length >= 6) break;
 }
 
-// Get category stats
 const categoryList = Object.entries(categories).map(([name, meta]: [string, any]) => ({
   name,
   slug: name.toLowerCase().replace(/\s+/g, '-'),
@@ -31,137 +29,477 @@ const categoryList = Object.entries(categories).map(([name, meta]: [string, any]
 const totalTopics = topics.length;
 ---
 
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ===== DELUXE HERO ANIMATIONS =====
+  const heroTl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+
+  // Badge: pop in with elastic bounce
+  heroTl.from('.hero-badge', {
+    scale: 0,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'elastic.out(1, 0.5)',
+  }, 0.2);
+
+  // Title: split into words and reveal with 3D rotation
+  const titleWords = document.querySelectorAll('.hero-title .word');
+  if (titleWords.length === 0) {
+    // fallback if words not wrapped
+    heroTl.from('.hero-title', {
+      y: 80,
+      opacity: 0,
+      rotateX: -40,
+      duration: 1.2,
+      ease: 'expo.out',
+    }, 0.4);
+  } else {
+    heroTl.from(titleWords, {
+      y: 60,
+      opacity: 0,
+      rotateX: -40,
+      duration: 1,
+      stagger: 0.08,
+      ease: 'expo.out',
+    }, 0.4);
+  }
+
+  // Gradient text shimmer effect
+  gsap.to('.gradient-text', {
+    backgroundPosition: '200% center',
+    duration: 4,
+    repeat: -1,
+    ease: 'none',
+  });
+
+  // Description: blur-to-focus reveal
+  heroTl.from('.hero-desc', {
+    y: 40,
+    opacity: 0,
+    filter: 'blur(10px)',
+    duration: 1,
+    ease: 'power3.out',
+  }, 0.7);
+
+  // Buttons: elastic pop with stagger
+  heroTl.from('.hero-buttons a', {
+    y: 30,
+    opacity: 0,
+    scale: 0.8,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'back.out(1.7)',
+  }, 0.9);
+
+  // ===== FLOATING PARTICLES BACKGROUND =====
+  const particleContainer = document.querySelector('.particle-container');
+  if (particleContainer) {
+    for (let i = 0; i < 20; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.cssText = `
+        position: absolute;
+        width: ${Math.random() * 4 + 2}px;
+        height: ${Math.random() * 4 + 2}px;
+        background: rgba(16, 185, 129, ${Math.random() * 0.3 + 0.1});
+        border-radius: 50%;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        pointer-events: none;
+      `;
+      particleContainer.appendChild(p);
+      gsap.to(p, {
+        y: -100 - Math.random() * 200,
+        x: (Math.random() - 0.5) * 100,
+        opacity: 0,
+        duration: 4 + Math.random() * 6,
+        repeat: -1,
+        delay: Math.random() * 5,
+        ease: 'none',
+      });
+    }
+  }
+
+  // ===== DELUXE STATS ANIMATIONS =====
+  const statItems = document.querySelectorAll('.stat-item');
+  const directions = [
+    { x: -50, y: 0 },
+    { x: 0, y: -30 },
+    { x: 0, y: 30 },
+    { x: 50, y: 0 },
+  ];
+
+  statItems.forEach((item, i) => {
+    const dir = directions[i % directions.length];
+    gsap.from(item, {
+      x: dir.x,
+      y: dir.y,
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 90%',
+        once: true,
+      },
+    });
+  });
+
+  // Number counter with blur-to-focus
+  const statNumbers = document.querySelectorAll('.stat-number[data-value]');
+  statNumbers.forEach((stat) => {
+    const target = parseInt(stat.getAttribute('data-value') || '0');
+    if (!isNaN(target) && target > 0) {
+      const obj = { val: 0 };
+      gsap.to(obj, {
+        val: target,
+        duration: 2.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: stat,
+          start: 'top 90%',
+          once: true,
+        },
+        onUpdate: () => {
+          stat.textContent = Math.round(obj.val).toString();
+        },
+        onComplete: () => {
+          // Pulse glow on complete
+          gsap.fromTo(stat,
+            { textShadow: '0 0 20px rgba(16, 185, 129, 0.5)' },
+            { textShadow: '0 0 0px rgba(16, 185, 129, 0)', duration: 1, ease: 'power2.out' }
+          );
+        },
+      });
+    }
+  });
+
+  // ===== DELUXE CATEGORIES ANIMATIONS =====
+  gsap.from('.categories-title', {
+    y: 50,
+    opacity: 0,
+    filter: 'blur(8px)',
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.categories-section',
+      start: 'top 80%',
+      once: true,
+    },
+  });
+
+  const categoryCards = document.querySelectorAll('.category-card');
+  categoryCards.forEach((card, i) => {
+    const isLeft = i % 2 === 0;
+    gsap.from(card, {
+      x: isLeft ? -60 : 60,
+      y: 40,
+      opacity: 0,
+      rotateY: isLeft ? 15 : -15,
+      duration: 0.9,
+      delay: i * 0.06,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.categories-grid',
+        start: 'top 85%',
+        once: true,
+      },
+    });
+  });
+
+  // Category cards: entrance animation only, hover is handled by CSS in component
+
+  // ===== DELUXE FEATURED TOPICS ANIMATIONS =====
+  gsap.from('.featured-header', {
+    y: 40,
+    opacity: 0,
+    filter: 'blur(6px)',
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.featured-section',
+      start: 'top 80%',
+      once: true,
+    },
+  });
+
+  const topicCards = document.querySelectorAll('.topic-card');
+  topicCards.forEach((card, i) => {
+    const row = Math.floor(i / 3);
+    const col = i % 3;
+    gsap.from(card, {
+      y: 60 + row * 20,
+      x: col === 0 ? -40 : col === 2 ? 40 : 0,
+      opacity: 0,
+      scale: 0.95,
+      duration: 0.9,
+      delay: i * 0.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.topics-grid',
+        start: 'top 85%',
+        once: true,
+      },
+    });
+  });
+
+  // Topic cards: entrance animation only, hover is handled by CSS in component
+
+  // ===== DELUXE CTA ANIMATIONS =====
+  gsap.from('.cta-section h2', {
+    y: 50,
+    opacity: 0,
+    scale: 0.95,
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 80%',
+      once: true,
+    },
+  });
+
+  gsap.from('.cta-section p', {
+    y: 30,
+    opacity: 0,
+    filter: 'blur(5px)',
+    duration: 1,
+    delay: 0.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 80%',
+      once: true,
+    },
+  });
+
+  gsap.from('.cta-section a', {
+    y: 30,
+    opacity: 0,
+    scale: 0.8,
+    duration: 0.9,
+    delay: 0.4,
+    ease: 'back.out(1.7)',
+    scrollTrigger: {
+      trigger: '.cta-section',
+      start: 'top 80%',
+      once: true,
+    },
+  });
+
+  // CTA button magnetic effect
+  const ctaBtn = document.querySelector('.cta-section a');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('mousemove', (e: Event) => {
+      const rect = (ctaBtn as HTMLElement).getBoundingClientRect();
+      const mouseEvent = e as MouseEvent;
+      const x = mouseEvent.clientX - rect.left - rect.width / 2;
+      const y = mouseEvent.clientY - rect.top - rect.height / 2;
+      gsap.to(ctaBtn, {
+        x: x * 0.3,
+        y: y * 0.3,
+        duration: 0.3,
+        ease: 'power2.out',
+      });
+    });
+    ctaBtn.addEventListener('mouseleave', () => {
+      gsap.to(ctaBtn, {
+        x: 0,
+        y: 0,
+        duration: 0.6,
+        ease: 'elastic.out(1, 0.3)',
+      });
+    });
+  }
+
+  // ===== PARALLAX ON SCROLL =====
+  gsap.utils.toArray<HTMLElement>('.parallax-slow').forEach((el) => {
+    gsap.to(el, {
+      y: -80,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    });
+  });
+
+  gsap.utils.toArray<HTMLElement>('.parallax-fast').forEach((el) => {
+    gsap.to(el, {
+      y: 40,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    });
+  });
+
+</script>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(90deg, #059669, #10b981, #34d399, #059669);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .category-card, .topic-card {
+    will-change: transform;
+  }
+  .stat-number {
+    font-variant-numeric: tabular-nums;
+  }
+</style>
+
 <Layout title="System Design Archive 2025 - Interactive Knowledge Base">
   <Header />
   
   <main class="flex-1">
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-surface border-b border-border">
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-violet-50/50 dark:from-blue-900/20 dark:via-transparent dark:to-violet-900/20"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-        <div class="max-w-3xl mx-auto text-center">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs font-medium mb-6">
-            <Zap class="w-3.5 h-3.5" />
-            <span>212 topics curated from the Big Archive</span>
-          </div>
-          
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary mb-6">
-            Master <span class="gradient-text">System Design</span><br />One Topic at a Time
-          </h1>
-          
-          <p class="text-lg text-text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
-            An interactive, free knowledge base covering algorithms, AI, databases, DevOps, networking, and more. 
-            Built for engineers who never stop learning.
-          </p>
-          
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="/topics"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent-hover transition-all shadow-lg shadow-blue-500/25"
-            >
-              <Search class="w-4 h-4" />
-              Explore Topics
-            </a>
-            <a
-              href="/categories"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-muted border border-border text-text font-semibold hover:border-accent/50 hover:bg-surface transition-all"
-            >
-              <Layers class="w-4 h-4" />
-              Browse Categories
-            </a>
-          </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-          <div class="text-center p-4 rounded-xl bg-surface-muted border border-border">
-            <div class="text-2xl font-bold text-primary">{totalTopics}</div>
-            <div class="text-xs text-text-muted mt-1">Topics</div>
-          </div>
-          <div class="text-center p-4 rounded-xl bg-surface-muted border border-border">
-            <div class="text-2xl font-bold text-primary">{categoryList.length}</div>
-            <div class="text-xs text-text-muted mt-1">Categories</div>
-          </div>
-          <div class="text-center p-4 rounded-xl bg-surface-muted border border-border">
-            <div class="text-2xl font-bold text-primary">442</div>
-            <div class="text-xs text-text-muted mt-1">Source Pages</div>
-          </div>
-          <div class="text-center p-4 rounded-xl bg-surface-muted border border-border">
-            <div class="text-2xl font-bold text-primary">Free</div>
-            <div class="text-xs text-text-muted mt-1">Forever</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-2xl font-bold text-primary">Browse by Category</h2>
-          <p class="text-text-muted mt-1">Organized topics across 10 key domains</p>
-        </div>
-        <a href="/categories" class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-hover transition-colors">
-          View all <ArrowRight class="w-4 h-4" />
-        </a>
-      </div>
+    <section class="relative pt-20 pb-16 sm:pt-28 sm:pb-24 overflow-hidden">
+      <div class="particle-container absolute inset-0 pointer-events-none overflow-hidden"></div>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-        {categoryList.map(cat => (
-          <CategoryCard
-            name={cat.name}
-            slug={cat.slug}
-            color={cat.color}
-            description={cat.description}
-            count={cat.count}
-          />
-        ))}
-      </div>
-    </section>
-
-    <!-- Featured Topics -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-border">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-2xl font-bold text-primary">Featured Topics</h2>
-          <p class="text-text-muted mt-1">Hand-picked highlights from the archive</p>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="hero-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 text-xs font-medium mb-8">
+          <Zap class="w-3 h-3" />
+          <span>212 topics curated from the Big Archive</span>
         </div>
-        <a href="/topics" class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-hover transition-colors">
-          View all topics <ArrowRight class="w-4 h-4" />
-        </a>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {featuredTopics.map(topic => (
-          <TopicCard
-            title={topic.title}
-            slug={topic.slug}
-            category={topic.category}
-            categoryColor={categories[topic.category as keyof typeof categories]?.color || 'accent'}
-            content={topic.content}
-          />
-        ))}
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="relative overflow-hidden rounded-3xl bg-primary-light dark:bg-slate-900 p-8 sm:p-12 text-center border border-border">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-violet-600/20"></div>
-        <div class="relative">
-          <BookOpen class="w-10 h-10 text-blue-400 mx-auto mb-4" />
-          <h2 class="text-2xl sm:text-3xl font-bold text-primary dark:text-white mb-3">Ready to dive deeper?</h2>
-          <p class="text-text-muted max-w-xl mx-auto mb-6">
-            This is a community tribute to the incredible work behind the Big Archive System Design 2025.
-            All content is free and attribution is always given.
-          </p>
+        
+        <h1 class="hero-title text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-stone-900 dark:text-stone-100 mb-6 leading-[1.1]" style="perspective: 1000px;">
+          <span class="word inline-block">Master</span> <span class="gradient-text word inline-block">System</span> <span class="gradient-text word inline-block">Design</span>
+        </h1>
+        
+        <p class="hero-desc text-lg sm:text-xl text-stone-500 dark:text-stone-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          An interactive, free knowledge base covering algorithms, AI, databases, DevOps, networking, and more. 
+          Built for engineers who never stop learning.
+        </p>
+        
+        <div class="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="/credits"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface dark:bg-slate-800 text-primary dark:text-white font-semibold hover:bg-surface-muted dark:hover:bg-slate-700 transition-all border border-border"
+            href="/topics"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-all"
           >
-            View Credits & Attribution
+            <Search class="w-4 h-4" />
+            Explore Topics
+          </a>
+          <a
+            href="/categories"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-stone-600 dark:text-stone-300 font-medium hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all"
+          >
+            <Layers class="w-4 h-4" />
+            Browse Categories
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="stats-section border-y border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-950">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-stone-200 dark:divide-stone-800">
+          <div class="stat-item py-8 text-center">
+            <div class="stat-number text-3xl font-bold text-stone-900 dark:text-stone-100" data-value={totalTopics}>{totalTopics}</div>
+            <div class="text-sm text-stone-400 dark:text-stone-500 mt-1">Topics</div>
+          </div>
+          <div class="stat-item py-8 text-center">
+            <div class="stat-number text-3xl font-bold text-stone-900 dark:text-stone-100" data-value={categoryList.length}>{categoryList.length}</div>
+            <div class="text-sm text-stone-400 dark:text-stone-500 mt-1">Categories</div>
+          </div>
+          <div class="stat-item py-8 text-center">
+            <div class="stat-number text-3xl font-bold text-stone-900 dark:text-stone-100" data-value="442">442</div>
+            <div class="text-sm text-stone-400 dark:text-stone-500 mt-1">Source Pages</div>
+          </div>
+          <div class="stat-item py-8 text-center">
+            <div class="stat-number text-3xl font-bold text-stone-900 dark:text-stone-100">Free</div>
+            <div class="text-sm text-stone-400 dark:text-stone-500 mt-1">Forever</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-section py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="categories-title text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-3">Browse by Category</h2>
+          <p class="text-stone-500 dark:text-stone-400 max-w-lg mx-auto">
+            Organized across 10 key domains in software engineering
+          </p>
+        </div>
+        
+        <div class="categories-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {categoryList.map(cat => (
+            <div class="category-card">
+              <CategoryCard
+                name={cat.name}
+                slug={cat.slug}
+                color={cat.color}
+                description={cat.description}
+                count={cat.count}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-section py-20 sm:py-28 bg-white dark:bg-stone-950 border-y border-stone-200 dark:border-stone-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="featured-header flex items-end justify-between mb-12">
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-2">Featured Topics</h2>
+            <p class="text-stone-500 dark:text-stone-400">Hand-picked highlights from the archive</p>
+          </div>
+          <a href="/topics" class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">
+            View all <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+        
+        <div class="topics-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" style="perspective: 1500px;">
+          {featuredTopics.map(topic => (
+            <div class="topic-card" style="transform-style: preserve-3d;">
+              <TopicCard
+                title={topic.title}
+                slug={topic.slug}
+                category={topic.category}
+                categoryColor={categories[topic.category as keyof typeof categories]?.color || 'accent'}
+                content={topic.content}
+              />
+            </div>
+          ))}
+        </div>
+        
+        <div class="mt-10 text-center sm:hidden">
+          <a href="/topics" class="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors">
+            View all topics <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-4">
+          Ready to dive deeper?
+        </h2>
+        <p class="text-stone-500 dark:text-stone-400 mb-8 max-w-xl mx-auto">
+          This is a community tribute to the incredible work behind the Big Archive System Design 2025. 
+          All content is free and attribution is always given.
+        </p>
+        <a
+          href="/credits"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 font-medium hover:bg-stone-700 dark:hover:bg-stone-200 transition-all"
+        >
+          View Credits & Attribution
+        </a>
       </div>
     </section>
   </main>

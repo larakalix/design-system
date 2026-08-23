@@ -1,6 +1,6 @@
 ---
 import Badge from '../atoms/Badge.astro';
-import { ArrowRight, FileText } from 'lucide-astro';
+import { ArrowUpRight } from 'lucide-astro';
 
 interface Props {
   title: string;
@@ -12,28 +12,42 @@ interface Props {
 
 const { title, slug, category, categoryColor, content } = Astro.props;
 
-const preview = content ? content.slice(0, 120).replace(/\n/g, ' ') + '...' : '';
+const preview = content ? content.slice(0, 100).replace(/\n/g, ' ') + '...' : '';
 ---
 
 <a
   href={`/topic/${slug}`}
-  class="group block p-5 rounded-2xl bg-surface border border-border card-hover"
+  class="group relative block p-6 bg-white dark:bg-stone-900 rounded-xl border border-stone-200 dark:border-stone-800 overflow-hidden transition-colors duration-300 hover:border-transparent"
 >
-  <div class="flex items-start justify-between gap-3 mb-3">
-    <div class="flex items-center gap-2">
-      <FileText class="w-4 h-4 text-text-muted flex-shrink-0" />
-      <Badge color={categoryColor}>{category}</Badge>
-    </div>
-    <ArrowRight class="w-4 h-4 text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
+  {/* Animated gradient border ring on hover */}
+  <div
+    class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+    style="background: linear-gradient(90deg, #10b981, #3b82f6, #8b5cf6, #f59e0b, #10b981); background-size: 400% 100%; animation: gradient-flow 3s linear infinite;"
+  >
+    <div class="absolute inset-[1.5px] rounded-[10px] bg-white dark:bg-stone-900"></div>
   </div>
-  
-  <h3 class="font-semibold text-text group-hover:text-accent transition-colors mb-2 line-clamp-2">
-    {title}
-  </h3>
-  
-  {preview && (
-    <p class="text-sm text-text-muted line-clamp-2 leading-relaxed">
-      {preview}
-    </p>
-  )}
+
+  <div class="relative z-10">
+    <div class="flex items-start justify-between gap-3 mb-4">
+      <Badge color={categoryColor}>{category}</Badge>
+      <ArrowUpRight class="w-4 h-4 text-stone-400 dark:text-stone-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors flex-shrink-0" />
+    </div>
+
+    <h3 class="font-semibold text-stone-900 dark:text-stone-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors mb-2 line-clamp-2 leading-snug">
+      {title}
+    </h3>
+
+    {preview && (
+      <p class="text-sm text-stone-500 dark:text-stone-400 line-clamp-2 leading-relaxed">
+        {preview}
+      </p>
+    )}
+  </div>
 </a>
+
+<style>
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+  }
+</style>

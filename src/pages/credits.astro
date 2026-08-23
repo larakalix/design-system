@@ -2,50 +2,47 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/organisms/Header.astro';
 import Footer from '../components/organisms/Footer.astro';
-import { Heart, BookOpen, ExternalLink, FileText } from 'lucide-astro';
+import { Heart, BookOpen, FileText } from 'lucide-astro';
 ---
 
 <Layout title="Credits & Attribution - System Design Archive 2025">
   <Header />
 
-  <main class="flex-1 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+  <main class="flex-1 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
     <div class="text-center mb-12">
-      <div class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-        <Heart class="w-8 h-8 text-accent" />
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 mb-4">
+        <Heart class="w-6 h-6" />
       </div>
-      <h1 class="text-3xl sm:text-4xl font-bold text-primary mb-3">Credits & Attribution</h1>
-      <p class="text-text-muted text-lg">This project exists because of the incredible work of others.</p>
+      <h1 class="text-4xl font-bold text-stone-900 dark:text-stone-100 mb-3">Credits</h1>
+      <p class="text-stone-500 dark:text-stone-400">This project exists because of the incredible work of others.</p>
     </div>
 
-    <div class="space-y-8">
-      <!-- Primary Attribution -->
-      <section class="bg-surface rounded-2xl border border-border p-6 sm:p-8">
-        <div class="flex items-center gap-3 mb-4">
-          <FileText class="w-5 h-5 text-accent" />
-          <h2 class="text-xl font-bold text-primary">Original Source</h2>
+    <div class="card-premium p-8 mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <FileText class="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+        <h2 class="text-xl font-bold text-stone-900 dark:text-stone-100">Original Source</h2>
+      </div>
+      <p class="text-stone-600 dark:text-stone-300 leading-relaxed mb-4">
+        All content in this archive is derived from the <strong class="text-stone-900 dark:text-stone-100">Big Archive System Design 2025</strong> PDF, 
+        a comprehensive 442-page reference covering system design, software architecture, AI/ML, DevOps, networking, and more.
+      </p>
+      <p class="text-stone-600 dark:text-stone-300 leading-relaxed mb-6">
+        This knowledge base is an independent, non-commercial tribute created to make the material more accessible, 
+        searchable, and interactive for learners worldwide.
+      </p>
+      <div class="flex items-center gap-4 p-4 rounded-xl bg-stone-50 dark:bg-stone-900">
+        <BookOpen class="w-10 h-10 text-stone-400 dark:text-stone-500 flex-shrink-0" />
+        <div>
+          <p class="font-semibold text-stone-900 dark:text-stone-100">Big Archive System Design 2025</p>
+          <p class="text-sm text-stone-500 dark:text-stone-400">442 pages · 212 topics · 10 categories</p>
         </div>
-        <p class="text-text-muted leading-relaxed mb-4">
-          All content in this archive is derived from the <strong class="text-primary">Big Archive System Design 2025</strong> PDF,
-          a comprehensive 442-page reference covering system design, software architecture, AI/ML, DevOps, networking, and more.
-        </p>
-        <p class="text-text-muted leading-relaxed mb-4">
-          This knowledge base is an independent, non-commercial tribute created to make the material more accessible,
-          searchable, and interactive for learners worldwide.
-        </p>
-        <div class="flex items-center gap-4 mt-6 p-4 rounded-xl bg-surface-muted border border-border">
-          <BookOpen class="w-10 h-10 text-text-muted flex-shrink-0" />
-          <div>
-            <p class="font-semibold text-primary">Big Archive System Design 2025</p>
-            <p class="text-sm text-text-muted">442 pages · 212 topics · 10 categories</p>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
 
-    <div class="mt-12 text-center">
+    <div class="text-center">
       <a
         href="/"
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent-hover transition-all"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-all"
       >
         Start Exploring
       </a>
