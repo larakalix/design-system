@@ -59,7 +59,7 @@ const staticDiagram = getStaticDiagramForSlug(topic.slug);
           <div class="prose max-w-none">
             {(() => {
               // Join mid-sentence line breaks back into paragraphs
-              const lines = topic.content.split('\n').map(l => l.trim()).filter(Boolean);
+              const lines = topic.content.split('\n').map((l: string) => l.trim()).filter(Boolean);
               const paragraphs: string[] = [];
               let current = '';
               
